@@ -98,7 +98,7 @@ var throneIsKilling='both';      //both, attackersOnly
 var killingKingCondition='two';  //two, four
 var throneProtecting='disable';  //enable, disable 
 var fourToKillOnThrone='enable'; //enable, disable
-var AI=2;  //0, 1-black, 2 - white
+var AI=1;  //0, 1-black, 2 - white
 
 var margin =100;
 
@@ -264,96 +264,96 @@ function drawHovered(){
     }
 }
 
-function remove(){
+function remove(c, d){
     var o;
     player==1?o=2:o=1;
 
     //simple killing figures
-    if(field[mouseCord.x+1][mouseCord.y]==o && field[mouseCord.x+2][mouseCord.y]==player)field[mouseCord.x+1][mouseCord.y]=0;
-    else if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==player)field[mouseCord.x-1][mouseCord.y]=0;
-    else if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==player)field[mouseCord.x][mouseCord.y+1]=0;
-    else if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==player)field[mouseCord.x][mouseCord.y-1]=0;
+    if(field[c+1][d]==o && field[c+2][d]==player)field[c+1][d]=0;
+    else if(field[c-1][d]==o && field[c-2][d]==player)field[c-1][d]=0;
+    else if(field[c][d+1]==o && field[c][d+2]==player)field[c][d+1]=0;
+    else if(field[c][d-1]==o && field[c][d-2]==player)field[c][d-1]=0;
 
     if(throneIsKilling=='both'){
-        if(field[mouseCord.x+1][mouseCord.y]==o && field[mouseCord.x+2][mouseCord.y]==5)field[mouseCord.x+1][mouseCord.y]=0;
-        else if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==5)field[mouseCord.x-1][mouseCord.y]=0;
-        else if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==5)field[mouseCord.x][mouseCord.y+1]=0;
-        else if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==5)field[mouseCord.x][mouseCord.y-1]=0;
+        if(field[c+1][d]==o && field[c+2][d]==5)field[c+1][d]=0;
+        else if(field[c-1][d]==o && field[c-2][d]==5)field[c-1][d]=0;
+        else if(field[c][d+1]==o && field[c][d+2]==5)field[c][d+1]=0;
+        else if(field[c][d-1]==o && field[c][d-2]==5)field[c][d-1]=0;
     }
     if(winCondition=='corner'){
-        if(field[mouseCord.x+1][mouseCord.y]==o && field[mouseCord.x+2][mouseCord.y]==4)field[mouseCord.x+1][mouseCord.y]=0;
-        else if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==4)field[mouseCord.x-1][mouseCord.y]=0;
-        else if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==4)field[mouseCord.x][mouseCord.y+1]=0;
-        else if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==4)field[mouseCord.x][mouseCord.y-1]=0;
+        if(field[c+1][d]==o && field[c+2][d]==4)field[c+1][d]=0;
+        else if(field[c-1][d]==o && field[c-2][d]==4)field[c-1][d]=0;
+        else if(field[c][d+1]==o && field[c][d+2]==4)field[c][d+1]=0;
+        else if(field[c][d-1]==o && field[c][d-2]==4)field[c][d-1]=0;
     }
     if(weaponlessKing=='disable'){
-        if(field[mouseCord.x+1][mouseCord.y]==o && field[mouseCord.x+2][mouseCord.y]==3)field[mouseCord.x+1][mouseCord.y]=0;
-        else if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==3)field[mouseCord.x-1][mouseCord.y]=0;
-        else if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==3)field[mouseCord.x][mouseCord.y+1]=0;
-        else if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==3)field[mouseCord.x][mouseCord.y-1]=0;
+        if(field[c+1][d]==o && field[c+2][d]==3)field[c+1][d]=0;
+        else if(field[c-1][d]==o && field[c-2][d]==3)field[c-1][d]=0;
+        else if(field[c][d+1]==o && field[c][d+2]==3)field[c][d+1]=0;
+        else if(field[c][d-1]==o && field[c][d-2]==3)field[c][d-1]=0;
     }
 }
 
-function removeKing(){
+function removeKing(c, d){
     if(killingKingCondition=='two'){
         if(field[parseInt(size/2)+1][parseInt(size/2)+1]!=3 && fourToKillOnThrone=='enable'){
-            if(field[mouseCord.x+1][mouseCord.y]==3 && field[mouseCord.x+2][mouseCord.y]==1){
-                if(mouseCord.x+1==parseInt(size/2)+1 && mouseCord.y==parseInt(size/2)+1){
-                    if(field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x+1][mouseCord.y-1]==1)win=1;
+            if(field[c+1][d]==3 && field[c+2][d]==1){
+                if(c+1==parseInt(size/2)+1 && d==parseInt(size/2)+1){
+                    if(field[c+1][d+1]==1 && field[c+1][d-1]==1)win=1;
                 }else win=1;
             }
-            else if(field[mouseCord.x-1][mouseCord.y]==3 && field[mouseCord.x-2][mouseCord.y]==1){
-                if(mouseCord.x-1==parseInt(size/2)+1 && mouseCord.y==parseInt(size/2)+1){
-                    if(field[mouseCord.x-1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+            else if(field[c-1][d]==3 && field[c-2][d]==1){
+                if(c-1==parseInt(size/2)+1 && d==parseInt(size/2)+1){
+                    if(field[c-1][d+1]==1 && field[c-1][d-1]==1)win=1;
                 }else win=1;
             }
-            else if(field[mouseCord.x][mouseCord.y+1]==3 && field[mouseCord.x][mouseCord.y+2]==1){
-                if(mouseCord.x==parseInt(size/2)+1 && mouseCord.y+1==parseInt(size/2)+1){
-                    if(field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y+1]==1)win=1;
+            else if(field[c][d+1]==3 && field[c][d+2]==1){
+                if(c==parseInt(size/2)+1 && d+1==parseInt(size/2)+1){
+                    if(field[c+1][d+1]==1 && field[c-1][d+1]==1)win=1;
                 }else win=1;
             }
-            else if(field[mouseCord.x][mouseCord.y-1]==3 && field[mouseCord.x][mouseCord.y-2]==1){
-                if(mouseCord.x==parseInt(size/2)+1 && mouseCord.y-1==parseInt(size/2)+1){
-                    if(field[mouseCord.x+1][mouseCord.y-1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+            else if(field[c][d-1]==3 && field[c][d-2]==1){
+                if(c==parseInt(size/2)+1 && d-1==parseInt(size/2)+1){
+                    if(field[c+1][d-1]==1 && field[c-1][d-1]==1)win=1;
                 }else win=1;
             }
         }else{
-            if(field[mouseCord.x+1][mouseCord.y]==3   && (field[mouseCord.x+2][mouseCord.y]==1 || mouseCord.x+2>size) &&
-               field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x+1][mouseCord.y-1]==1)win=1;
-            else if(field[mouseCord.x-1][mouseCord.y]==3   && (field[mouseCord.x-2][mouseCord.y]==1 || mouseCord.x-2<1) &&
-                    field[mouseCord.x-1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
-            else if(field[mouseCord.x][mouseCord.y+1]==3   && (field[mouseCord.x][mouseCord.y+2]==1 || mouseCord.y+2>size) &&
-                    field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y+1]==1)win=1;
-            else if(field[mouseCord.x][mouseCord.y-1]==3   && (field[mouseCord.x][mouseCord.y-2]==1 || mouseCord.y-2<1) &&
-                    field[mouseCord.x+1][mouseCord.y-1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+            if(field[c+1][d]==3   && (field[c+2][d]==1 || c+2>size) &&
+               field[c+1][d+1]==1 && field[c+1][d-1]==1)win=1;
+            else if(field[c-1][d]==3   && (field[c-2][d]==1 || c-2<1) &&
+                    field[c-1][d+1]==1 && field[c-1][d-1]==1)win=1;
+            else if(field[c][d+1]==3   && (field[c][d+2]==1 || d+2>size) &&
+                    field[c+1][d+1]==1 && field[c-1][d+1]==1)win=1;
+            else if(field[c][d-1]==3   && (field[c][d-2]==1 || d-2<1) &&
+                    field[c+1][d-1]==1 && field[c-1][d-1]==1)win=1;
         }
     }else if(killingKingCondition=='four'){
-            if(field[mouseCord.x+1][mouseCord.y]==3   && (field[mouseCord.x+2][mouseCord.y]==1 || mouseCord.x+2>size) &&
-               field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x+1][mouseCord.y-1]==1)win=1;
-            else if(field[mouseCord.x-1][mouseCord.y]==3   && (field[mouseCord.x-2][mouseCord.y]==1 || mouseCord.x-2<1) &&
-                    field[mouseCord.x-1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
-            else if(field[mouseCord.x][mouseCord.y+1]==3   && (field[mouseCord.x][mouseCord.y+2]==1 || mouseCord.y+2>size) &&
-                    field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y+1]==1)win=1;
-            else if(field[mouseCord.x][mouseCord.y-1]==3   && (field[mouseCord.x][mouseCord.y-2]==1 || mouseCord.y-2<1) &&
-                    field[mouseCord.x+1][mouseCord.y-1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+            if(field[c+1][d]==3   && (field[c+2][d]==1 || c+2>size) &&
+               field[c+1][d+1]==1 && field[c+1][d-1]==1)win=1;
+            else if(field[c-1][d]==3   && (field[c-2][d]==1 || c-2<1) &&
+                    field[c-1][d+1]==1 && field[c-1][d-1]==1)win=1;
+            else if(field[c][d+1]==3   && (field[c][d+2]==1 || d+2>size) &&
+                    field[c+1][d+1]==1 && field[c-1][d+1]==1)win=1;
+            else if(field[c][d-1]==3   && (field[c][d-2]==1 || d-2<1) &&
+                    field[c+1][d-1]==1 && field[c-1][d-1]==1)win=1;
     }
 }
-function escaping(){
-    if(winCondition=="edge" && (mouseCord.x==size||mouseCord.y==size||mouseCord.x==1||mouseCord.y==1))win=2;
-    if(winCondition=="corner" && (mouseCord.x==1&&mouseCord.y==1 || mouseCord.x==1&&mouseCord.y==size||
-                                  mouseCord.x==size&&mouseCord.y==1 || mouseCord.x==size&&mouseCord.y==size))win=2;
+function escaping(c, d){
+    if(winCondition=="edge" && (c==size||d==size||c==1||d==1))win=2;
+    if(winCondition=="corner" && (c==1&&d==1 || c==1&&d==size||
+                                  c==size&&d==1 || c==size&&d==size))win=2;
 }
 
 function move(a, b, c, d){
-    if(field[a][b]==3)escaping();
+    if(field[a][b]==3)escaping(c, d);
     var buf=field[a][b];
     if(buf==3 && a==parseInt(size/2)+1 && b==parseInt(size/2)+1)field[a][b]=5;
     else field[a][b]=0;
     field[c][d]=buf;
     if(player==1 &&(field[c+1][d]==3 || field[c-1][d]==3 ||
                     field[c][d+1]==3 || field[c][d-1]==3)
-    )removeKing();
-    remove();
+    )removeKing(c, d);
+    remove(c, d);
     
     player==1?player=2:player=1;
 }
@@ -393,18 +393,24 @@ function canMove(x,y,tx,ty){
     return true;
 }
 
+function randomInt(min, max) {
+	return min + Math.floor((max - min) * Math.random());
+}
+
 function AImove(a){
-	for(i=1; i<size; i++){
-        for(j=1; j<size; j++){
-        	if(field[i][j]==a){
-        		for(k=1; k<size; k++){
-        			for(l=1; l<size; l++){
-        				if(canMove(i, j, k, l))move(i, j, k, l);
-        			}
-        		}
-        	}
-        }
-    }
+	var AImoved=false;
+	while(!AImoved){
+		var a = randomInt(1, size);
+		var b = randomInt(1, size);
+		var c = randomInt(1, size);
+		var d = randomInt(1, size);
+
+		if((field[a][b]==AI || (field[a][b]==AI+1 && AI==2)) && canMove(a,b,c,d) && (a!=c || b!=d)){
+			move(a,b,c,d);
+			console.log("ruch z: " + a + ", " + b + " do: " + c + ", " + d);
+			AImoved=true;
+		}
+    }		
 }
 
 function click(e){
@@ -421,9 +427,11 @@ function click(e){
     }else if(mainMenu==1){
         mainMenu=0;
     }else if(win!=0){
+    	player
         clearFigures();
         putFiguresOnMap();
         win=0;
+        player==1?player=2:player=1;
     }else{
         if(mouseX>startCord.x && mouseY>startCord.y && mouseX<(startCord.x+(size*fieldSize)) && mouseY<(startCord.y+(size*fieldSize))){
             if(clicked.x==0 && clicked.y==0){
