@@ -98,6 +98,7 @@ var throneIsKilling='both';      //both, attackersOnly
 var killingKingCondition='two';  //two, four
 var throneProtecting='disable';  //enable, disable 
 var fourToKillOnThrone='enable'; //enable, disable
+var AI=2;  //0, 1-black, 2 - white
 
 var margin =100;
 
@@ -133,8 +134,7 @@ function cursorPos(e) {
                     mouseCord = {
                         x: i,
                         y: j
-                    }
-                    //console.log(field[mouseCord.x][mouseCord.y]);     
+                    }     
                     found=true;
                 }
             }
@@ -344,25 +344,23 @@ function escaping(){
                                   mouseCord.x==size&&mouseCord.y==1 || mouseCord.x==size&&mouseCord.y==size))win=2;
 }
 
-function move(){
-    if(field[clicked.x][clicked.y]==3)escaping();
-    var buf=field[clicked.x][clicked.y];
-    if(buf==3 && clicked.x==parseInt(size/2)+1 && clicked.y==parseInt(size/2)+1)field[clicked.x][clicked.y]=5;
-    else field[clicked.x][clicked.y]=0;
-    field[mouseCord.x][mouseCord.y]=buf;
-    if(player==1 &&(field[mouseCord.x+1][mouseCord.y]==3 || field[mouseCord.x-1][mouseCord.y]==3 ||
-                    field[mouseCord.x][mouseCord.y+1]==3 || field[mouseCord.x][mouseCord.y-1]==3)
+function move(a, b, c, d){
+    if(field[a][b]==3)escaping();
+    var buf=field[a][b];
+    if(buf==3 && a==parseInt(size/2)+1 && b==parseInt(size/2)+1)field[a][b]=5;
+    else field[a][b]=0;
+    field[c][d]=buf;
+    if(player==1 &&(field[c+1][d]==3 || field[c-1][d]==3 ||
+                    field[c][d+1]==3 || field[c][d-1]==3)
     )removeKing();
     remove();
-    clicked.x=0;
-    clicked.y=0;
+    
     player==1?player=2:player=1;
-    sound.play();
 }
 
 function canMove(x,y,tx,ty){
     if(x!=tx&&y!=ty)return false;
-    if(field[clicked.x][clicked.y]!=3 && (field[mouseCord.x][mouseCord.y]==5||field[mouseCord.x][mouseCord.y]==4))return false;
+    if(field[x][y]!=3 && (field[tx][ty]==5||field[x][y]==4))return false;
     if(x==tx){
         if(ty>y){
             for(i=y+1; i<=ty; i++){
@@ -393,6 +391,20 @@ function canMove(x,y,tx,ty){
         }
     }
     return true;
+}
+
+function AImove(a){
+	for(i=1; i<size; i++){
+        for(j=1; j<size; j++){
+        	if(field[i][j]==a){
+        		for(k=1; k<size; k++){
+        			for(l=1; l<size; l++){
+        				if(canMove(i, j, k, l))move(i, j, k, l);
+        			}
+        		}
+        	}
+        }
+    }
 }
 
 function click(e){
@@ -427,7 +439,15 @@ function click(e){
                 }
             }else if(field[clicked.x][clicked.y]==1 || field[clicked.x][clicked.y]==2 || field[clicked.x][clicked.y]==3){
                 if(clicked.x!=mouseCord.x || clicked.y!=mouseCord.y){
-                    if(canMove(clicked.x, clicked.y, mouseCord.x, mouseCord.y))move();
+                    if(canMove(clicked.x, clicked.y, mouseCord.x, mouseCord.y)){
+                    	move(clicked.x, clicked.y, mouseCord.x, mouseCord.y);
+                    	sound.play();
+                    	clicked.x=0;
+    					clicked.y=0;
+                    	if(win==0){
+	                    	if(player==AI)AImove(player);
+                    	}
+                    }
                     else{
                         clicked.x=0;
                         clicked.y=0;
