@@ -98,20 +98,20 @@ var throneIsKilling='both';      //both, attackersOnly
 var killingKingCondition='two';  //two, four
 var throneProtecting='disable';  //enable, disable 
 var fourToKillOnThrone='enable'; //enable, disable
-var AI=1;  //0, 1-black, 2 - white
+var startingPlayer='black';		 //black, white
+var AI=2;  						 //0, 1-black, 2 - white
 
 var margin =100;
 
 var mouseX=9999999;
 var mouseY=9999999;
 var MouseCord;
-
+var player;
 var fieldSize;
 var center;
 var startCord;
 var isMobile;
 var tourNr=0;
-var player=1;
 var win=0;
 var mainMenu=0;
 var firstBoard=1;
@@ -165,10 +165,10 @@ function renderMap(size){
     }   
 }
 
-function clearFigures(){
-    for(i=1; i<100; i++){
-        for(j=1; j<100; j++){
-            field[i][j]=0;
+function clearFigures(a){
+    for(i=0; i<100; i++){
+        for(j=0; j<100; j++){
+            a[i][j]=0;
         }
     }
 };
@@ -270,27 +270,27 @@ function remove(c, d){
 
     //simple killing figures
     if(field[c+1][d]==o && field[c+2][d]==player)field[c+1][d]=0;
-    else if(field[c-1][d]==o && field[c-2][d]==player)field[c-1][d]=0;
-    else if(field[c][d+1]==o && field[c][d+2]==player)field[c][d+1]=0;
-    else if(field[c][d-1]==o && field[c][d-2]==player)field[c][d-1]=0;
+    if(field[c-1][d]==o && field[c-2][d]==player)field[c-1][d]=0;
+    if(field[c][d+1]==o && field[c][d+2]==player)field[c][d+1]=0;
+    if(field[c][d-1]==o && field[c][d-2]==player)field[c][d-1]=0;
 
     if(throneIsKilling=='both'){
         if(field[c+1][d]==o && field[c+2][d]==5)field[c+1][d]=0;
-        else if(field[c-1][d]==o && field[c-2][d]==5)field[c-1][d]=0;
-        else if(field[c][d+1]==o && field[c][d+2]==5)field[c][d+1]=0;
-        else if(field[c][d-1]==o && field[c][d-2]==5)field[c][d-1]=0;
+        if(field[c-1][d]==o && field[c-2][d]==5)field[c-1][d]=0;
+        if(field[c][d+1]==o && field[c][d+2]==5)field[c][d+1]=0;
+        if(field[c][d-1]==o && field[c][d-2]==5)field[c][d-1]=0;
     }
     if(winCondition=='corner'){
         if(field[c+1][d]==o && field[c+2][d]==4)field[c+1][d]=0;
-        else if(field[c-1][d]==o && field[c-2][d]==4)field[c-1][d]=0;
-        else if(field[c][d+1]==o && field[c][d+2]==4)field[c][d+1]=0;
-        else if(field[c][d-1]==o && field[c][d-2]==4)field[c][d-1]=0;
+        if(field[c-1][d]==o && field[c-2][d]==4)field[c-1][d]=0;
+        if(field[c][d+1]==o && field[c][d+2]==4)field[c][d+1]=0;
+        if(field[c][d-1]==o && field[c][d-2]==4)field[c][d-1]=0;
     }
     if(weaponlessKing=='disable'){
         if(field[c+1][d]==o && field[c+2][d]==3)field[c+1][d]=0;
-        else if(field[c-1][d]==o && field[c-2][d]==3)field[c-1][d]=0;
-        else if(field[c][d+1]==o && field[c][d+2]==3)field[c][d+1]=0;
-        else if(field[c][d-1]==o && field[c][d-2]==3)field[c][d-1]=0;
+        if(field[c-1][d]==o && field[c-2][d]==3)field[c-1][d]=0;
+        if(field[c][d+1]==o && field[c][d+2]==3)field[c][d+1]=0;
+        if(field[c][d-1]==o && field[c][d-2]==3)field[c][d-1]=0;
     }
 }
 
@@ -398,19 +398,51 @@ function randomInt(min, max) {
 }
 
 function AImove(a){
-	var AImoved=false;
-	while(!AImoved){
-		var a = randomInt(1, size);
-		var b = randomInt(1, size);
-		var c = randomInt(1, size);
-		var d = randomInt(1, size);
+	
+	//RANDOM MOVES//
+	//var AImoved=false;
+	// while(!AImoved){
+			
+	// 	var a = randomInt(1, size+1);
+	// 	var b = randomInt(1, size+1);
+	// 	var c = randomInt(1, size+1);
+	// 	var d = randomInt(1, size+1);
+	// 	if((field[a][b]==AI || (field[a][b]==AI+1 && AI==2)) && canMove(a,b,c,d) && (a!=c || b!=d)){
+	// 		move(a,b,c,d);
+	// 		console.log("ruch z: " + a + ", " + b + " do: " + c + ", " + d);
+	// 		AImoved=true;
+	// 	}
+ 	//}	
 
-		if((field[a][b]==AI || (field[a][b]==AI+1 && AI==2)) && canMove(a,b,c,d) && (a!=c || b!=d)){
-			move(a,b,c,d);
-			console.log("ruch z: " + a + ", " + b + " do: " + c + ", " + d);
-			AImoved=true;
-		}
-    }		
+ 	//INTELIGENT MOVES
+ 	for(a=1; a<=size; a++){
+ 		for(b=1; b<=size; b++){
+ 			for(c=1; c<=size; c++){
+	 			if((field[a][b]==AI || (field[a][b]==AI+1 && AI==2)) && canMove(a,b,c,b) && a!=c){
+					move(a,b,c,b);
+					console.log("ruch z: " + a + ", " + b + " do: " + c + ", " + b);
+					return 0;
+				}
+				if((field[a][b]==AI || (field[a][b]==AI+1 && AI==2)) && canMove(a,b,a,c) && b!=c){
+					move(a,b,a,c);
+					console.log("ruch z: " + a + ", " + b + " do: " + a + ", " + c);
+					return 0;
+				}
+		 	}
+ 		}
+ 	}
+}
+
+function AIcount(t){
+	var value=0;
+	for(i=1; i<=size; i++){
+    	for(j=1; j<=size; j++){
+    		if(t[i][j]==1)value+=10;
+    		if(t[i][j]==2)value-=10;
+    	}
+    }
+	console.log('licze... serio! wartość planszy: '+value);
+	return value;
 }
 
 function click(e){
@@ -427,11 +459,10 @@ function click(e){
     }else if(mainMenu==1){
         mainMenu=0;
     }else if(win!=0){
-    	player
-        clearFigures();
+        clearFigures(field);
         putFiguresOnMap();
         win=0;
-        player==1?player=2:player=1;
+        startingPlayer=='black'?player=1:player=2;
     }else{
         if(mouseX>startCord.x && mouseY>startCord.y && mouseX<(startCord.x+(size*fieldSize)) && mouseY<(startCord.y+(size*fieldSize))){
             if(clicked.x==0 && clicked.y==0){
@@ -452,9 +483,6 @@ function click(e){
                     	sound.play();
                     	clicked.x=0;
     					clicked.y=0;
-                    	if(win==0){
-	                    	if(player==AI)AImove(player);
-                    	}
                     }
                     else{
                         clicked.x=0;
@@ -485,6 +513,7 @@ function start(){
         killingKingCondition='two'; 
         throneProtecting='disable';
         fourToKillOnThrone='enable';
+        startingPlayer='black';
     }
     else if(gameName=='Tablut'){
         size=9;
@@ -494,8 +523,9 @@ function start(){
         killingKingCondition='four'; 
         throneProtecting='enable';
         fourToKillOnThrone='enable';
+        startingPlayer='black';
     }
-    
+    startingPlayer=='black'?player=1:player=2;
 
     s.init(document.getElementById("game"));
 
@@ -521,8 +551,9 @@ function start(){
     };
 
     isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    clearFigures();
+    clearFigures(field);
     putFiguresOnMap();
+    if(player==1 && AI ==1)AImove();
 }
 
 function update(){
@@ -557,6 +588,7 @@ function update(){
         renderMap(size);
         if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
         renderFig();
+		if(player==AI)AImove(player);
     }
     if(!isMobile)s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);
 }
