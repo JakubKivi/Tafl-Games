@@ -88,7 +88,7 @@ var clicked = {
     y:0
 };
 
-var gameName='Tablut';           // Brandubh, Tablut
+var gameName='Brandubh';           // Brandubh, Tablut
 var size=0;                      //by default
 var winCondition='corner';       //edge, corner
 var moveThroughtThrone='enable'; //enable, disable
@@ -99,7 +99,7 @@ var killingKingCondition='two';  //two, four
 var throneProtecting='disable';  //enable, disable 
 var fourToKillOnThrone='enable'; //enable, disable
 var startingPlayer='black';		 //black, white
-var AI=2;  						 //0, 1-black, 2 - white
+var AI=0;  						 //0, 1-black, 2 - white
 
 var margin =100;
 
