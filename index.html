@@ -13,6 +13,15 @@
 		</style>
 
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="js/setup.js"></script>
+		<script src="js/functions.js"></script>
+		<script src="js/var.js"></script>
+		<script src="js/mouse.js"></script>
+		<script src="js/click.js"></script>
+		<script src="js/movingMechanics.js"></script>
+		<script src="js/killingMechanics.js"></script>
+		<script src="js/textures.js"></script>
+		<script src="js/Screen.js"></script>
 		<script src="js/main.js"></script>
 
 		<link href="css/styles.css" rel="stylesheet" />
@@ -20,14 +29,14 @@
 
 	<body>
 		<!-- Trigger/Open The Modal -->
-		<button id="myBtn">Play</button>
-
+		<div class="row">
+			<button class="buttonPlay" id="myBtn">Play</button>
+		</div>
 		<!-- The Modal -->
 		<div id="myModal" class="modal">
 
 		  <!-- Modal content -->
 		  <div class="modal-content">
-		    <span class="close">&times;</span>
 		    <canvas id="game" style="position: fixed"></canvas>
 		  </div>
 
@@ -50,11 +59,6 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
