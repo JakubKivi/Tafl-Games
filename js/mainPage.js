@@ -6,8 +6,8 @@ function handleBackPress(event) {
     $('.modal-backdrop').remove();
 }
 
-var closedModalHashStateId = "#modalClosed";
-var openModalHashStateId = "#modalOpen";
+var closedModalHashStateId = "#menu";
+var openModalHashStateId = "#game";
 
 /* Updating the hash state creates a new entry
  * in the web browser's history. The latest entry in the web browser's
@@ -63,6 +63,7 @@ var resumeBtn = document.getElementById("resButton");
 var btn = document.getElementById("playButton");
 
 resumeBtn.onclick =function(){
+	window.location.hash = openModalHashStateId;
 	modal.style.display = "block";
 }
 
@@ -112,13 +113,4 @@ $(document).keyup(function(e) {
 });
 
 
-$(window).on("navigate", function (event, data) {
-  var direction = data.state.direction;
-  if (direction == 'back') {
-    modal.style.display = "none";
-  }
-  if (direction == 'forward') {
-    // do something else
-  }
-});
 
