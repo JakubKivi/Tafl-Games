@@ -13,83 +13,80 @@
 		</style>
 
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script src="js/setup.js"></script>
-		<script src="js/functions.js"></script>
-		<script src="js/var.js"></script>
-		<script src="js/mouse.js"></script>
-		<script src="js/click.js"></script>
-		<script src="js/movingMechanics.js"></script>
-		<script src="js/killingMechanics.js"></script>
-		<script src="js/textures.js"></script>
-		<script src="js/Screen.js"></script>
-		<script src="js/main.js"></script>
+
+		<script src="js/game/setup.js"></script>
+		<script src="js/game/functions.js"></script>
+		<script src="js/game/var.js"></script>
+		<script src="js/game/mouse.js"></script>
+		<script src="js/game/click.js"></script>
+		<script src="js/game/movingMechanics.js"></script>
+		<script src="js/game/killingMechanics.js"></script>
+		<script src="js/game/textures.js"></script>
+		<script src="js/game/Screen.js"></script>
+		<script src="js/game/main.js"></script>
 
 		<link href="css/styles.css" rel="stylesheet" />
 	</head>
 
 	<body>
 		<!-- Trigger/Open The Modal -->
-		<div class="row">
-			<button class="buttonPlay" id="myBtn">Play</button>
+		<div class="buttons">
+				<button class="buttonResume" id="resButton">Resume</button>
+				<button class="buttonPlay" id="playButton">New game</button>
 		</div>
+
+		<!-- Header -->
 		<div class = "marg1">
 			<h2>
 				Choose a Nordic Chess Game
 			</h2>
 		</div>
 		<!-- Checkboxes -->
-		<div class = "marg2">
-			<label class="container cont1">Modern Hnefatafl
-			  <input type="radio" name="gameName" checked="checked">
-			  <span class="checkmark"></span>
-			</label>
+		<div class="checkboxes">
+			<div class = "marg2">
+				<label class="container cont1">Modern Hnefatafl
+				  <input type="radio" name="gameName" checked="checked">
+				  <span class="checkmark"></span>
+				</label>
 
-			<label class="container cont1">Classic Hnefatafl
-			  <input type="radio" name="gameName">
-			  <span class="checkmark"></span>
-			</label>
+				<label class="container cont1">Classic Hnefatafl
+				  <input type="radio" name="gameName">
+				  <span class="checkmark"></span>
+				</label>
 
-			<label class="container cont1">Tablut
-			  <input type="radio" name="gameName">
-			  <span class="checkmark"></span>
-			</label>
+				<label class="container cont1">Tablut
+				  <input type="radio" name="gameName">
+				  <span class="checkmark"></span>
+				</label>
 
-			<label class="container cont1">Brandubh
-			  <input type="radio" name="gameName">
-			  <span class="checkmark"></span>
-			</label> 
+				<label class="container cont1">Brandubh
+				  <input type="radio" name="gameName">
+				  <span class="checkmark"></span>
+				</label> 
+			</div>
+			<div class = "marg2">
 
-			<label class="container cont1">Ard Ri
-			  <input type="radio" name="gameName">
-			  <span class="checkmark"></span>
-			</label> 
 
-		</div>
-		<div class = "marg2">
-			<label class="container cont1">Tawlbwrdd
-			  <input type="radio" name="gameName" checked="checked">
-			  <span class="checkmark"></span>
-			</label>
+				<label class="container cont1">Ard Ri
+				  <input type="radio" id name="gameName">
+				  <span class="checkmark"></span>
+				</label> 
 
-			<label class="container cont1">Ard Ri
-			  <input type="radio" name="gameName">
-			  <span class="checkmark"></span>
-			</label>
+				<label class="container cont1">Tawlbwrdd
+				  <input type="radio" name="gameName" checked="checked">
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container cont1">Alea<br> Evangeli
+				  <input type="radio" name="gameName">
+				  <span class="checkmark"></span>
+				</label>
 
-			<label class="container cont1">Alea<br> Evangeli
-			  <input type="radio" name="gameName">
-			  <span class="checkmark"></span>
-			</label>
+				<label class="container cont1">Custom
+				  <input type="radio" name="gameName">
+				  <span class="checkmark"></span>
+				</label> 
 
-			<label class="container cont1">Custom
-			  <input type="radio" name="gameName">
-			  <span class="checkmark"></span>
-			</label> 
-
-			<label class="container cont2">Future
-			  <span class="checkmark"></span>
-			</label> 
-
+			</div>
 		</div>
 
 		<div class = "marg1">
@@ -112,25 +109,4 @@
 </html>
 
 
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
+<script src="js/mainPage.js"></script>

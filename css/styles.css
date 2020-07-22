@@ -1,3 +1,20 @@
+body{
+  background-image: url("../img/background.jpg");
+  background-color: #cccccc;
+   /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-weight: 700;
+  color: #ed3330;
+  width:80%;
+  padding-left: 10%;
+}
+
 .buttonPlay{
 color: #fff !important;
 text-transform: uppercase;
@@ -14,9 +31,39 @@ transition: all 0.4s ease 0s;
 letter-spacing: 2px;
 font-weight: bold;
 margin-top: 2%;
+float: left;
 }
 
 .buttonPlay:hover{
+  background: #434343;
+letter-spacing: 4px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+}
+
+.buttonResume{
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 30px;
+  background: #3333ed;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 8px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-top: 2%;
+  float: left;
+  margin-right: 1%;
+  display: none;
+}
+.buttonResume:hover{
   background: #434343;
 letter-spacing: 4px;
 -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
@@ -53,9 +100,26 @@ transition: all 0.4s ease 0s;
 
 .marg2{
   margin: auto;
-  width: 80%;
+  width: 20%;
+  float: left;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
+.checkboxes{
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -1.5rem;
+  margin-left: -1.5rem;
+}
+
+.buttons{
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .h2{
   width: 100%;
@@ -79,7 +143,7 @@ transition: all 0.4s ease 0s;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  float: left;
+  /*float: left;*/
   margin-left: 0px;
   margin-right: 5px;
   text-align: center;
@@ -92,10 +156,6 @@ transition: all 0.4s ease 0s;
   cursor: pointer;
   height: 0;
   width: 0;
-}
-
-.cont2{
-  visibility: hidden;
 }
 
 /* Create a custom checkbox */
