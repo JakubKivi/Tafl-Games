@@ -1,3 +1,18 @@
+function handleBackPress(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    $('.modal').modal('hide');
+    $('.modal-backdrop').remove();
+}
+
+var closedModalHashStateId = "#modalClosed";
+var openModalHashStateId = "#modalOpen";
+
+/* Updating the hash state creates a new entry
+ * in the web browser's history. The latest entry in the web browser's
+ * history is "modal.html#modalClosed". */
+window.location.hash = closedModalHashStateId;
 
 var radios = document.getElementsByName('gameName');
 
@@ -84,6 +99,7 @@ btn.onclick = function() {
 		break;
 		}
 	}
+	window.location.hash = openModalHashStateId;
 	onModalOpen();
 	modal.style.display = "block";
 }
@@ -94,3 +110,15 @@ $(document).keyup(function(e) {
         resButton.style.display = "block";
     }
 });
+
+
+$(window).on("navigate", function (event, data) {
+  var direction = data.state.direction;
+  if (direction == 'back') {
+    modal.style.display = "none";
+  }
+  if (direction == 'forward') {
+    // do something else
+  }
+});
+

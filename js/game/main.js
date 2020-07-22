@@ -58,6 +58,10 @@ function start(){
 }
 
 function update(){
+    if(window.location.hash == closedModalHashStateId){
+        modal.style.display = "none";
+    }
+
     setTimeout(function(){
          update();  
     }, 1000 / s.FPS);
