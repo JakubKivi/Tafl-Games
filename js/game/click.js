@@ -1,15 +1,5 @@
 function click(e){
-    if(firstBoard==1){
-        if(mouseY > (s.h()-clickToStart.height)/2 && mouseY < (s.h()-clickToStart.height)/2 + clickToStart.height){
-            firstBoard=0;
-            var audio = new Audio('sound/music.mp3');
-            audio.play();
-            audio.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-        }
-    }else if(mainMenu==1){
+    if(mainMenu==1){
         mainMenu=0;
     }else if(win!=0){
         clearFigures(field);

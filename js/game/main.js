@@ -1,8 +1,8 @@
-$(window).ready(function(){
+function onModalOpen(){
     // onload
     start();
     update();
-});
+}
 
 function start(){
     
@@ -58,20 +58,18 @@ function start(){
 }
 
 function update(){
+    if(window.location.hash == closedModalHashStateId){
+        modal.style.display = "none";
+        resButton.style.display = "block";
+    }
+
     setTimeout(function(){
          update();  
     }, 1000 / s.FPS);
     s.ctx.clearRect(0, 0, s.w(), s.h());
 
     s.ctx.fillRect(0, 0, s.w(), s.h());
-    if(firstBoard==1){
-        
-        if(mouseY > (s.h()-clickToStart.height)/2 && mouseY < (s.h()-clickToStart.height)/2 + clickToStart.height)
-            s.ctx.drawImage(clickToStartH, 0, (s.h()-clickToStartH.height)/2, s.w(), clickToStartH.height);
-        else s.ctx.drawImage(clickToStart, 0, (s.h()-clickToStart.height)/2, s.w(), clickToStart.height);
-    }else if(mainMenu==1){
-
-    }else if(win==1){
+    if(win==1){
         renderMap(size);
         renderFig();
         s.ctx.save();

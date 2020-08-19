@@ -8,7 +8,7 @@ class Screen{
     }
 
     get FPS(){
-        return 20;
+        return 15;
     }
 
     w(){

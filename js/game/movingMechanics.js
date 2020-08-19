@@ -21,6 +21,14 @@ function canMove(t,x,y,tx,ty){
     }
     if(x!=tx&&y!=ty)return false;
     if(t[x][y]!=3 && (t[tx][ty]==5||t[x][y]==4))return false;
+
+    if(winCondition=='corner'){
+        if(tx==1 && ty==1)return false;
+        if(tx==1 && ty==size)return false;
+        if(tx==size && ty==1)return false;
+        if(tx==size && ty==size)return false;
+    }
+
     if(x==tx){
         if(ty>y){
             for(i=y+1; i<=ty; i++){
