@@ -26,6 +26,7 @@ function click(e){
                     	sound.play();
                     	clicked.x=0;
     					clicked.y=0;
+                        player==1?player=2:player=1;
                     }
                     else{
                         clicked.x=0;

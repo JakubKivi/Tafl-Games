@@ -9,7 +9,7 @@ function move(t, a, b, c, d){
     )removeKing(t, c, d);
     remove(t, c, d);
     
-    player==1?player=2:player=1;
+    
 }
 
 function canMove(t,x,y,tx,ty){
@@ -31,13 +31,13 @@ function canMove(t,x,y,tx,ty){
 
     if(x==tx){
         if(ty>y){
-            for(i=y+1; i<=ty; i++){
+            for(var i=y+1; i<=ty; i++){
                 if(t[x][i]==1 || t[x][i]==2 || t[x][i]==3)return false;
                 if(t[x][y]!=3 && t[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && t[x][i]==5)return false;
             }
         }else if(ty<y){
-            for(i=y-1; i>=ty; i--){
+            for(var i=y-1; i>=ty; i--){
                 if(t[x][i]==1 || t[x][i]==2 || t[x][i]==3)return false;
                 if(t[x][y]!=3 && t[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && t[x][i]==5)return false;
@@ -45,13 +45,13 @@ function canMove(t,x,y,tx,ty){
         }
     }else if(y==ty){
         if(tx>x){
-            for(i=x+1; i<=tx; i++){
+            for(var i=x+1; i<=tx; i++){
                 if(t[i][y]==1 || t[i][y]==2 || t[i][y]==3)return false;
                 if(t[x][y]!=3 && t[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && t[i][y]==5)return false;
             }
         }else if(tx<x){
-            for(i=x-1; i>=tx; i--){
+            for(var i=x-1; i>=tx; i--){
                 if(t[i][y]==1 || t[i][y]==2 || t[i][y]==3)return false;
                 if(t[x][y]!=3 && t[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && t[i][y]==5)return false;
