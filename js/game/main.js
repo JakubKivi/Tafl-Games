@@ -89,9 +89,9 @@ function update(){
         renderFig();
 		if(player==AI){
             var a = new ruch();
-            a=AImove(field, AI, 1);
+            a=AImove(field, AI, 3);
             if(a.x!=0){
-                move(field, a.x, a.y, a.tx, a.ty);
+                move(field, a.x, a.y, a.tx, a.ty, AI);
                 console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);
                 player==1?player=2:player=1;
             }else console.log('ai ma totalny problem');

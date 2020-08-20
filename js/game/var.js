@@ -18,7 +18,7 @@ var killingKingCondition='two';  //two, four
 var throneProtecting='disable';  //enable, disable 
 var fourToKillOnThrone='enable'; //enable, disable
 var startingPlayer='black';		 //black, white
-var AI=2;  						 //0, 1-black, 2 - white
+var AI=1;  						 //0, 1-black, 2 - white
 
 var margin =100;
 
