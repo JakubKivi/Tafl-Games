@@ -87,7 +87,15 @@ function update(){
         renderMap(size);
         if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
         renderFig();
-		if(player==AI)AImove(field);
+		if(player==AI){
+            var a = new ruch();
+            a=AImove(field, AI, 3);
+            if(a.x!=0){
+                move(field, a.x, a.y, a.tx, a.ty, AI);
+                console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);
+                player==1?player=2:player=1;
+            }else console.log('ai ma totalny problem');
+        }
     }
     if(!isMobile)s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);
 }

@@ -1,5 +1,3 @@
-
-
 function cursorPos(e) {
 
     e = e || window.event;

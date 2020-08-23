@@ -1,67 +1,133 @@
-function AImove(t){
- 	//INTELIGENT MOVES... almost xd
- 	var bestBoard=0;
- 	var bestMove={
- 		x: 0,
- 		y: 0,
- 		tx: 0,
- 		ty: 0
- 	};
+class ruch {
+	constructor(x, y, tx, ty, value) {
+    	this.x = x;
+    	this.y= y;
+    	this.tx = tx;
+    	this.ty= ty;
+    	this.value=value;
+  	}
+}
 
+function AImove(t, p, depth){
 	var nfield= createArray(100, 100);
 	clearFigures(nfield);
 
- 	for(i=0; i<=size; i++){
-        for(j=0; j<=size; j++){
-        	nfield[i][j]=t[i][j];
+ 	for(var iii=0; iii<=size; iii++){
+        for(var jjj=0; jjj<=size; jjj++){
+        	nfield[iii][jjj]=t[iii][jjj];
         }
     }
-
- 	for(a=1; a<=size; a++){
- 		for(b=1; b<=size; b++){
- 			for(c=1; c<=size; c++){
-	 			if((nfield[a][b]==AI || (nfield[a][b]==AI+1 && AI==2)) && canMove(nfield,a,b,c,b) && a!=c){
-	 				console.log('a');
-					move(nfield,a,b,c,b);
-
+    if(p==1)var bestMove = new ruch(0,0,0,0,-Infinity);
+    else var bestMove = new ruch(0,0,0,0,Infinity);
+	
+	
+	//przejrzyj wszystkie pola
+	for(var i=1; i<=size; i++){
+		for(var j=1; j<=size; j++){
+			if(t[i][j]==p || (t[i][j]==3 && p==2)){  //jeśli jest twoje
+				for(var k=1; k<=size; k++){ //przejrzyj wszystkie pola na które może się ruszyć
+					if(k!=i && t[k][j]==0 && canMove(nfield, i, j, k, j)){   //poziomo
+						if(depth==2)console.log("myśl: "+ i, j, k, j);
+						else console.log("głębsza myśl: "+ i, j, k, j);
+						move(nfield, i, j, k, j, p);
+						if(depth>1){
+							var pp;
+							p==1?pp=2:pp=1;
+							var aa = new ruch();
+							aa=AImove(nfield, pp, depth-1);
+				            if(aa.x!=0){
+				            	console.log("response: "+aa.x,aa.y,aa.tx,aa.ty);
+				                move(nfield, aa.x, aa.y, aa.tx, aa.ty);
+				            }else console.log('ai ma totalny problem w głebi');
+						}
+						var x=AIcount(nfield, t);
+						console.log(depth +' wartość po ruchu: '+ x)
+						if(p==1){
+							if(x>bestMove.value){
+								bestMove.x=i;
+								bestMove.y=j;
+								bestMove.tx=k;
+								bestMove.ty=j;
+								bestMove.value=x;
+								console.log("my new best move "+ bestMove.value);
+							}
+						}else{
+							if(x<bestMove.value){
+								bestMove.x=i;
+								bestMove.y=j;
+								bestMove.tx=k;
+								bestMove.ty=j;
+								bestMove.value=x;
+								console.log("my new best response "+ bestMove.value);
+							}
+						}
+					}
+					if(k!=j && t[i][k]==0 && canMove(nfield, i, j, i, k)){   //pionowo
+						if(depth==2)console.log("myśl:"+ i, j, i, k);
+						else console.log("głębsza myśl: "+ i, j, i, k);
+						move(nfield, i, j, i, k, p);
+						if(depth>1){
+							var pp;
+							p==1?pp=2:pp=1;
+							var aa = new ruch();
+							aa=AImove(nfield, pp, depth-1);
+				            if(aa.x!=0){
+				            	console.log("response: "+aa.x,aa.y,aa.tx,aa.ty);
+				                move(nfield, aa.x, aa.y, aa.tx, aa.ty);
+				            }else console.log('ai ma totalny problem głebi');
+						}
+						var x=AIcount(nfield, t);
+						console.log(depth +' wartość po ruchu: '+ x)
+						if(p==1){
+							if(x>bestMove.value){
+								bestMove.x=i;
+								bestMove.y=j;
+								bestMove.tx=i;
+								bestMove.ty=k;
+								bestMove.value=x;
+								console.log("my new best move "+ bestMove.value);
+							}
+						}else{
+							if(x<bestMove.value){
+								bestMove.x=i;
+								bestMove.y=j;
+								bestMove.tx=i;
+								bestMove.ty=k;
+								bestMove.value=x;
+								console.log("my new best response "+ bestMove.value);
+							}
+						}
+						
+					}
 				}
-				if((nfield[a][b]==AI || (nfield[a][b]==AI+1 && AI==2)) && canMove(nfield,a,b,a,c) && b!=c){
-					console.log('a');
-					move(nfield,a,b,a,c);
-
-				}
-		 	}
- 		}
- 	}
- 	if(bestMove.x!=0 && bestMove.y!=0 && bestMove.tx!=0 && bestMove.ty!=0){
- 		move(field,bestMove.x, bestMove.y, bestMove.tx, bestMove.ty);
- 		console.log("ruch z: " + bestMove.x + ", " + bestMove.y + " do: " + bestMove.tx + ", " + bestMove.ty);
- 	}
- 	else{
-		//RANDOM MOVES//
-		var AImoved=false;
-		while(!AImoved){
-				
-			var a = randomInt(1, size+1);
-			var b = randomInt(1, size+1);
-			var c = randomInt(1, size+1);
-			var d = randomInt(1, size+1);
-			if((field[a][b]==AI || (field[a][b]==AI+1 && AI==2)) && canMove(field,a,b,c,d) && (a!=c || b!=d)){
-				move(field,a,b,c,d);
-				console.log('wale randoma');
-				AImoved=true;
 			}
-	 	}	
- 	}
+		}
+	}
+ 	return bestMove;
 }
 
-function AIcount(t){
+function AIcount(t, tt){
 	var value=0;
-	for(i=1; i<=size; i++){
-    	for(j=1; j<=size; j++){
-    		if(t[i][j]==1)value+=10;
-    		if(t[i][j]==2)value-=10;
+	for(var i=1; i<=size; i++){
+    	for(var j=1; j<=size; j++){
+    		if(t[i][j]==1)value+=10;  //czarne chcą dużo, białe chcą mało
+    		if(t[i][j]==2)value-=10;  //przyda się-> 1 - black, 2 - white, 3 - king, 4 - obstacle
+
     	}
     }
+    if(win==1){
+    	value+=Infinity;
+    }
+    if(win==2){
+    	value-=Infinity;
+    }
+    
+    for(var ii=0; ii<=size; ii++){
+        for(var jj=0; jj<=size; jj++){
+        	t[ii][jj]=tt[ii][jj];
+        }
+    }
+    win=0;
+
 	return value;
 }

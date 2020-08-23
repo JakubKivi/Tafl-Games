@@ -24,8 +24,10 @@
 		<script src="js/game/textures.js"></script>
 		<script src="js/game/Screen.js"></script>
 		<script src="js/game/main.js"></script>
+		<script src="js/game/AI.js"></script>
 
 		<link href="css/styles.css" rel="stylesheet" />
+		<link href="css/help.css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -44,23 +46,36 @@
 		<!-- Checkboxes -->
 		<div class="checkboxes">
 			<div class = "marg2">
-				<label class="container cont1">Modern Hnefatafl
-				  <input type="radio" name="gameName" checked="checked">
+				<label class="container cont1">Modern Hnefatafl 
+					<div class="help-tip">
+				    	<p class="help-tip-tip">This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+					</div>
+				  <input type="radio" name="gameName">
 				  <span class="checkmark"></span>
 				</label>
+				
 
 				<label class="container cont1">Classic Hnefatafl
+					<div class="help-tip">
+				    	<p class="help-tip-tip">This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+					</div>
 				  <input type="radio" name="gameName">
 				  <span class="checkmark"></span>
 				</label>
 
 				<label class="container cont1">Tablut
+					<div class="help-tip help-tip-b">
+				    	<p class="help-tip-tip">This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+					</div>
 				  <input type="radio" name="gameName">
 				  <span class="checkmark"></span>
 				</label>
 
 				<label class="container cont1">Brandubh
-				  <input type="radio" name="gameName">
+					<div class="help-tip help-tip-b">
+				    	<p class="help-tip-tip">This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+					</div>
+				  <input type="radio" name="gameName" checked="checked">
 				  <span class="checkmark"></span>
 				</label> 
 			</div>
@@ -68,20 +83,32 @@
 
 
 				<label class="container cont1">Ard Ri
+					<div class="help-tip">
+				    	<p class="help-tip-tip">This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+					</div>
 				  <input type="radio" id name="gameName">
 				  <span class="checkmark"></span>
 				</label> 
 
 				<label class="container cont1">Tawlbwrdd
+					<div class="help-tip">
+				    	<p class="help-tip-tip">This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+					</div>
 				  <input type="radio" name="gameName">
 				  <span class="checkmark"></span>
 				</label>
 				<label class="container cont1">Alea<br> Evangeli
+					<div class="help-tip help-tip-b">
+				    	<p class="help-tip-tip">This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+					</div>
 				  <input type="radio" name="gameName">
 				  <span class="checkmark"></span>
 				</label>
 
 				<label class="container cont1">Custom
+					<div class="help-tip help-tip-b">
+				    	<p class="help-tip-tip">This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+					</div>
 				  <input type="radio" name="gameName">
 				  <span class="checkmark"></span>
 				</label> 
@@ -93,6 +120,41 @@
 			<h2>
 				Check or change the rules
 			</h2>
+		</div>
+		<div class="checkboxes">
+			<div class = "marg2">
+				<div class = "container cont1">Win Condition</div>
+				<label class="container cont1">Edge
+				  <input type="radio" name="winCondition" checked="checked">
+				  <span class="checkmark"></span>
+				</label>
+
+				<label class="container cont1">Corner
+				  <input type="radio" name="winCondition">
+				  <span class="checkmark"></span>
+				</label>
+				<div class = "container cont1"><br></div>
+				<label class="container cont1">Move Through Throne
+				  <input type="checkbox" name="moveThroughThrone">
+				  <span class="checkmark"></span>
+				</label>
+
+				
+			</div>
+			<div class = "marg2">
+				<div class = "container cont1">Throne is Killing</div>
+				<label class="container cont1">Both
+				  <input type="radio" name="ThroneIsKilling" checked="checked">
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container cont1">Attacker
+				  <input type="radio" name="ThroneIsKilling">
+				  <span class="checkmark"></span>
+				</label>
+
+				
+
+			</div>
 		</div>
 
 		<!-- The Modal -->

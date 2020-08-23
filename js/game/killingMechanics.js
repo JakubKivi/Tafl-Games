@@ -1,12 +1,12 @@
-function remove(t, c, d){
+function remove(t, c, d, p){
     var o;
-    player==1?o=2:o=1;
+    p==1?o=2:o=1;
 
     //simple killing figures
-                if(t[c+1][d]==o && t[c+2][d]==player)t[c+1][d]=0;
-    if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==player)t[c-1][d]=0;
-                if(t[c][d+1]==o && t[c][d+2]==player)t[c][d+1]=0;
-    if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==player)t[c][d-1]=0;
+                if(t[c+1][d]==o && t[c+2][d]==p)t[c+1][d]=0;
+    if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==p)t[c-1][d]=0;
+                if(t[c][d+1]==o && t[c][d+2]==p)t[c][d+1]=0;
+    if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==p)t[c][d-1]=0;
 
     if(throneIsKilling=='both'){
                     if(t[c+1][d]==o && t[c+2][d]==5)t[c+1][d]=0;
