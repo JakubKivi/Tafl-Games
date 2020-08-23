@@ -109,6 +109,7 @@ $(document).keyup(function(e) {
      if (e.key === "Escape" && modal.style.display!="none") {
         modal.style.display = "none";
         resButton.style.display = "block";
+        window.location.hash = closedModalHashStateId;
     }
 });
 

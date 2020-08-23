@@ -91,5 +91,3 @@ function update(){
     }
     if(!isMobile)s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);
 }
-
-
