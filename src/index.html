@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Tafl Games</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<script src="js/game/setup.js"></script>
+		<script src="js/game/functions.js"></script>
+		<script src="js/game/var.js"></script>
+		<script src="js/game/mouse.js"></script>
+		<script src="js/game/click.js"></script>
+		<script src="js/game/movingMechanics.js"></script>
+		<script src="js/game/killingMechanics.js"></script>
+		<script src="js/game/textures.js"></script>
+		<script src="js/game/Screen.js"></script>
+		<script src="js/game/main.js"></script>
+		<script src="js/game/AI.js"></script>
+
+		<link href="css/style.css" rel="stylesheet" />
+
+	</head>
+	<body>
+
+		<h1><a href="index.html">Tafl Games</a></h1>
+		<a href="index.html">Home</a>
+		<a target="_blank" href="https://en.wikipedia.org/wiki/Tafl_games">What are Tafl games?</a>
+		<a target="_blank" href="https://jakubkivi.github.io/en.html">About author</a>
+				
+
+		<h2>Tafl Games</h2>
+		<p>Play, choose, make your own Tafl game</p>
+				
+		<button class="button big resButton" id="resButton">Resume</button>
+		<button class="button big" id="playButton">PLAY</button>
+		<button class="button big" id="btnOptions">Options</button>
+
+		
+		<!-- Modals -->
+		<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+				<canvas id="game" style="position: fixed"></canvas>
+			</div>
+
+		</div>
+
+		<div id="optionsModal" class="optionsModal">
+
+			<!-- Modal content -->
+			<div class="modal-content-options">
+			    <span class="close">&times;</span>
+			    <select id="cars">
+				  <option value="volvo">Volvo</option>
+				  <option value="saab">Saab</option>
+				  <option value="opel">Opel</option>
+				  <option value="audi">Audi</option>
+				</select>
+			</div>
+
+		</div>
+
+	</body>
+</html>
+
+<script src="js/mainPage.js"></script>
