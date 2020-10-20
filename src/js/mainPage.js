@@ -91,7 +91,7 @@ btn.onclick = function() {
 }
 
 document.addEventListener("keydown", ({key}) => {
-    if (key === "Escape"){
+    if (key === "Escape"&&window.location.hash == openModalHashStateId){
         modal.style.display = "none";
         resButton.style.display = "block";
         window.location.hash = closedModalHashStateId;
