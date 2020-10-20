@@ -26,6 +26,44 @@ function start(){
         fourToKillOnThrone='enable';
         startingPlayer='black';
     }
+    else if(gameName=='Ard Ri'){
+        size=7;
+        winCondition='corner';
+        moveThroughtThrone='enable';
+        throneIsKilling='both';
+        killingKingCondition='two'; 
+        throneProtecting='enable';
+        fourToKillOnThrone='enable';
+        startingPlayer='black';
+    }else if(gameName=='Tawlbwrdd'){
+        size=11;
+        winCondition='corner';
+        moveThroughtThrone='enable';
+        throneIsKilling='both';
+        killingKingCondition='two'; 
+        throneProtecting='enable';
+        fourToKillOnThrone='enable';
+        startingPlayer='black';
+    }else if(gameName=='Hnefatafl'){
+        size=11;
+        winCondition='corner';
+        moveThroughtThrone='enable';
+        throneIsKilling='both';
+        killingKingCondition='two'; 
+        throneProtecting='enable';
+        fourToKillOnThrone='enable';
+        startingPlayer='black';
+    }
+    else if(gameName=='Alea Evangelii'){
+        size=19;
+        winCondition='corner';
+        moveThroughtThrone='enable';
+        throneIsKilling='both';
+        killingKingCondition='two'; 
+        throneProtecting='enable';
+        fourToKillOnThrone='enable';
+        startingPlayer='black';
+    }
     startingPlayer=='black'?player=1:player=2;
 
     s.init(document.getElementById("game"));

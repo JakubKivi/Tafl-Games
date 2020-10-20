@@ -60,7 +60,27 @@ function putFiguresOnMap(){
             }
         }
    }
-   if(gameName=='Tablut'){
+   else if(gameName=='Ard Ri'){
+        for(i=1; i<=parseInt(size/2)+1; i++){
+            for(j=1; j<=parseInt(size/2)+1; j++){
+                if(j==4){
+                    if(i<3||i>5)field[i][j]=1;
+                    else field[i][j]=2;
+                }
+                else if(i==4){
+                    if(j<3||j>5)field[i][j]=1;
+                    else field[i][j]=2;
+                }
+                else if((i==3 && j==1) ||(i==1 && j==3)){
+                    field[i][j]=1;
+                }
+                else if(i==3 && j==3){
+                    field[i][j]=2;
+                }
+            }
+        }
+   }
+   else if(gameName=='Tablut'){
         for(i=1; i<=parseInt(size/2)+1; i++){
             for(j=1; j<=parseInt(size/2)+1; j++){
                 if(j==5){
@@ -72,6 +92,47 @@ function putFiguresOnMap(){
                     else field[i][j]=2;
                 }
                 if((i==4 && j==1) || (j==4 && i==1))field[i][j]=1;
+            }
+        }
+   }else if(gameName=='Tawlbwrdd'){
+        for(i=1; i<=parseInt(size/2)+1; i++){
+            for(j=1; j<=parseInt(size/2)+1; j++){
+                if((i==6&&j>3)||(j==6&&i>3))field[i][j]=2;
+                else if(i==5&&j==5)field[i][j]=2;
+                else if(i==6||j==6){
+                    if(i==1||i==3||j==1||j==3)field[i][j]=1;
+                }else if(i==5||j==5){
+                    if(j<3||i<3)field[i][j]=1;
+                }
+            }
+        }
+   }else if(gameName=='Hnefatafl'){
+        for(i=1; i<=parseInt(size/2)+1; i++){
+            for(j=1; j<=parseInt(size/2)+1; j++){
+                if((i==6&&j>3)||(j==6&&i>3))field[i][j]=2;
+                else if(i==5&&j==5)field[i][j]=2;
+                else if(i==6||j==6){
+                    if(i<4||j<4)field[i][j]=1;
+                }else if(i==5||j==5){
+                    if(j==1||i==1)field[i][j]=1;
+                }else if(i==4||j==4){
+                    if(j==1||i==1)field[i][j]=1;
+                }
+            }
+        }
+   }
+   else if(gameName=='Alea Evangelii'){
+        for(i=1; i<=parseInt(size/2)+1; i++){
+            for(j=1; j<=parseInt(size/2)+1; j++){
+                if(i==1||j==1){
+                    if(i==3||j==3||i==6||j==6)field[i][j]=1;
+                }else if((i==3||j==3)&&(i==6||j==6))field[i][j]=1;
+                else if(i+j==12&&i>3&&j>3)field[i][j]=1;
+                else if(i==10||j==10){
+                    if(i==4||j==4)field[i][j]=1;
+                    if(i>6&&j>6&&i!=8&&j!=8)field[i][j]=2;
+                }else if((i==9&&j==5)||(i==5&&j==9))field[i][j]=2;
+                else if((i==9&&j==8)||(i==8&&j==9))field[i][j]=2;
             }
         }
    }
