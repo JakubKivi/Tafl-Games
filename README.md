@@ -11,4 +11,4 @@ Goal is to make all known variants of the game, and also, your own variant creat
 
 ## Where to play?
 
-At [TaflGames.github.io](https://jakubkivi.github.io/Tafl-Games/).
+Here -> [Tafl-Games](https://jakubkivi.github.io/Tafl-Games/src).
