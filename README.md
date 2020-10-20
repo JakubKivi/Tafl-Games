@@ -1,6 +1,6 @@
 # Adjustable Tafl Game
 
-![Board](/img/readmeImage.jpg)
+![Board](readmeImage.jpg)
 
 ## What are tafl games?
 Tafl games are Nordic board game group, also known as Viking chess. Becouse of the expansion of viking, translation problems, historical game changes it appeared that we have a lot of different variations of the game. Read more: wikipedia.org/wiki/Tafl_games
