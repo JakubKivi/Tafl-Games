@@ -98,7 +98,6 @@ function start(){
 function update(){
     if(window.location.hash == closedModalHashStateId){
         modal.style.display = "none";
-        resButton.style.display = "block";
     }
 
     setTimeout(function(){

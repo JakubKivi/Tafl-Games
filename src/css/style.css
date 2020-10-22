@@ -1,3 +1,46 @@
+html, body{
+	background-color: #856066;
+	background-image: url(../../assets/img/readmeImage.jpg);
+	height: 100%;
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.navbar-custom{
+	background-color: #493538 ;
+}
+
+.rest{
+	
+	height: 100%;
+}
+
+.button {
+	box-shadow:inset 0px 0px 10px 3px #a6827e;
+	background-color:transparent;
+	border-radius:20px;
+	border:6px solid #493538;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Impact;
+	font-size:28px;
+	font-weight:bold;
+	padding:13px 73px;
+	text-decoration:none;
+	text-shadow:-7px 4px 3px #4d3534;
+	transition: 0.5s;
+}
+.button:hover {
+	background-color:#493538;
+	transition: 0.5s;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
 .resButton{
 	display: none;
 }
@@ -54,3 +97,4 @@
   text-decoration: none;
   cursor: pointer;
 }
+

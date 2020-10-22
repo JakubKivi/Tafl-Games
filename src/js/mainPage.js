@@ -93,7 +93,7 @@ btn.onclick = function() {
 document.addEventListener("keydown", ({key}) => {
     if (key === "Escape"&&window.location.hash == openModalHashStateId){
         modal.style.display = "none";
-        resButton.style.display = "block";
+        resButton.style.display = "inline-block";
         window.location.hash = closedModalHashStateId;
     }
 })
