@@ -12,11 +12,6 @@ html, body{
 	background-color: #493538 ;
 }
 
-.rest{
-	
-	height: 100%;
-}
-
 .button {
 	box-shadow:inset 0px 0px 10px 3px #a6827e;
 	background-color:transparent;
@@ -41,12 +36,61 @@ html, body{
 	position:relative;
 	top:1px;
 }
+
+.button-modal-close{
+  font-size:18px;
+  padding:5px 20px;
+}
+
+.button-modal-save{
+  font-size:24px;
+  padding:5px 20px;
+
+}
+
 .resButton{
 	display: none;
 }
 
+
+.modal-content-bg-custom{
+  background-color: #a6827e;
+  border-color: #493538;
+  border-width: 5px;
+  border-radius: 20px;
+}
+
+.modal-backdrop {
+   background-color: #a6827e;
+}
+
+.modal-title-custom{
+  
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+}
+
+.modal-header-custom{
+  border-bottom-color: #493538;
+  border-width: 3px;
+}
+
+.modal-custom{
+  
+}
+
+.modal-body-custom{
+  color: white;
+}
+
+.modal-footer-custom{
+  border-top-color: #493538;
+  border-width: 3px;
+}
+
 /* The Modal*/
-.modal {
+.modal-game {
   cursor: none;
   display: none;
   position: fixed;
@@ -60,41 +104,28 @@ html, body{
   padding-top: 0px;
 }
 
-/* The Modal (background) */
-.optionsModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+.row-custom-options{
+  
 }
 
-/* Modal Content/Box */
-.modal-content-options {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+.btn-custom-info{
+  border-width: 3px;
+  border-color: #493538;
+  display: inline-block;
+  color: #493538;
+  font-weight:bold;
+  font-size: 1em;
+  background-color: #00000000;
+  -webkit-border-radius:.75em;
+  -moz-border-radius:.75em;
+  border-radius:.75em;
 }
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.btn-custom-info:hover{
+  background-color: #00000022;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.col-custom{
+  margin: auto;
 }
-

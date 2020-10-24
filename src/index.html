@@ -70,7 +70,7 @@
 			        	<button class="button big" id="playButton">PLAY</button>
 			        </div>
 			        <div class="col-md-5  text-center">
-			        	<button class="button big" id="btnOptions">Options</button>
+			        	<button type="button" data-toggle="modal" data-target="#exampleModalLong" class= "button big" id="btnOptions">Options</button>
 			        </div>
 			    </div>
 			    <div class="row">
@@ -79,45 +79,60 @@
 			    	</div>
 			    </div>
 			</div>
-			
-			
 		</section>
 		
-		
-			
-		
-		<!-- Modals -->
-		<div id="myModal" class="modal">
+		<!-- game -->
+		<div id="myModal" class="modal-game">
 
 			<!-- Modal content -->
-			<div class="modal-content">
+			<div class="modal-content-game">
 				<canvas id="game" style="position: fixed"></canvas>
 			</div>
 
 		</div>
 
-		<div id="optionsModal" class="optionsModal">
-
-			<!-- Modal content -->
-			<div class="modal-content-options">
-			    <span class="close">&times;</span>
-			    <select id="cars">
-				  <option value="volvo">Volvo</option>
-				  <option value="saab">Saab</option>
-				  <option value="opel">Opel</option>
-				  <option value="audi">Audi</option>
-				</select>
-
-				<input type="radio" id="gameName" name="gender" value="male" checked="checked">
-				<label for="male">Modern Hnefatafl</label><br>
-				<input type="radio" id="gameName" name="gender" value="female">
-				<label for="female">Female</label><br>
-				<input type="radio" id="gameName" name="gender" value="other">
-				<label for="other">Other</label>
-			</div>
-
-
-		</div>
+		<!-- options -->
+		<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-xl modal-dialog-centered " role="document">
+		    <div class="modal-content modal-content-bg-custom" >
+		      <div class="modal-header modal-header-custom">
+		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Game variants</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span style="color: white;" aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body modal-body-custom">
+		        <section>
+		        	<div class="container">
+		        		<div class="row row-custom-options">
+		        			<div class="col-md-4 col-custom">
+		        				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+								<label class="form-check-label" for="exampleRadios1">
+								Modern Hnefatafl
+								</label>
+								<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Modern Hnefatafl" data-content="Today, many different versions of modern hnefatafl are in play – both online and on physical boards that are sold commercially. One variant used in tournaments is Copenhagen Hnefatafl, which also features a 'shield wall' mechanism to capture several soldiers at once, and an 'exit fort' rule that enables the king to escape on the edge while otherwise being limited to escape in the corners.">?</a>
+		        			</div>
+		        			<div class="col-md-4 col-custom">
+		        				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+		        				<label class="form-check-label" for="exampleRadios2">
+									Second default radio
+								</label>
+		        			</div>
+		        			<div class="col-md-4  col-custom">
+		        				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+								<label class="form-check-label" for="exampleRadios3">
+									Disabled radio
+								</label>
+		        			</div>
+		        		</div>
+		        	</div>
+		        </section>
+		      </div>
+		      <div class="modal-footer modal-footer-custom">
+		        <button type="button" class="button button-modal-close" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
 		</div>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

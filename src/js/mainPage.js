@@ -1,17 +1,12 @@
-function handleBackPress(event) {
-    event.preventDefault();
-    event.stopPropagation();
 
-    $('.modal').modal('hide');
-    $('.modal-backdrop').remove();
-}
+$('#exampleModalLong').on('shown.bs.modal', function () {
+
+  $("#exampleModalLong").focus();
+})
 
 var closedModalHashStateId = "#menu";
 var openModalHashStateId = "#game";
 
-/* Updating the hash state creates a new entry
- * in the web browser's history. The latest entry in the web browser's
- * history is "modal.html#modalClosed". */
 window.location.hash = closedModalHashStateId;
 
 var radios = document.getElementsByName('gameName');
@@ -25,32 +20,23 @@ var btn = document.getElementById("playButton");
 resumeBtn.onclick =function(){
 	window.location.hash = openModalHashStateId;
 	modal.style.display = "block";
+
 }
 
-// Get the modal
-var optionsModal = document.getElementById("optionsModal");
-// Get the button that opens the modal
-var btnOptions = document.getElementById("btnOptions");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btnOptions.onclick = function() {
-  optionsModal.style.display = "block";
+function handleBackPress(event) {
+    event.preventDefault();
+    event.stopPropagation();
+	resumeBtn.style.display = "inline-block";
+    $('.modal').modal('hide');
+    $('.modal-backdrop').remove();
+    
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  optionsModal.style.display = "none";
-}
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == optionsModal) {
-    optionsModal.style.display = "none";
-  }
-}
+
 
 btn.onclick = function() {
 	for (var i = 0, length = radios.length; i < length; i++) {
@@ -93,7 +79,7 @@ btn.onclick = function() {
 document.addEventListener("keydown", ({key}) => {
     if (key === "Escape"&&window.location.hash == openModalHashStateId){
         modal.style.display = "none";
-        resButton.style.display = "inline-block";
+        resumeBtn.style.display = "inline-block";
         window.location.hash = closedModalHashStateId;
     }
 })
