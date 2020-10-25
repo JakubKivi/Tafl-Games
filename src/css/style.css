@@ -164,3 +164,7 @@ html, body{
   border-bottom-color: #493538; 
   border-bottom-width: 3px;
 }
+
+.form-control-custom{
+  /*background-color: #a6827e;*/
+}
