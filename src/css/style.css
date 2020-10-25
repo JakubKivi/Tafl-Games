@@ -81,12 +81,18 @@ html, body{
 }
 
 .modal-body-custom{
+  border-style: solid;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom-color: #493538;
+  border-width: 3px;
   color: white;
 }
 
 .modal-footer-custom{
-  border-top-color: #493538;
-  border-width: 3px;
+  
+  border-top: hidden;
 }
 
 /* The Modal*/
@@ -106,7 +112,7 @@ html, body{
 
 
 .row-custom-options{
-  
+  font-size: calc(100% + 0.5vw + 0.5vh);
 }
 
 .btn-custom-info{
@@ -124,8 +130,37 @@ html, body{
 
 .btn-custom-info:hover{
   background-color: #00000022;
+  
 }
 
 .col-custom{
-  margin: auto;
+  
+}
+
+.custom-control-label::before ,.custom-control-label::after{
+  width:30px; height:30px;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  color: #493538;
+  border-color: #493538;
+}
+
+.custom-control-input:checked~.custom-control-label.myColor::before {
+  background-color: #493538;
+}
+
+
+.dropdown-item-custom{
+  color: white;
+}
+
+.dropdown-item-custom:hover{
+  color: white;
+  background-color: #493538;
+}
+
+.section-custom{
+  border-bottom-color: #493538; 
+  border-bottom-width: 3px;
 }

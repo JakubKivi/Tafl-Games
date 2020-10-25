@@ -45,9 +45,10 @@
 				 		<li class="nav-item dropdown">
 				 			<a role="button" class="nav-link dropdown-toggle" data-toggle="dropdown" target="_blank" aria-expanded="false" id="submenu" aria-haspopup="true">About authors</a>
 
-				 			<div class="dropdown-menu" aria-labelledby="submenu">
-				 				 <a class="dropdown-item" target="_blank" href="https://jakubkivi.github.io/en.html">Jakub Kivi - Programista</a>
-				 				 <a class="dropdown-item" target="_blank" href="https://www.instagram.com/priestoov/">Joanna Butkiewicz - Artystka</a>
+				 			<div class="dropdown-menu" aria-labelledby="submenu"
+				 			style="background-color: #a6827e;">
+				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://jakubkivi.github.io/en.html">Jakub Kivi - Programista</a>
+				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://www.instagram.com/priestoov/">Joanna Butkiewicz - Artystka</a>
 				 			</div>
 				 		</li>
 				 		<li class="nav-item">
@@ -65,8 +66,8 @@
 		<section>
 
 			<div class="container">
-			    <div class="row mb-5">
-			        <div class="mb-5 offset-md-1 col-md-5 text-center">
+			    <div class="row mb-3">
+			        <div class="mb-3 offset-md-1 col-md-5 text-center">
 			        	<button class="button big" id="playButton">PLAY</button>
 			        </div>
 			        <div class="col-md-5  text-center">
@@ -102,38 +103,80 @@
 		        </button>
 		      </div>
 		      <div class="modal-body modal-body-custom">
-		        <section>
+		        <section class="section section-custom">
 		        	<div class="container">
+		        		<div class="row row-custom-options mb-1">
+		        			<div class="col-xl-4 col-custom">
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Modern Hnefatafl" data-content="Today, many different versions of modern hnefatafl are in play – both online and on physical boards that are sold commercially. One variant used in tournaments is Copenhagen Hnefatafl, which also features a 'shield wall' mechanism to capture several soldiers at once, and an 'exit fort' rule that enables the king to escape on the edge while otherwise being limited to escape in the corners.">?</a>
+		        				<div class="custom-control custom-radio custom-control-inline">
+								  <input type="radio" id="rd_1" name="rd" class="custom-control-input" checked value="No">
+								  <label class="custom-control-label myColor" for="rd_1"><p style="margin-left: 10px;">Modern Hnefatafl</p></label>
+								</div>
+								
+							</div>
+		        			<div class="col-xl-4 col-custom">
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<div class="custom-control custom-radio custom-control-inline">
+								  <input type="radio" id="rd_2" name="rd" class="custom-control-input" value="Yes">
+								  <label class="custom-control-label myColor" for="rd_2"><p style="margin-left: 10px;">Classic Hnefatafl</p></label>
+								</div>
+								
+		        			</div>
+		        			<div class="col-xl-4  col-custom">
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<div class="custom-control custom-radio custom-control-inline">
+								  <input type="radio" id="rd_3" name="rd" class="custom-control-input" value="No">
+								  <label class="custom-control-label myColor" for="rd_3"><p style="margin-left: 10px;">Brandubth</p></label>
+								</div>
+								
+		        			</div>
+		        		</div>
+
 		        		<div class="row row-custom-options">
-		        			<div class="col-md-4 col-custom">
-		        				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-								<label class="form-check-label" for="exampleRadios1">
-								Modern Hnefatafl
-								</label>
-								<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Modern Hnefatafl" data-content="Today, many different versions of modern hnefatafl are in play – both online and on physical boards that are sold commercially. One variant used in tournaments is Copenhagen Hnefatafl, which also features a 'shield wall' mechanism to capture several soldiers at once, and an 'exit fort' rule that enables the king to escape on the edge while otherwise being limited to escape in the corners.">?</a>
+		        			<div class="col-xl-4 col-custom">
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+								<div class="custom-control custom-radio custom-control-inline">
+								  <input type="radio" id="rd_4" name="rd" class="custom-control-input" value="No">
+								  <label class="custom-control-label myColor" for="rd_4"><p style="margin-left: 10px;">Ard Ri</p></label>
+								</div>
+							</div>
+		        			<div class="col-xl-4 col-custom">
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<div class="custom-control custom-radio custom-control-inline">
+								  <input type="radio" id="rd_5" name="rd" class="custom-control-input" value="Yes">
+								  <label class="custom-control-label myColor" for="rd_5"><p style="margin-left: 10px;">Tawlbwrdd</p></label>
+								</div>
 		        			</div>
-		        			<div class="col-md-4 col-custom">
-		        				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-		        				<label class="form-check-label" for="exampleRadios2">
-									Second default radio
-								</label>
+		        			<div class="col-xl-4  col-custom">
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<div class="custom-control custom-radio custom-control-inline">
+								  <input type="radio" id="rd_6" name="rd" class="custom-control-input" value="No">
+								  <label class="custom-control-label myColor" for="rd_6"><p style="margin-left: 10px;">Alea Evangelii</p></label>
+								</div>
 		        			</div>
-		        			<div class="col-md-4  col-custom">
-		        				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-								<label class="form-check-label" for="exampleRadios3">
-									Disabled radio
-								</label>
-		        			</div>
+		        		</div>
+		        		<div class="row row-custom-options">
+		        			<div class="col-xl-offset-4 col-xl-4 col-custom">
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<div class="custom-control custom-radio custom-control-inline">
+								  <input type="radio" id="rd_7" name="rd" class="custom-control-input" value="No">
+								  <label class="custom-control-label myColor" for="rd_7"><p style="margin-left: 10px;">Custom</p></label>
+								</div>
+							</div>
 		        		</div>
 		        	</div>
 		        </section>
 		      </div>
+		      <div class="modal-body modal-body-custom">
+		        	<h3>sieeeema</h3>
+		        </div>
 		      <div class="modal-footer modal-footer-custom">
 		        <button type="button" class="button button-modal-close" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>
 		  </div>
 		</div>
+
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
