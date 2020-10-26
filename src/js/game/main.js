@@ -10,6 +10,8 @@ function start(){
         size=7;
         winCondition='corner';
         moveThroughtThrone='enable';
+        weaponlessKing='disable'; 
+        ableToBackToThrone='enable';
         throneIsKilling='both';
         killingKingCondition='two'; 
         throneProtecting='disable';

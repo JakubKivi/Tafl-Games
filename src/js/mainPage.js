@@ -1,3 +1,26 @@
+var ele = document.getElementsByName('rd'); 
+
+$('input').on('click', function (e) {
+	var ele = document.getElementsByName('rd'); 
+              
+    for(i = 0; i < ele.length; i++) { 
+        if(ele[i].checked) {
+        gameName = ele[i].value; 
+    	}
+    }
+    if(gameName == "Brandubh"){
+    	$('#Escape').val('Corner');
+    	$('#Move-throught-throne').val('Enabled');
+    	$('#King-weapon').val('Killing');
+    	$('#Throne-return').val('Enabled');
+    	$('#Throne-deadliness').val('Both');
+    	$('#King-surroundings').val('Two');
+    	$('#Throne-protecting').val('Disabled');
+    	$('#Throne-surroundings').val('Four');
+    	$('#Starting-Player').val('Attackers');
+    }
+});
+
 
 $('#exampleModalLong').on('shown.bs.modal', function () {
 

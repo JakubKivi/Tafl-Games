@@ -1,3 +1,9 @@
+:root {
+  --main-color-dark: #493538;
+  --main-color-bright: #a6827e;
+}
+
+
 html, body{
 	background-color: #856066;
 	background-image: url(../../assets/img/readmeImage.jpg);
@@ -9,14 +15,14 @@ html, body{
 }
 
 .navbar-custom{
-	background-color: #493538 ;
+	background-color: var(--main-color-dark) ;
 }
 
 .button {
-	box-shadow:inset 0px 0px 10px 3px #a6827e;
+	box-shadow:inset 0px 0px 10px 3px var(--main-color-bright);
 	background-color:transparent;
 	border-radius:20px;
-	border:6px solid #493538;
+	border:6px solid var(--main-color-dark);
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -29,7 +35,7 @@ html, body{
 	transition: 0.5s;
 }
 .button:hover {
-	background-color:#493538;
+	background-color: var(--main-color-dark);
 	transition: 0.5s;
 }
 .button:active {
@@ -54,25 +60,25 @@ html, body{
 
 
 .modal-content-bg-custom{
-  background-color: #a6827e;
-  border-color: #493538;
+  background-color: var(--main-color-bright);
+  border-color: var(--main-color-dark);
   border-width: 5px;
   border-radius: 20px;
 }
 
 .modal-backdrop {
-   background-color: #a6827e;
+   background-color: var(--main-color-bright);
 }
 
 .modal-title-custom{
-  
+  margin-left: 10px;
   font-weight: bold;
   font-size: 25px;
   color: white;
 }
 
 .modal-header-custom{
-  border-bottom-color: #493538;
+  border-bottom-color: var(--main-color-dark);
   border-width: 3px;
 }
 
@@ -85,7 +91,7 @@ html, body{
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
-  border-bottom-color: #493538;
+  border-bottom-color: var(--main-color-dark);
   border-width: 3px;
   color: white;
 }
@@ -116,16 +122,24 @@ html, body{
 }
 
 .btn-custom-info{
-  border-width: 3px;
-  border-color: #493538;
+  vertical-align: middle;
+  text-align: center;
+  border-width: 2px;
+  border-color: var(--main-color-dark);
   display: inline-block;
-  color: #493538;
-  font-weight:bold;
-  font-size: 1em;
+  color: var(--main-color-dark);
+  font-size: 1rem;
+  font-weight: bold;
   background-color: #00000000;
   -webkit-border-radius:.75em;
   -moz-border-radius:.75em;
   border-radius:.75em;
+}
+.btn-custom-info p{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .btn-custom-info:hover{
@@ -142,14 +156,18 @@ html, body{
 }
 
 .custom-control-input:checked~.custom-control-label::before {
-  color: #493538;
-  border-color: #493538;
+  color: var(--main-color-dark);
+  border-color: var(--main-color-dark);
 }
 
 .custom-control-input:checked~.custom-control-label.myColor::before {
-  background-color: #493538;
+  background-color: var(--main-color-dark);
+  box-shadow: var(--main-color-bright) 0px 0px 8px; 
 }
 
+.custom-control-input:active{
+
+}
 
 .dropdown-item-custom{
   color: white;
@@ -157,14 +175,36 @@ html, body{
 
 .dropdown-item-custom:hover{
   color: white;
-  background-color: #493538;
+  background-color: var(--main-color-dark);
 }
 
 .section-custom{
-  border-bottom-color: #493538; 
+  border-bottom-color: var(--main-color-dark); 
   border-bottom-width: 3px;
 }
 
 .form-control-custom{
-  /*background-color: #a6827e;*/
+  color: white;
+  background-color: var(--main-color-bright);
+  border-color: var(--main-color-dark); 
+  border-width: 3px;
+  border-radius: .5em;
+  height: 50px;
+  font-size: 20px;
+}
+
+.form-control-custom:active{
+  color: white;
+  background-color: #a9877f;
+  border-color: var(--main-color-dark); 
+  border-width: 3px;
+  border-radius: .5em;
+  height: 50px;
+}
+
+.form-control-custom option{
+  border-color: var(--main-color-dark); 
+  border-width: 1px;
+  color: white;
+  background-color: var(--main-color-bright);
 }
