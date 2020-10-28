@@ -8,17 +8,19 @@ var clicked = {
 };
 
 var gameName='Brandubh';           // Brandubh, Tablut, Ard Ri, Tawlbwrdd, Hnefatafl, Alea Evangelii
-var size=0;                      //by default
-var winCondition='corner';       //edge, corner
-var moveThroughtThrone='enable'; //enable, disable
-var weaponlessKing='disable';    //enable, disable
-var ableToBackToThrone='enable'; //enable, disable
-var throneIsKilling='both';      //both, attackersOnly
-var killingKingCondition='two';  //two, four
-var throneProtecting='disable';  //enable, disable 
-var fourToKillOnThrone='enable'; //enable, disable
-var startingPlayer='black';		 //black, white
-var AI=0;  						 //0, 1-black, 2 - white
+var size=0;                      //by default								/		
+var winCondition='corner';       //edge, corner						/
+var moveThroughtThrone='enable'; //enable, disable					/
+var weaponlessKing='disable';    //enable, disable						
+var ableToBackToThrone='enable'; //enable, disable					/
+var throneIsKilling='both';      //both, attackersOnly				/	
+var killingKingCondition='two';  //two, four 						/
+var fourToKillOnThrone='enable'; //enable, disable					/
+var startingPlayer='black';		 //black, white					/	
+var shieldWall='disable';        //disable, enable				
+var AI=0;  						 //0, 1-black, 2 - white		
+
+// czy na krawedzi da sie zabic zmienna			
 
 var margin =100;
 

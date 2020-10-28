@@ -8,16 +8,73 @@ $('input').on('click', function (e) {
         gameName = ele[i].value; 
     	}
     }
-    if(gameName == "Brandubh"){
+
+    for (var i = 0, length = ele.length; i < length; i++) {
+		if (ele[i].checked) {
+		switch(i+1){
+			case 1:
+				gameName='Hnefatafl';
+			break;
+			case 2:
+				gameName='Tablut';
+			break;
+			case 3:
+				gameName='Brandubh';
+			break;
+			case 4:
+				gameName='Ard Ri';
+			break;
+			case 5:
+				gameName='Tawlbwrdd';
+			break;
+			case 6:
+				gameName='Alea Evangeli';
+			break;
+			case 7:
+				gameName='Custom';
+			break;
+		}
+
+		break;
+		}
+	}
+
+    if(gameName == "Hnefatafl"){
+    	$('#Map-size').val('11');
     	$('#Escape').val('Corner');
     	$('#Move-throught-throne').val('Enabled');
     	$('#King-weapon').val('Killing');
     	$('#Throne-return').val('Enabled');
-    	$('#Throne-deadliness').val('Both');
-    	$('#King-surroundings').val('Two');
-    	$('#Throne-protecting').val('Disabled');
+    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('Four');
+    	$('#Throne-protecting').val('Enabled');
     	$('#Throne-surroundings').val('Four');
     	$('#Starting-Player').val('Attackers');
+    	$('#Shield-wall').val('Enabled');
+    }else if(gameName == "Tablut"){
+    	$('#Map-size').val('9');
+    	$('#Escape').val('Edge');
+    	$('#Move-throught-throne').val('Enabled');
+    	$('#King-weapon').val('Killing');
+    	$('#Throne-return').val('Disabled');
+    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('Two');
+    	$('#Throne-protecting').val('Enabled');
+    	$('#Throne-surroundings').val('Four');
+    	$('#Starting-Player').val('Attackers');
+    	$('#Shield-wall').val('Enabled');
+    }else if(gameName == "Brandubh"){
+    	$('#Map-size').val('7'); 
+    	$('#Escape').val('Corner'); 
+    	$('#Move-throught-throne').val('Enabled'); 
+    	$('#King-weapon').val('Unarmed'); 
+    	$('#Throne-return').val('Disabled'); 
+    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('Two'); 
+    	$('#Throne-protecting').val('Disabled'); 
+    	$('#Throne-surroundings').val('Four'); 
+    	$('#Starting-Player').val('Attackers');
+    	$('#Shield-wall').val('Enabled');
     }
 });
 
@@ -31,8 +88,6 @@ var closedModalHashStateId = "#menu";
 var openModalHashStateId = "#game";
 
 window.location.hash = closedModalHashStateId;
-
-var radios = document.getElementsByName('gameName');
 
 var modal = document.getElementById("myModal");
 modal.style.display = "none";
@@ -70,38 +125,6 @@ $('body').on('click', function (e) {
 
 
 btn.onclick = function() {
-	for (var i = 0, length = radios.length; i < length; i++) {
-		if (radios[i].checked) {
-		switch(i+1){
-			case 1:
-				gameName='Modern Hnefatafl';
-			break;
-			case 2:
-				gameName='Classic Hnefatafl';
-			break;
-			case 3:
-				gameName='Tablut';
-			break;
-			case 4:
-				gameName='Brandubh';
-			break;
-			case 5:
-				gameName='Ard Ri';
-			break;
-			case 6:
-				gameName='Tawlbwrdd';
-			break;
-			case 7:
-				gameName='Alea Evangeli';
-			break;
-			case 8:
-				gameName='Custom';
-			break;
-		}
-
-		break;
-		}
-	}
 	window.location.hash = openModalHashStateId;
 	onModalOpen();
 	modal.style.display = "block";
