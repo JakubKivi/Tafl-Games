@@ -21,7 +21,10 @@ function click(e){
                 }
             }else if(field[clicked.x][clicked.y]==1 || field[clicked.x][clicked.y]==2 || field[clicked.x][clicked.y]==3){
                 if(clicked.x!=mouseCord.x || clicked.y!=mouseCord.y){
-                    if(canMove(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y)){
+                    if(field[mouseCord.x][mouseCord.y]==player){
+                        clicked.x=mouseCord.x;
+                        clicked.y=mouseCord.y;
+                    }else if(canMove(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y)){
                     	move(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y, player);
                     	sound.play();
                     	clicked.x=0;
