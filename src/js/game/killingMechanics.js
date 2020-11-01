@@ -25,12 +25,7 @@ function remove(t, c, d, p){
                          if(t[c+1][d]==o && t[c+2][d]==3)t[c+1][d]=0;
             if(c-2>0)    if(t[c-1][d]==o && t[c-2][d]==3)t[c-1][d]=0;
                          if(t[c][d+1]==o && t[c][d+2]==3)t[c][d+1]=0;
-            if(d-2>0)    if(t[c][d-1]==o && t[c][d-2]==3)t[c][d-1]=0;
-        }else if(t[parseInt(size/2)+1][parseInt(size/2)+1]!=3){ 
-            if(t[c+1][d]==o && t[c+2][d]==3)t[c+1][d]=0;
-            if(c-2>0)    if(t[c-1][d]==o && t[c-2][d]==3)t[c-1][d]=0;
-                         if(t[c][d+1]==o && t[c][d+2]==3)t[c][d+1]=0;
-            if(d-2>0)    if(t[c][d-1]==o && t[c][d-2]==3)t[c][d-1]=0;
+            if(d-2>0)    if(t[c][d-1]==o && t[c][d-2]==3)t[c][d-1]=0; //to jest że król ogólnie
         }
     }
 }
