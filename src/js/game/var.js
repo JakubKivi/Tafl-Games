@@ -7,7 +7,7 @@ var clicked = {
     y:0
 };
 
-var gameName='Alea Evangelii';           // Brandubh, Tablut, Ard Ri, Tawlbwrdd, Hnefatafl, Alea Evangelii
+var gameName='Brandubh';           // Brandubh, Tablut, Ard Ri, Tawlbwrdd, Hnefatafl, Alea Evangelii
 var size=0;                      //by default
 var winCondition='corner';       //edge, corner
 var moveThroughtThrone='enable'; //enable, disable

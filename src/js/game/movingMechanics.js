@@ -4,9 +4,10 @@ function move(t, a, b, c, d, e){
     if(buf==3 && a==parseInt(size/2)+1 && b==parseInt(size/2)+1)t[a][b]=5;
     else t[a][b]=0;
     t[c][d]=buf;
-    if(c-1>0)if(e==1 &&(t[c+1][d]==3 || t[c-1][d]==3 ||
-                    t[c][d+1]==3 || t[c][d-1]==3)
-    )removeKing(t, c, d);
+    if(c-1>0)
+        if(e==1 && (t[c+1][d]==3 || t[c-1][d]==3 ||
+                    t[c][d+1]==3 || t[c][d-1]==3))
+                    removeKing(t, c, d);
     remove(t, c, d, e);
     
     
