@@ -3,11 +3,18 @@ function remove(t, c, d, p){
     p==1?o=2:o=1;
 
     //simple killing figures
-                if(t[c+1][d]==o && t[c+2][d]==p)t[c+1][d]=0;
-    if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==p)t[c-1][d]=0;
-                if(t[c][d+1]==o && t[c][d+2]==p)t[c][d+1]=0;
-    if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==p)t[c][d-1]=0;
+    if(weaponlessKing=='disable'){  
+                    if(t[c+1][d]==o && t[c+2][d]==p)t[c+1][d]=0;
+        if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==p)t[c-1][d]=0;
+                    if(t[c][d+1]==o && t[c][d+2]==p)t[c][d+1]=0;
+        if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==p)t[c][d-1]=0;
+    }else if(t[c][d]!=3){       //jeśli król nie moze bic to reszta moze oczywiscie 
+                    if(t[c+1][d]==o && t[c+2][d]==p)t[c+1][d]=0;
+        if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==p)t[c-1][d]=0;
+                    if(t[c][d+1]==o && t[c][d+2]==p)t[c][d+1]=0;
+        if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==p)t[c][d-1]=0;
 
+    }
     if(throneIsKilling=='both'){
                     if(t[c+1][d]==o && t[c+2][d]==5 )t[c+1][d]=0;
     if(c-2>0)       if(t[c-1][d]==o && t[c-2][d]==5)t[c-1][d]=0;
@@ -20,13 +27,13 @@ function remove(t, c, d, p){
                 if(t[c][d+1]==o && t[c][d+2]==4)t[c][d+1]=0;
     if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==4)t[c][d-1]=0;
     }
-    if(weaponlessKing=='disable'){
-        if(o==1){
-                         if(t[c+1][d]==o && t[c+2][d]==3)t[c+1][d]=0;
-            if(c-2>0)    if(t[c-1][d]==o && t[c-2][d]==3)t[c-1][d]=0;
-                         if(t[c][d+1]==o && t[c][d+2]==3)t[c][d+1]=0;
-            if(d-2>0)    if(t[c][d-1]==o && t[c][d-2]==3)t[c][d-1]=0; //to jest że król ogólnie
-        }
+    if(weaponlessKing=='disable'  || t[parseInt(size/2)+1][parseInt(size/2)+1]==3){
+    
+                     if(t[c+1][d]==o && t[c+2][d]==3)t[c+1][d]=0;
+        if(c-2>0)    if(t[c-1][d]==o && t[c-2][d]==3)t[c-1][d]=0;
+                     if(t[c][d+1]==o && t[c][d+2]==3)t[c][d+1]=0;
+        if(d-2>0)    if(t[c][d-1]==o && t[c][d-2]==3)t[c][d-1]=0; //to jest że się zabija o króla
+    
     }
 }
 
