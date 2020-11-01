@@ -9,8 +9,6 @@ function move(t, a, b, c, d, e){
                     t[c][d+1]==3 || t[c][d-1]==3))
                     removeKing(t, c, d);
     remove(t, c, d, e);
-    
-    
 }
 
 function canMove(t,x,y,tx,ty){

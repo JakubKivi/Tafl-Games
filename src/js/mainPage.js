@@ -1,20 +1,93 @@
-function handleBackPress(event) {
-    event.preventDefault();
-    event.stopPropagation();
+var ele = document.getElementsByName('rd'); 
 
-    $('.modal').modal('hide');
-    $('.modal-backdrop').remove();
-}
+$('input').on('click', function (e) {
+	var ele = document.getElementsByName('rd'); 
+              
+    for(i = 0; i < ele.length; i++) { 
+        if(ele[i].checked) {
+        gameName = ele[i].value; 
+    	}
+    }
+
+    for (var i = 0, length = ele.length; i < length; i++) {
+		if (ele[i].checked) {
+		switch(i+1){
+			case 1:
+				gameName='Hnefatafl';
+			break;
+			case 2:
+				gameName='Tablut';
+			break;
+			case 3:
+				gameName='Brandubh';
+			break;
+			case 4:
+				gameName='Ard Ri';
+			break;
+			case 5:
+				gameName='Tawlbwrdd';
+			break;
+			case 6:
+				gameName='Alea Evangeli';
+			break;
+			case 7:
+				gameName='Custom';
+			break;
+		}
+
+		break;
+		}
+	}
+
+    if(gameName == "Hnefatafl"){
+    	$('#Map-size').val('11');
+    	$('#Escape').val('Corner');
+    	$('#Move-throught-throne').val('Enabled');
+    	$('#King-weapon').val('Killing');
+    	$('#Throne-return').val('Enabled');
+    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('Four');
+    	$('#Throne-protecting').val('Enabled');
+    	$('#Throne-surroundings').val('Four');
+    	$('#Starting-Player').val('Attackers');
+    	$('#Shield-wall').val('Enabled');
+    }else if(gameName == "Tablut"){
+    	$('#Map-size').val('9');
+    	$('#Escape').val('Edge');
+    	$('#Move-throught-throne').val('Enabled');
+    	$('#King-weapon').val('Killing');
+    	$('#Throne-return').val('Disabled');
+    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('Two');
+    	$('#Throne-protecting').val('Enabled');
+    	$('#Throne-surroundings').val('Four');
+    	$('#Starting-Player').val('Attackers');
+    	$('#Shield-wall').val('Enabled');
+    }else if(gameName == "Brandubh"){
+    	$('#Map-size').val('7'); 
+    	$('#Escape').val('Corner'); 
+    	$('#Move-throught-throne').val('Enabled'); 
+    	$('#King-weapon').val('Unarmed'); 
+    	$('#Throne-return').val('Disabled'); 
+    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('Two'); 
+    	$('#Throne-protecting').val('Disabled'); 
+    	$('#Throne-surroundings').val('Four'); 
+    	$('#Starting-Player').val('Attackers');
+    	$('#Shield-wall').val('Enabled');
+    }
+});
+
+
+$('#exampleModalLong').on('shown.bs.modal', function () {
+
+  $("#exampleModalLong").focus();
+})
 
 var closedModalHashStateId = "#menu";
 var openModalHashStateId = "#game";
 
-/* Updating the hash state creates a new entry
- * in the web browser's history. The latest entry in the web browser's
- * history is "modal.html#modalClosed". */
 window.location.hash = closedModalHashStateId;
-
-var radios = document.getElementsByName('gameName');
 
 var modal = document.getElementById("myModal");
 modal.style.display = "none";
@@ -25,66 +98,33 @@ var btn = document.getElementById("playButton");
 resumeBtn.onclick =function(){
 	window.location.hash = openModalHashStateId;
 	modal.style.display = "block";
+
 }
 
-// Get the modal
-var optionsModal = document.getElementById("optionsModal");
-// Get the button that opens the modal
-var btnOptions = document.getElementById("btnOptions");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btnOptions.onclick = function() {
-  optionsModal.style.display = "block";
+function handleBackPress(event) {
+    event.preventDefault();
+    event.stopPropagation();
+	resumeBtn.style.display = "inline-block";
+    $('.modal').modal('hide');
+    $('.modal-backdrop').remove();
+    
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  optionsModal.style.display = "none";
-}
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == optionsModal) {
-    optionsModal.style.display = "none";
-  }
-}
+$('body').on('click', function (e) {
+    $('[data-toggle=popover]').each(function () {
+        // hide any open popovers when the anywhere else in the body is clicked
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+        }
+    });
+});
+
 
 btn.onclick = function() {
-	for (var i = 0, length = radios.length; i < length; i++) {
-		if (radios[i].checked) {
-		switch(i+1){
-			case 1:
-				gameName='Modern Hnefatafl';
-			break;
-			case 2:
-				gameName='Classic Hnefatafl';
-			break;
-			case 3:
-				gameName='Tablut';
-			break;
-			case 4:
-				gameName='Brandubh';
-			break;
-			case 5:
-				gameName='Ard Ri';
-			break;
-			case 6:
-				gameName='Tawlbwrdd';
-			break;
-			case 7:
-				gameName='Alea Evangeli';
-			break;
-			case 8:
-				gameName='Custom';
-			break;
-		}
-
-		break;
-		}
-	}
 	window.location.hash = openModalHashStateId;
 	onModalOpen();
 	modal.style.display = "block";
@@ -93,7 +133,7 @@ btn.onclick = function() {
 document.addEventListener("keydown", ({key}) => {
     if (key === "Escape"&&window.location.hash == openModalHashStateId){
         modal.style.display = "none";
-        resButton.style.display = "block";
+        resumeBtn.style.display = "inline-block";
         window.location.hash = closedModalHashStateId;
     }
 })

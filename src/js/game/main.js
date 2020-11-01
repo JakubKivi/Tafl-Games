@@ -10,6 +10,8 @@ function start(){
         size=7;
         winCondition='corner';
         moveThroughtThrone='enable';
+        weaponlessKing='enable'; 
+        ableToBackToThrone='enable';
         throneIsKilling='both';
         killingKingCondition='two'; 
         throneProtecting='disable';
@@ -20,8 +22,9 @@ function start(){
         size=9;
         winCondition='edge';
         moveThroughtThrone='enable';
-        throneIsKilling='both';
-        killingKingCondition='four'; 
+        ableToBackToThrone='disable';
+        throneIsKilling='both';  //tu tez
+        killingKingCondition='two'; 
         throneProtecting='enable';
         fourToKillOnThrone='enable';
         startingPlayer='black';
@@ -48,11 +51,14 @@ function start(){
         size=11;
         winCondition='corner';
         moveThroughtThrone='enable';
-        throneIsKilling='both';
-        killingKingCondition='two'; 
+        throneIsKilling='both';   //chyba że jest król... do implementacji
+        killingKingCondition='four'; 
         throneProtecting='enable';
         fourToKillOnThrone='enable';
+        weaponlessKing='disable';
         startingPlayer='black';
+        shieldWall='enable';
+        ableToBackToThrone='enable';
     }
     else if(gameName=='Alea Evangelii'){
         size=19;
@@ -98,7 +104,6 @@ function start(){
 function update(){
     if(window.location.hash == closedModalHashStateId){
         modal.style.display = "none";
-        resButton.style.display = "block";
     }
 
     setTimeout(function(){
