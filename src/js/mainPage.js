@@ -75,6 +75,18 @@ $('input').on('click', function (e) {
     	$('#Throne-surroundings').val('Four'); 
     	$('#Starting-Player').val('Attackers');
     	$('#Shield-wall').val('Enabled');
+    }else if(gameName == "Ard Ri"){
+    	$('#Map-size').val('7'); 
+    	$('#Escape').val('Corner'); 
+    	$('#Move-throught-throne').val('Enabled'); 
+    	$('#King-weapon').val('Unarmed'); 
+    	$('#Throne-return').val('Disabled'); 
+    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('Two'); 
+    	$('#Throne-protecting').val('Disabled'); 
+    	$('#Throne-surroundings').val('Four'); 
+    	$('#Starting-Player').val('Attackers');
+    	$('#Shield-wall').val('Enabled');
     }
 });
 
