@@ -1,5 +1,18 @@
 var ele = document.getElementsByName('rd'); 
 
+var hOptionsH = true;
+$(".modal-body-options").hide();
+$('#hOptions').on('click', function(e){
+    console.log("dupaaaaaaaaaaaaaa");
+    if(hOptionsH){
+        hOptionsH=false;
+        $(".modal-body-options").show();
+    }else{
+        hOptionsH=true;
+        $(".modal-body-options").hide();
+    }
+});
+
 $('input').on('click', function (e) {
 	var ele = document.getElementsByName('rd'); 
               

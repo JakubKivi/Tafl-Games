@@ -60,6 +60,9 @@
 				 		<li class="nav-item">
 				 			<a class="nav-link" target="_blank" href="https://en.wikipedia.org/wiki/Tafl_games" aria-expanded="false">Angielska Wiki</a>
 				 		</li>
+				 		<li class="nav-item dropdown">
+				 			<a type="button" class="nav-link" data-toggle="modal" data-target="#exampleModalLong3" aria-expanded="false">Więcej?</a>
+				 		</li>
 				 		<li class="nav-item">
 				 			<a class="nav-link" target="_blank" href="https://jakubkivi.github.io#contact" aria-expanded="false">Zgłoś błąd</a>
 				 		</li>
@@ -97,6 +100,37 @@
 			</div>
 		</div>
 
+		<!-- mało informacji?! -->
+		<div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		  	<div class="modal-dialog modal-xl modal-dialog-centered " role="document">
+		    	<div class="modal-content modal-content-bg-custom" >
+		    		<div class="modal-header modal-header-custom">
+		        		<h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Mało Ci informacji o szachach wikingów?</h5>
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          		<span style="color: white;" aria-hidden="true">&times;</span>
+		        		</button>
+		      		</div>
+		    		<div class="modal-body modal-body-custom">
+		        		<section class="section section-custom">
+		        			<p class="text-justify" style="font-size: 18px;">
+		        				Sprawdź te źródła:<br>
+		        				<a target="_blank" class="link link-custom" href="http://aagenielsen.dk/tafl_rules.php">aagenielsen.dk</a><br>
+		        				<a  target="_blank" class="link link-custom" href="http://hem.bredband.net/b512479/Hnefatafl_by_Sten_Helmfrid.pdf">Hnefatafl_by_Sten_Helmfrid.pdf</a><br>
+		        				<a  target="_blank" class="link link-custom" href="https://web.archive.org/web/20080317021144/http://alumnus.caltech.edu/~leif/games/Hnefetafl/ardri.html">alumnus/ardri</a><br>
+		        				<a  target="_blank" class="link link-custom" href="https://web.archive.org/web/20081121205304/http://www.pipcom.com/~colyne/Article/SCA_game_tafl.htm">pipcom/SCA_game_tafl</a><br>
+		        				
+		        			</p>
+		        			
+		        		</section>
+		        	</div>
+		        	<div class="modal-footer modal-footer-custom">
+				        <button type="button" class="button button-modal-close" data-dismiss="modal">Zamknij</button>
+				    </div>
+		        </div>
+		    </div>
+		</div>
+
+		<!-- jak grać? -->
 		<div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 		  	<div class="modal-dialog modal-xl modal-dialog-centered " role="document">
 		    	<div class="modal-content modal-content-bg-custom" >
@@ -110,8 +144,13 @@
 		        		<section class="section section-custom"">
 		        			<div class="container">
 			        		<div class="row">
-			        		<img src="../assets/img/Pogchamp.jpg" class="img-rounded  rounded mx-auto img-responsive" alt="...">
-		        			<div class="col-lg-8">
+			        		<div class="col-xl-4">
+			        			<figure class="figure">
+								  <img src="../assets/img/history.png" class="figure-img img-rounded img-fluid rounded mx-auto img-responsive" alt="...">
+								  <figcaption class="figure-caption" style="font-style: italic; text-align: center;">Pionki z wikińskiego grobowca</figcaption>
+								</figure>
+			        		</div>
+		        			<div class="col-xl-8">
 		        			<p class="text-justify">
 			        			Historia gra kluczową rolę w opisywaniu zasad szachów wikingów. Jak wiadomo, w czasach świetności wyznawców Odyna, podbijali, czy też łupili bardzo odległe lądy. Podczas tych podbojów, albo pewnie raczej po nich, podczas biesiady lubili oni pogrywać w szachy... Ale nie takie jakie znamy dzisiaj. Okazuje się, że mieli własną wersję zwaną dzisiaj szachy wikingów. Przez wiele lat podbojów i ekspansji, w czasach bez globalnej komunikacji, gra w różnych miejscach ewoluowała w rózny sposób, czego wynikiem jest cała gama wersji szachów wikingów, z całej europy.<br/> <br>
 			        			Historia szachów wikingów miała jednka swoje mroczne czasy kiedy świat o nich zapomniał. Dopiero odkrycia z XVIII wieku przypomniały ludzkości o tej jakże ciekawej grze. Dzisiaj ma ona grono fanów które dopracowuje zasad, stara się balansować rozgrywkę, a także zajmuje się tworzeniem, często przepięknych, planszy i pionków. <br/><br>
@@ -153,7 +192,7 @@
 					        		<p class="text-justify">
 					        			Ruch:<br>
 					        			Każdy pionek może się ruszać w pionie i w poziomie. Zabronione jest natomiast poruszanie się ukośnie. Nie można także przesunąć się po polu na ktorym stoi już inny pion. Gracze wykonują ruch naprzemiennie. Aż do zwycięstwa jednego z nich (wyjątek, patrz dodatkowe zasady).<br>
-					        			Jeśli ruch spowoduje, otoczenie przeciwnika z dwóch naprzemiennych stron (pionowo lub poziomo, nie na ukos), przeciwnik zostaje zbity z planszy. <!-- --dodać obrazek-- --><br>
+					        			Jeśli ruch spowoduje, otoczenie przeciwnika z dwóch naprzemiennych stron (pionowo lub poziomo, nie na ukos), przeciwnik zostaje zbity z planszy.<br>
 					        			Zbijać można też o pola specjalne, jak np. narożnik (tylko w wariancie z narożnikami), czy pusty tron.<br>
 					        			Zależnie od wariantu można lub nie można ruszać się przez tron, zawsze natomiast nie można stanąć na tronie zwykłym pionkiem. Król zależnie od wariantu może, lub nie, wrócić na tron.<br>
 					        			Zbijanie króla jest uzależnione od wariantu i może mieć wiele specjalnych zasad, jak np. zbijanie na tronie wymagające 4 przeciwnikow, albo zbijanie przy tronie wymagające 3.
@@ -167,6 +206,7 @@
 					        			Dodatkowe zasady:<br>
 					        			Shieldwall - kiedy część pionków jest otoczona ze wszystkich stron, poza jedną z której jest krawędź, pionki zostają zbite.<br>
 					        			Otoczenie - Jeśli wszyscy obrońcy zostaną otoczeni przez atakujących, atakujący wygrywają.<br>
+					        			For ucieczki - uciekający mogą także wygrać otaczając króla z każdej strony poza krawędzią przy której stoi. Oczywiście to wszystko w przypadku, gdy król musi uciec do narożnika.<br>
 					        			Powtórzenia - powtórzenie ruchu jest zakazane, jeśli ktoś zostanie zmuszony to powtórzenia ruchu, przegrywa. Tak samo jeśli nie może wykonać żadnego legalnego ruchu.<br>
 					        			Jeżeli z jakiegoś powodu nie można zakończyć rozgrywki, np jest zbyt mało pionków i sytuacja ciągnie się zbyt długo, można zarządzić remis.<br>
 					        			Dodatkowych zasad różniących się od wariantów gry jest prawdopodobnie jeszcze kilka, możesz ich szukać pod znakami zapytania w opcjach, albo... jak czasem bywa na polu bitwy, liczyć na pomoc Thora.
@@ -220,7 +260,7 @@
 		        </section>
 		      </div>
 		      <div class="modal-header modal-header-custom">
-		      	<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst"><p>?</p></a>
+		      	<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Mnogość możliwości" data-content="Przez olbrzymią ekspansję wikingów gra zaczeła ewoluować i powstało wiele wariacji. Możesz nawet pokusić się o stworzenie swoich własnych szachów wikingów."><p>?</p></a>
 		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Warianty rozgrywki</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		        </button>
@@ -230,7 +270,7 @@
 		        	<div class="container">
 		        		<div class="row row-custom-options mb-1">
 		        			<div class="col-xl-4 col-custom">
-		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Modern Hnefatafl" data-content="Today, many different versions of modern hnefatafl are in play – both online and on physical boards that are sold commercially. One variant used in tournaments is Copenhagen Hnefatafl, which also features a 'shield wall' mechanism to capture several soldiers at once, and an 'exit fort' rule that enables the king to escape on the edge while otherwise being limited to escape in the corners.">?</a>
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Współczesna zabawa" data-content="Dzisiaj bardzo popularna czy to online czy na fizycznych planszach. Grane jest kilka wariantów ja przedstawiam jeden konkretny, ten najbardziej dopracowany pod względem zbalansowania. Wariant ten jest grany na oficjalnych zawodach w Kopenhadze.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_1" name="rd" class="custom-control-input" checked value="Hnefatafl">
 								  <label class="custom-control-label myColor" for="rd_1"><p style="margin-left: 10px;">Hnefatafl</p></label>
@@ -238,14 +278,14 @@
 								
 							</div>
 		        			<div class="col-xl-4 col-custom">
-		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Lapońska zabawa" data-content="Wariant północny szachów wikingów. Odkryta i spisana około 1700 roku wariacja. Być może przez błędne tłumaczenia, być może taki był zamysł Lapończyków, gra jest znacznie łatwiejsza po stronie Szwedzkich obrońców, przez co zaleca się granie dwóch partii i zapamiętywanie ilości ruchów potrzebnych do wygrania.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_7" name="rd" class="custom-control-input" value="Tablut">
 								  <label class="custom-control-label myColor" for="rd_7"><p style="margin-left: 10px;">Tablut</p></label>
 								</div>
 		        			</div>
 		        			<div class="col-xl-4  col-custom">
-		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Irlandzka sztuka" data-content="Czarny krók, bo taką nosi nazwe, to znany tylko z poezji wariant Irlandzki. Nie są spisane jej zasady, ale łącząc książki i wiersze, z zasadami Hnefatafl, udało się odtworzyć grę na małej planszy. Dużo akcji, mało miejsca, szybka gra, każdy ruch może siętu okazać kluczowy i bolesny w skutkach. Bez wątpienia wariant dla strategów i wyjadaczy szachów wikingów">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_3" name="rd" class="custom-control-input" value="Brandubh">
 								  <label class="custom-control-label myColor" for="rd_3"><p style="margin-left: 10px;">Brandubth</p></label>
@@ -256,21 +296,21 @@
 
 		        		<div class="row row-custom-options">
 		        			<div class="col-xl-4 col-custom">
-		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Szkodzka przepychanka" data-content="'Wielki król', tak nazywali tę grę szkoci. Specyficzny wariant, harakteryzujący się ciasnotą, z kluczową zasadą wyróżniającą. tym razem pionek może ruszać się tylko o jedno pole w trakcie swojego ruchu. Wariant ciekawy, nastawiony na przemyślenie każdego ruchu na malutkiej, gęstej planszy.">?</a>
 								<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_4" name="rd" class="custom-control-input" value="Ard Ri">
 								  <label class="custom-control-label myColor" for="rd_4"><p style="margin-left: 10px;">Ard Ri</p></label>
 								</div>
 							</div>
 		        			<div class="col-xl-4 col-custom">
-		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Walijska rozmowa" data-content="Ten wariant, poza kolejnym różnym od innych rozstawieniem figur, cechuje się jeszcze jedną kluczową zasadą. Walijczycy grając w szachy wikingów byli wyjątkowo rozgadani. I tak np. aby zbić króla ruch wcześniej trzeba było powiedzieć 'Zważaj na Króla'.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_5" name="rd" class="custom-control-input" value="Tawlbwrdd">
 								  <label class="custom-control-label myColor" for="rd_5"><p style="margin-left: 10px;">Tawlbwrdd</p></label>
 								</div>
 		        			</div>
 		        			<div class="col-xl-4  col-custom">
-		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Gra Ewangelii" data-content="Anglo-Saski wariant będący religijną alegorią, na wielu polach nawiązywał do Chrześcijaństwa. Kluczowy jest tutaj rozmiar planszy (19x19) oraz warunek ucieczki, czyli 4 pola na każy narożnik.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_6" name="rd" class="custom-control-input" value="Alea Evangelii">
 								  <label class="custom-control-label myColor" for="rd_6"><p style="margin-left: 10px;">Alea Evangelii</p></label>
@@ -279,7 +319,7 @@
 		        		</div>
 		        		<div class="row row-custom-options">
 		        			<div class="col-xl-offset-4 col-xl-4 col-custom">
-		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Ciekawski historyk" data-content="Zastanawiasz się jakie jeszcze warianty szachów wikingów mogłyby powstać lub nawet powstały? A może chcesz przetestować swoją wersje w kontekście balansu gry? Zmieniaj opcje niżej i baw się dobrze młody wojowniku.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_8" name="rd" class="custom-control-input" value="Custom">
 								  <label class="custom-control-label myColor" for="rd_8"><p style="margin-left: 10px;">Własne</p></label>
@@ -290,11 +330,13 @@
 		        </section>
 		      </div>
 		      <div class="modal-header modal-header-custom">
-		        <a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst"><p>?</p></a>
-		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Zasady</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        <a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Mnogość możliwośći" data-content="Jeżeli chcesz się upewnić jakimi prawi rządzi się konkretny wariant zobacz co jest dla niego ustawione, a jeśli coś byś poprawił... po prostu to zrób!"><p>?</p></a>
+		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Zasady - Sprawdź lub zmień</h5>
+		        <button type="button" class="close close-custom" aria-label="Close" id="hOptions">
+		        	<span style="color: white;" aria-hidden="true"><i class="arrow down"></i></span>
+		        </button>
 		      </div>
-		      <div class="modal-body modal-body-custom">
+		      <div class="modal-body modal-body-custom modal-body-options" id="options" >
 				<section class="section section-custom">
 					<div class="container">
 						<div class="row row-custom-options mb-1">
