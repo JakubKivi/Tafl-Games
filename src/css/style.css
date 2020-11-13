@@ -177,6 +177,15 @@ html, body{
   color: white;
   background-color: var(--main-color-dark);
 }
+.dropdown-item-custom-info{
+  text-align: center;
+  color: white;
+}
+
+.dropdown-item-custom-info:hover{
+  color: white;
+  background-color: var(--main-color-bright);
+}
 
 .section-custom{
   border-bottom-color: var(--main-color-dark); 

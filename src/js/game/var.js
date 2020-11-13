@@ -22,7 +22,7 @@ var AI=0;  						 //0, 1-black, 2 - white
 
 // czy na krawedzi da sie zabic zmienna			
 
-var margin =100;
+var margin =0;
 
 var mouseX=9999999;
 var mouseY=9999999;

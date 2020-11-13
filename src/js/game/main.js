@@ -47,11 +47,12 @@ function start(){
         throneProtecting='enable';
         fourToKillOnThrone='enable';
         startingPlayer='black';
+        weaponlessKing='disable';
     }else if(gameName=='Hnefatafl'){
         size=11;
         winCondition='corner';
         moveThroughtThrone='enable';
-        throneIsKilling='both';   //chyba że jest król... do implementacji
+        throneIsKilling='both';
         killingKingCondition='four'; 
         throneProtecting='enable';
         fourToKillOnThrone='enable';
@@ -69,6 +70,8 @@ function start(){
         throneProtecting='enable';
         fourToKillOnThrone='enable';
         startingPlayer='black';
+    }else if(gameName=='Custom'){
+        
     }
     startingPlayer=='black'?player=1:player=2;
 

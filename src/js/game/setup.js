@@ -59,28 +59,7 @@ function putFiguresOnMap(){
                 }
             }
         }
-   }
-   else if(gameName=='Ard Ri'){
-        for(i=1; i<=parseInt(size/2)+1; i++){
-            for(j=1; j<=parseInt(size/2)+1; j++){
-                if(j==4){
-                    if(i<3||i>5)field[i][j]=1;
-                    else field[i][j]=2;
-                }
-                else if(i==4){
-                    if(j<3||j>5)field[i][j]=1;
-                    else field[i][j]=2;
-                }
-                else if((i==3 && j==1) ||(i==1 && j==3)){
-                    field[i][j]=1;
-                }
-                else if(i==3 && j==3){
-                    field[i][j]=2;
-                }
-            }
-        }
-   }
-   else if(gameName=='Tablut'){
+   }else if(gameName=='Tablut'){
         for(i=1; i<=parseInt(size/2)+1; i++){
             for(j=1; j<=parseInt(size/2)+1; j++){
                 if(j==5){

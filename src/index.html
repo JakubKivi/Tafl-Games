@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 	<head>
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +30,7 @@
 				
 				<a class="navbar-brand" href="https://jakubkivi.github.io/Tafl-Games/src/index.html">
 					<img src="../assets/img/logo.png" width="30" height="30" alt="" class="d-inline-block mr-1 align-bottom" >
-					 Tafl Games
+					 Sachy wikingów
 				</a>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="drop-down menu">
@@ -39,20 +39,29 @@
 
 				 <div id="menu" class="collapse navbar-collapse">
 				 	<ul class="navbar-nav ml-auto ">
-				 		<li class="nav-item">
-				 			<a class="nav-link" href="index.html">Home</a>
+				 		<li class="nav-item dropdown">
+				 			<a class="nav-link" href="index.html" aria-expanded="false">Home</a>
 				 		</li>
 				 		<li class="nav-item dropdown">
-				 			<a role="button" class="nav-link dropdown-toggle" data-toggle="dropdown" target="_blank" aria-expanded="false" id="submenu" aria-haspopup="true">About authors</a>
+				 			<a type="button" class="nav-link" data-toggle="modal" data-target="#exampleModalLong2" aria-expanded="false">Jak się gra?</a>
+				 		</li>
+				 		<li class="nav-item dropdown">
+				 			<a role="button" class="nav-link dropdown-toggle" data-toggle="dropdown" target="_blank" aria-expanded="false" id="submenu" aria-haspopup="true">Autorzy</a>
 
 				 			<div class="dropdown-menu" aria-labelledby="submenu"
 				 			style="background-color: #a6827e;">
-				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://jakubkivi.github.io/en.html">Jakub Kivi - Programista</a>
+				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://jakubkivi.github.io/">Jakub Kivi - Programista</a>
 				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://www.instagram.com/priestoov/">Joanna Butkiewicz - Artystka</a>
 				 			</div>
 				 		</li>
 				 		<li class="nav-item">
-				 			<a class="nav-link" target="_blank" href="https://en.wikipedia.org/wiki/Tafl_games" aria-expanded="false">What are Tafl games?</a>
+				 			<a class="nav-link" target="_blank" href="https://pl.wikipedia.org/wiki/Tablut" aria-expanded="false">Polska Wiki</a>
+				 		</li>
+				 		<li class="nav-item">
+				 			<a class="nav-link" target="_blank" href="https://en.wikipedia.org/wiki/Tafl_games" aria-expanded="false">Angielska Wiki</a>
+				 		</li>
+				 		<li class="nav-item">
+				 			<a class="nav-link" target="_blank" href="https://jakubkivi.github.io#contact" aria-expanded="false">Zgłoś błąd</a>
 				 		</li>
 				 	</ul>
 				 </div>
@@ -65,15 +74,15 @@
 			<div class="container">
 			    <div class="row mb-3">
 			        <div class="mb-3 offset-md-1 col-md-5 text-center">
-			        	<button class="button big" id="playButton">PLAY</button>
+			        	<button class="button big" id="playButton">NOWA GRA</button>
 			        </div>
 			        <div class="col-md-5  text-center">
-			        	<button type="button" data-toggle="modal" data-target="#exampleModalLong" class= "button big" id="btnOptions">Options</button>
+			        	<button type="button" data-toggle="modal" data-target="#exampleModalLong" class= "button big" id="btnOptions">Opcje</button>
 			        </div>
 			    </div>
 			    <div class="row">
 			    	<div class="col-md-12 text-center">
-			    		<button class=" button big resButton" id="resButton">Resume</button>
+			    		<button class=" button big resButton" id="resButton">Wznów</button>
 			    	</div>
 			    </div>
 			</div>
@@ -88,12 +97,98 @@
 			</div>
 		</div>
 
+		<div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		  	<div class="modal-dialog modal-xl modal-dialog-centered " role="document">
+		    	<div class="modal-content modal-content-bg-custom" >
+		    		<div class="modal-header modal-header-custom">
+		        		<h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Krótka historia</h5>
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          		<span style="color: white;" aria-hidden="true">&times;</span>
+		        		</button>
+		      		</div>
+		    		<div class="modal-body modal-body-custom">
+		        		<section class="section section-custom"">
+		        			<div class="container">
+			        		<div class="row">
+			        		<img src="../assets/img/Pogchamp.jpg" class="img-rounded  rounded mx-auto img-responsive" alt="...">
+		        			<div class="col-lg-8">
+		        			<p class="text-justify">
+			        			Historia gra kluczową rolę w opisywaniu zasad szachów wikingów. Jak wiadomo, w czasach świetności wyznawców Odyna, podbijali, czy też łupili bardzo odległe lądy. Podczas tych podbojów, albo pewnie raczej po nich, podczas biesiady lubili oni pogrywać w szachy... Ale nie takie jakie znamy dzisiaj. Okazuje się, że mieli własną wersję zwaną dzisiaj szachy wikingów. Przez wiele lat podbojów i ekspansji, w czasach bez globalnej komunikacji, gra w różnych miejscach ewoluowała w rózny sposób, czego wynikiem jest cała gama wersji szachów wikingów, z całej europy.<br/> <br>
+			        			Historia szachów wikingów miała jednka swoje mroczne czasy kiedy świat o nich zapomniał. Dopiero odkrycia z XVIII wieku przypomniały ludzkości o tej jakże ciekawej grze. Dzisiaj ma ona grono fanów które dopracowuje zasad, stara się balansować rozgrywkę, a także zajmuje się tworzeniem, często przepięknych, planszy i pionków. <br/><br>
+								Dzięki zarysowi historycznemu, gra nabiera tak zwanego "smaczku". Na przykład figury obu graczy określano jako Szwedów i Moskali (stąd też grafiki na planszy). Po więcej klikaj znaki zapytania w opcjach.
+							</p>
+					        </div>
+		        		</section>
+		    		</div>
+		    		<div class="modal-header modal-header-custom">
+		        		<h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Zasady</h5>
+		        		</button>
+		      		</div>
+		    		<div class="modal-body modal-body-custom">
+		        		<section class="section section-custom">
+		        			<div class="container">
+			        			<div class="row">
+			        				<div class="col-lg-8">
+				        			<p class="text-justify">
+					        			Podstawowe zasady szachów wikingów są bardzo proste. Cała sztuka polega na niuansach i różnicach pomiędzy konkretnymi wariantami. <br><br>
+					        			Przygotowanie:<br>
+					        			Plansza - zależnie od wariantu może mieć różny rozmiar, jednak zawsze jest to liczba nieparzysta. W przypadku implementacji gry które proponuje na stronie są to rozmiary od 7x7 do 19x19.<br>
+					        			Król - zawsze startuje w geometrycnym centrum kwadratowej planszy.<br>
+					        			Obrońcy - grupa ustwiona zależnie od wariantu, ale zwykle w okolica króla jako wsparcie.<br>
+					        			Atakujący - grupa ustawiona zwykle na brzegach planszy, wokół broniących.
+					        		</p>
+						        	</div>
+					        		<img src="../assets/img/Pogchamp.jpg" class="img-rounded  rounded mx-auto img-responsive" alt="...">
+					        	</div><div class="row">
+					        	<img src="../assets/img/Pogchamp.jpg" class="img-rounded  rounded mx-auto img-responsive" alt="...">
+		        				<div class="col-lg-8">
+					        		<p class="text-justify">
+					        			Cel:<br>
+					        			Broniący - wygrywają, jeżeli król dotrze do pola specjalnego w rogu lub do krawędzi mapy, znowu zależy od wariantu gry.<br>
+					        			Atakujący - wygrywają otaczając króla, zależnie od wariantu z 4 lub 2 stron, jednak często istnieją dodatkowe zasady związane z krawędzią, lub z środkowym polem zwanym tronem lub zamkiem.
+					        		</p>
+					        	</div>
+					        	</div><div class="row">
+					        		<div class="col-lg-8">
+					        		<p class="text-justify">
+					        			Ruch:<br>
+					        			Każdy pionek może się ruszać w pionie i w poziomie. Zabronione jest natomiast poruszanie się ukośnie. Nie można także przesunąć się po polu na ktorym stoi już inny pion. Gracze wykonują ruch naprzemiennie. Aż do zwycięstwa jednego z nich (wyjątek, patrz dodatkowe zasady).<br>
+					        			Jeśli ruch spowoduje, otoczenie przeciwnika z dwóch naprzemiennych stron (pionowo lub poziomo, nie na ukos), przeciwnik zostaje zbity z planszy. <!-- --dodać obrazek-- --><br>
+					        			Zbijać można też o pola specjalne, jak np. narożnik (tylko w wariancie z narożnikami), czy pusty tron.<br>
+					        			Zależnie od wariantu można lub nie można ruszać się przez tron, zawsze natomiast nie można stanąć na tronie zwykłym pionkiem. Król zależnie od wariantu może, lub nie, wrócić na tron.<br>
+					        			Zbijanie króla jest uzależnione od wariantu i może mieć wiele specjalnych zasad, jak np. zbijanie na tronie wymagające 4 przeciwnikow, albo zbijanie przy tronie wymagające 3.
+					        		</p>
+					        		</div>
+					        		<img src="../assets/img/Pogchamp.jpg" class="img-rounded  rounded mx-auto img-responsive" alt="...">
+					        	</div><div class="row">
+					        		<img src="../assets/img/Pogchamp.jpg" class="img-rounded  rounded mx-auto img-responsive" alt="...">
+					        		<div class="col-lg-8">
+					        		<p class="text-justify">
+					        			Dodatkowe zasady:<br>
+					        			Shieldwall - kiedy część pionków jest otoczona ze wszystkich stron, poza jedną z której jest krawędź, pionki zostają zbite.<br>
+					        			Otoczenie - Jeśli wszyscy obrońcy zostaną otoczeni przez atakujących, atakujący wygrywają.<br>
+					        			Powtórzenia - powtórzenie ruchu jest zakazane, jeśli ktoś zostanie zmuszony to powtórzenia ruchu, przegrywa. Tak samo jeśli nie może wykonać żadnego legalnego ruchu.<br>
+					        			Jeżeli z jakiegoś powodu nie można zakończyć rozgrywki, np jest zbyt mało pionków i sytuacja ciągnie się zbyt długo, można zarządzić remis.<br>
+					        			Dodatkowych zasad różniących się od wariantów gry jest prawdopodobnie jeszcze kilka, możesz ich szukać pod znakami zapytania w opcjach, albo... jak czasem bywa na polu bitwy, liczyć na pomoc Thora.
+					        		</p>
+					        		</div>
+					        	</div>
+					        </div>
+		        		</section>
+		    		</div>
+		    		<div class="modal-footer modal-footer-custom">
+				        <button type="button" class="button button-modal-close" data-dismiss="modal">Zamknij</button>
+				    </div>
+				</div>
+
+		  	</div>
+		</div>
 		<!-- options -->
 		<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 		  <div class="modal-dialog modal-xl modal-dialog-centered " role="document">
 		    <div class="modal-content modal-content-bg-custom" >
 		    	<div class="modal-header modal-header-custom">
-		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Players</h5>
+		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Gracze</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span style="color: white;" aria-hidden="true">&times;</span>
 		        </button>
@@ -105,19 +200,19 @@
 		        			<div class="col-xl-4 col-custom">
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="ai_1" name="ai" class="custom-control-input" checked value="No">
-								  <label class="custom-control-label myColor" for="ai_1"><p style="margin-left: 10px;">2 Players</p></label>
+								  <label class="custom-control-label myColor" for="ai_1"><p style="margin-left: 10px;">2 Graczy</p></label>
 								</div>
 							</div>
 							<div class="col-xl-4 col-custom">
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="ai_2" name="ai" class="custom-control-input" checked value="No">
-								  <label class="custom-control-label myColor" for="ai_2"><p style="margin-left: 10px;">AI attackers</p></label>
+								  <label class="custom-control-label myColor" for="ai_2"><p style="margin-left: 10px;">SI jako takujący</p></label>
 								</div>
 							</div>
 							<div class="col-xl-4 col-custom">
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="ai_3" name="ai" class="custom-control-input" checked value="No">
-								  <label class="custom-control-label myColor" for="ai_3"><p style="margin-left: 10px;">AI Defenders</p></label>
+								  <label class="custom-control-label myColor" for="ai_3"><p style="margin-left: 10px;">SI jako obrońcy</p></label>
 								</div>
 							</div>
 		        		</div>
@@ -125,9 +220,9 @@
 		        </section>
 		      </div>
 		      <div class="modal-header modal-header-custom">
-		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Game variants</h5>
+		      	<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst"><p>?</p></a>
+		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Warianty rozgrywki</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span style="color: white;" aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
 		      <div class="modal-body modal-body-custom">
@@ -187,7 +282,7 @@
 		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_8" name="rd" class="custom-control-input" value="Custom">
-								  <label class="custom-control-label myColor" for="rd_8"><p style="margin-left: 10px;">Custom</p></label>
+								  <label class="custom-control-label myColor" for="rd_8"><p style="margin-left: 10px;">Własne</p></label>
 								</div>
 							</div>
 		        		</div>
@@ -196,7 +291,7 @@
 		      </div>
 		      <div class="modal-header modal-header-custom">
 		        <a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="tutaj daj tekst"><p>?</p></a>
-		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Game rules</h5>
+		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Zasady</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		      </div>
 		      <div class="modal-body modal-body-custom">
@@ -207,7 +302,7 @@
 						    	<div class="form-group">
 									<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-		        						<label for="exampleFormControlSelect1">Map size</label>
+		        						<label for="exampleFormControlSelect1">Rozmiar Mapy</label>
 											<select class="form-control form-control-custom" id="Map-size">
 											  <option>7</option>
 											  <option>9</option>
@@ -221,10 +316,10 @@
 						    	<div class="form-group">
 									<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-										<label for="exampleFormControlSelect1">Starting Player</label>
+										<label for="exampleFormControlSelect1">Zaczyna</label>
 										<select class="form-control form-control-custom" id="Starting-Player">
-										  <option>Attackers</option>
-										  <option>Defenders</option>
+										  <option>Atakujący</option>
+										  <option>Broniący</option>
 										</select>
 									</div>
 								</div>
@@ -233,11 +328,11 @@
 						    	<div class="form-group">
 									<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-		        						<label for="exampleFormControlSelect1">Escape</label>
+		        						<label for="exampleFormControlSelect1">Ucieczka</label>
 										<select class="form-control form-control-custom" id="Escape">
-										  <option>Edge</option>
-										  <option>Corner</option>
-										  <option >Corner (2x2)</option>
+										  <option>Krawędź</option>
+										  <option>Narożnik</option>
+										  <option >Narożnik (2x2)</option>
 										</select>
 									</div>
 								</div>
@@ -253,10 +348,10 @@
 							    	<div class="form-group">
 										<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-											<label for="exampleFormControlSelect1">King surroundings</label>
+											<label for="exampleFormControlSelect1">Otaczenie króla</label>
 											<select class="form-control form-control-custom" id="King-surroundings">
-											  <option>Two</option>
-											  <option>Four</option>
+											  <option>2</option>
+											  <option>4</option>
 											</select>
 										</div>
 									</div>
@@ -265,10 +360,10 @@
 							    	<div class="form-group">
 										<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-			        						<label for="exampleFormControlSelect1">King weapon</label>
+			        						<label for="exampleFormControlSelect1">Uzbrojenie Króla</label>
 											<select class="form-control form-control-custom" id="King-weapon">
-											  <option>Unarmed</option>
-											  <option>Killing</option>
+											  <option>Nieuzbrojony</option>
+											  <option>Zabójczy</option>
 											</select>
 										</div>
 									</div>
@@ -277,10 +372,10 @@
 							    	<div class="form-group">
 										<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-											<label for="exampleFormControlSelect1">Throne deadliness</label>
+											<label for="exampleFormControlSelect1">Tron zabójczy</label>
 											<select class="form-control form-control-custom" id="Throne-deadliness">
-											  <option>Both</option>
-											  <option>Attackers Only</option>
+											  <option>Dla obu graczy</option>
+											  <option>Tylko dla atakujących</option>
 											</select>
 										</div>
 									</div>
@@ -297,10 +392,10 @@
 							    	<div class="form-group">
 										<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-											<label for="exampleFormControlSelect1">Throne protecting</label>
+											<label for="exampleFormControlSelect1">Tron chroni</label>
 											<select class="form-control form-control-custom" id="Throne-protecting">
-											  <option>Enabled</option>
-											  <option>Disabled</option>
+											  <option>Włączone</option>
+											  <option>Wyłączone</option>
 											</select>
 										</div>
 									</div>
@@ -309,10 +404,10 @@
 							    	<div class="form-group">
 										<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-											<label for="exampleFormControlSelect1">Throne surroundings</label>
+											<label for="exampleFormControlSelect1">Otoczenie na tronie</label>
 											<select class="form-control form-control-custom" id="Throne-surroundings">
-											  <option>Two</option>
-											  <option>Four</option>
+											  <option>2</option>
+											  <option>4</option>
 											</select>
 										</div>
 									</div>
@@ -321,10 +416,10 @@
 							    	<div class="form-group">
 										<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-											<label for="exampleFormControlSelect1">Throne return</label>
+											<label for="exampleFormControlSelect1">Powrót na tron</label>
 											<select class="form-control form-control-custom" id="Throne-return">
-											  <option>Enabled</option>
-											  <option>Disabled</option>
+											  <option>Włączone</option>
+											  <option>Wyłączone</option>
 											</select>
 										</div>
 									</div>
@@ -340,10 +435,10 @@
 							    	<div class="form-group">
 										<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-										<label for="exampleFormControlSelect1">Move throught throne</label>
+										<label for="exampleFormControlSelect1">Ruch przez tron</label>
 										<select class="form-control form-control-custom" id="Move-throught-throne">
-										  <option>Enabled</option>
-										  <option>Disabled</option>
+										  <option>Włączone</option>
+										  <option>Wyłączone</option>
 										</select>
 										</div>
 									</div>
@@ -354,8 +449,8 @@
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
 										<label for="exampleFormControlSelect1">ShieldWall</label>
 										<select disabled class="form-control form-control-custom" id="shield-wall">
-										  <option>Enabled</option>
-										  <option selected="selected">Disabled</option>
+										  <option>Włączone</option>
+										  <option selected="selected">Wyłączone</option>
 										</select>
 										</div>
 									</div>
@@ -366,7 +461,7 @@
 					</section>
 		        </div>
 		      <div class="modal-footer modal-footer-custom">
-		        <button type="button" class="button button-modal-close" data-dismiss="modal">Close</button>
+		        <button type="button" class="button button-modal-close" data-dismiss="modal">Zamknij</button>
 		      </div>
 		    </div>
 		  </div>

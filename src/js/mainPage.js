@@ -28,7 +28,7 @@ $('input').on('click', function (e) {
 				gameName='Tawlbwrdd';
 			break;
 			case 6:
-				gameName='Alea Evangeli';
+				gameName='Alea Evangelii';
 			break;
 			case 7:
 				gameName='Custom';
@@ -41,52 +41,64 @@ $('input').on('click', function (e) {
 
     if(gameName == "Hnefatafl"){
     	$('#Map-size').val('11');
-    	$('#Escape').val('Corner');
-    	$('#Move-throught-throne').val('Enabled');
-    	$('#King-weapon').val('Killing');
-    	$('#Throne-return').val('Enabled');
-    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
-    	$('#King-surroundings').val('Four');
-    	$('#Throne-protecting').val('Enabled');
-    	$('#Throne-surroundings').val('Four');
-    	$('#Starting-Player').val('Attackers');
-    	$('#Shield-wall').val('Enabled');
+    	$('#Escape').val('Narożnik');
+    	$('#Move-throught-throne').val('Włączone');
+    	$('#King-weapon').val('Zabójczy');
+    	$('#Throne-return').val('Włączone');
+    	$('#Throne-deadliness').val('Dla obu graczy');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('4');
+    	$('#Throne-protecting').val('Włączone');
+    	$('#Throne-surroundings').val('4');
+    	$('#Starting-Player').val('Atakujący');
+    	$('#Shield-wall').val('Włączone');
     }else if(gameName == "Tablut"){
     	$('#Map-size').val('9');
-    	$('#Escape').val('Edge');
-    	$('#Move-throught-throne').val('Enabled');
-    	$('#King-weapon').val('Killing');
-    	$('#Throne-return').val('Disabled');
-    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
-    	$('#King-surroundings').val('Two');
-    	$('#Throne-protecting').val('Enabled');
-    	$('#Throne-surroundings').val('Four');
-    	$('#Starting-Player').val('Attackers');
-    	$('#Shield-wall').val('Enabled');
+    	$('#Escape').val('Krawędź');
+    	$('#Move-throught-throne').val('Włączone');
+    	$('#King-weapon').val('Zabójczy');
+    	$('#Throne-return').val('Wyłączone');
+    	$('#Throne-deadliness').val('Dla obu graczy');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('2');
+    	$('#Throne-protecting').val('Włączone');
+    	$('#Throne-surroundings').val('4');
+    	$('#Starting-Player').val('Atakujący');
+    	$('#Shield-wall').val('Włączone');
     }else if(gameName == "Brandubh"){
     	$('#Map-size').val('7'); 
-    	$('#Escape').val('Corner'); 
-    	$('#Move-throught-throne').val('Enabled'); 
-    	$('#King-weapon').val('Unarmed'); 
-    	$('#Throne-return').val('Disabled'); 
-    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
-    	$('#King-surroundings').val('Two'); 
-    	$('#Throne-protecting').val('Disabled'); 
-    	$('#Throne-surroundings').val('Four'); 
-    	$('#Starting-Player').val('Attackers');
-    	$('#Shield-wall').val('Enabled');
+    	$('#Escape').val('Narożnik'); 
+    	$('#Move-throught-throne').val('Włączone'); 
+    	$('#King-weapon').val('Nieuzbrojony'); 
+    	$('#Throne-return').val('Wyłączone'); 
+    	$('#Throne-deadliness').val('Dla obu graczy');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('2'); 
+    	$('#Throne-protecting').val('Wyłączone'); 
+    	$('#Throne-surroundings').val('4'); 
+    	$('#Starting-Player').val('Atakujący');
+    	$('#Shield-wall').val('Włączone');
     }else if(gameName == "Ard Ri"){
     	$('#Map-size').val('7'); 
-    	$('#Escape').val('Corner'); 
-    	$('#Move-throught-throne').val('Enabled'); 
-    	$('#King-weapon').val('Unarmed'); 
-    	$('#Throne-return').val('Disabled'); 
-    	$('#Throne-deadliness').val('Both');  //chyba ze krol siedzi
-    	$('#King-surroundings').val('Two'); 
-    	$('#Throne-protecting').val('Disabled'); 
-    	$('#Throne-surroundings').val('Four'); 
-    	$('#Starting-Player').val('Attackers');
-    	$('#Shield-wall').val('Enabled');
+    	$('#Escape').val('Narożnik'); 
+    	$('#Move-throught-throne').val('Włączone'); 
+    	$('#King-weapon').val('Nieuzbrojony'); 
+    	$('#Throne-return').val('Wyłączone'); 
+    	$('#Throne-deadliness').val('Dla obu graczy');  //chyba ze krol siedzi
+    	$('#King-surroundings').val('2'); 
+    	$('#Throne-protecting').val('Wyłączone'); 
+    	$('#Throne-surroundings').val('4'); 
+    	$('#Starting-Player').val('Atakujący');
+    	$('#Shield-wall').val('Włączone');
+    }else if(gameName == "Tawlbwrdd"){
+        $('#Map-size').val('11'); 
+        $('#Escape').val('Narożnik'); 
+        $('#Move-throught-throne').val('Włączone'); 
+        $('#King-weapon').val('Zabójczy'); 
+        $('#Throne-return').val('Wyłączone'); 
+        $('#Throne-deadliness').val('Dla obu graczy');  //chyba ze krol siedzi
+        $('#King-surroundings').val('2'); 
+        $('#Throne-protecting').val('Wyłączone'); 
+        $('#Throne-surroundings').val('4'); 
+        $('#Starting-Player').val('Atakujący');
+        $('#Shield-wall').val('Włączone');
     }
 });
 
