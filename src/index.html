@@ -75,7 +75,12 @@
 		<section>
 
 			<div class="container">
-			    <div class="row mb-3">
+				<div class="row">
+					<h2 class="text-center hint" id="hint">
+						<b>Hnefatafl</b> - Najpopularniejszy i najbardziej zbalansowany wariant, grany na zawodach.
+					</h2>
+				</div>
+			    <div class="row">
 			        <div class="mb-3 offset-md-1 col-md-5 text-center">
 			        	<button class="button big" id="playButton">NOWA GRA</button>
 			        </div>
@@ -147,7 +152,7 @@
 			        		<div class="col-xl-4">
 			        			<figure class="figure">
 								  <img src="../assets/img/history.png" class="figure-img img-rounded img-fluid rounded mx-auto img-responsive" alt="...">
-								  <figcaption class="figure-caption" style="font-style: italic; text-align: center;">Pionki z wikińskiego grobowca</figcaption>
+								  <figcaption class="figure-caption" style="font-style: italic; text-align: center; color: white;">Pionki z wikińskiego grobowca</figcaption>
 								</figure>
 			        		</div>
 		        			<div class="col-xl-8">
@@ -239,19 +244,19 @@
 		        		<div class="row row-custom-options mb-1">
 		        			<div class="col-xl-4 col-custom">
 		        				<div class="custom-control custom-radio custom-control-inline">
-								  <input type="radio" id="ai_1" name="ai" class="custom-control-input" checked value="No">
+								  <input type="radio" id="ai_1" name="ai" class="custom-control-input" checked value="Yes">
 								  <label class="custom-control-label myColor" for="ai_1"><p style="margin-left: 10px;">2 Graczy</p></label>
 								</div>
 							</div>
 							<div class="col-xl-4 col-custom">
 		        				<div class="custom-control custom-radio custom-control-inline">
-								  <input type="radio" id="ai_2" name="ai" class="custom-control-input" checked value="No">
+								  <input type="radio" id="ai_2" name="ai" class="custom-control-input" value="No">
 								  <label class="custom-control-label myColor" for="ai_2"><p style="margin-left: 10px;">SI jako takujący</p></label>
 								</div>
 							</div>
 							<div class="col-xl-4 col-custom">
 		        				<div class="custom-control custom-radio custom-control-inline">
-								  <input type="radio" id="ai_3" name="ai" class="custom-control-input" checked value="No">
+								  <input type="radio" id="ai_3" name="ai" class="custom-control-input"value="No">
 								  <label class="custom-control-label myColor" for="ai_3"><p style="margin-left: 10px;">SI jako obrońcy</p></label>
 								</div>
 							</div>
@@ -288,7 +293,7 @@
 		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Irlandzka sztuka" data-content="Czarny krók, bo taką nosi nazwe, to znany tylko z poezji wariant Irlandzki. Nie są spisane jej zasady, ale łącząc książki i wiersze, z zasadami Hnefatafl, udało się odtworzyć grę na małej planszy. Dużo akcji, mało miejsca, szybka gra, każdy ruch może siętu okazać kluczowy i bolesny w skutkach. Bez wątpienia wariant dla strategów i wyjadaczy szachów wikingów">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_3" name="rd" class="custom-control-input" value="Brandubh">
-								  <label class="custom-control-label myColor" for="rd_3"><p style="margin-left: 10px;">Brandubth</p></label>
+								  <label class="custom-control-label myColor" for="rd_3"><p style="margin-left: 10px;">Brandubh</p></label>
 								</div>
 								
 		        			</div>
@@ -310,7 +315,7 @@
 								</div>
 		        			</div>
 		        			<div class="col-xl-4  col-custom">
-		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Gra Ewangelii" data-content="Anglo-Saski wariant będący religijną alegorią, na wielu polach nawiązywał do Chrześcijaństwa. Kluczowy jest tutaj rozmiar planszy (19x19) oraz warunek ucieczki, czyli 4 pola na każy narożnik.">?</a>
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Biblijna " data-content="Anglo-Saski wariant będący religijną alegorią, na wielu polach nawiązywał do Chrześcijaństwa. Kluczowy jest tutaj rozmiar planszy (19x19) oraz warunek ucieczki, czyli 4 pola na każy narożnik.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="rd_6" name="rd" class="custom-control-input" value="Alea Evangelii">
 								  <label class="custom-control-label myColor" for="rd_6"><p style="margin-left: 10px;">Alea Evangelii</p></label>
@@ -328,8 +333,8 @@
 		        		</div>
 		        	</div>
 		        </section>
-		      </div>
-		      <div class="modal-header modal-header-custom">
+		    </div>
+		    <div class="modal-header modal-header-custom">
 		        <a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Mnogość możliwośći" data-content="Jeżeli chcesz się upewnić jakimi prawi rządzi się konkretny wariant zobacz co jest dla niego ustawione, a jeśli coś byś poprawił... po prostu to zrób!"><p>?</p></a>
 		        <h5 class="modal-title modal-title-custom" id="exampleModalLongTitle">Zasady - Sprawdź lub zmień</h5>
 		        <button type="button" class="close close-custom" aria-label="Close" id="hOptions">
@@ -343,26 +348,16 @@
 							<div class="col-xl-4">
 						    	<div class="form-group">
 									<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-		        						<label for="exampleFormControlSelect1">Rozmiar Mapy</label>
+		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="Rozmiary i rozstaw figur" data-content="Dostosuj rozmiar planszy i ustawienie figur zgodne z jednym z ustawień z domyślnych gier">?</a>
+		        						<label for="exampleFormControlSelect1">Mapa</label>
 											<select class="form-control form-control-custom" id="Map-size">
-											  <option>7</option>
-											  <option>9</option>
-											  <option>11</option>
-											  <option>19</option>
+											  <option>7x7 (Brandubh)</option>
+											  <option>7x7 (Ard Ri)</option>
+											  <option>9x9 (Tablut)</option>
+											  <option>11x11 (Hnefatafl)</option>
+											  <option>11x11 (Tawlbwrdd)</option>
+											  <option>19x19 (Alea Evangelii)</option>
 											</select>
-									</div>
-								</div>
-							</div>
-							<div class="col-xl-4">
-						    	<div class="form-group">
-									<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-										<label for="exampleFormControlSelect1">Zaczyna</label>
-										<select class="form-control form-control-custom" id="Starting-Player">
-										  <option>Atakujący</option>
-										  <option>Broniący</option>
-										</select>
 									</div>
 								</div>
 							</div>
@@ -374,19 +369,11 @@
 										<select class="form-control form-control-custom" id="Escape">
 										  <option>Krawędź</option>
 										  <option>Narożnik</option>
-										  <option >Narożnik (2x2)</option>
 										</select>
 									</div>
 								</div>
 							</div>
-						</div>
-
-					</div>
-				</section>
-					<section class="section section-custom">
-						<div class="container">
-							<div class="row row-custom-options mb-1">
-								<div class="col-xl-4">
+							<div class="col-xl-4">
 							    	<div class="form-group">
 										<div class="form-group">
 		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
@@ -398,6 +385,13 @@
 										</div>
 									</div>
 								</div>
+						</div>
+
+					</div>
+				</section>
+					<section class="section section-custom">
+						<div class="container">
+							<div class="row row-custom-options mb-1 justify-content-md-center">
 								<div class="col-xl-4">
 							    	<div class="form-group">
 										<div class="form-group">
@@ -407,93 +401,6 @@
 											  <option>Nieuzbrojony</option>
 											  <option>Zabójczy</option>
 											</select>
-										</div>
-									</div>
-								</div>
-								<div class="col-xl-4">
-							    	<div class="form-group">
-										<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-											<label for="exampleFormControlSelect1">Tron zabójczy</label>
-											<select class="form-control form-control-custom" id="Throne-deadliness">
-											  <option>Dla obu graczy</option>
-											  <option>Tylko dla atakujących</option>
-											</select>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</section>
-					</section>
-					<section class="section section-custom">
-						<div class="container">
-							<div class="row row-custom-options mb-1">
-								<div class="col-xl-4">
-							    	<div class="form-group">
-										<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-											<label for="exampleFormControlSelect1">Tron chroni</label>
-											<select class="form-control form-control-custom" id="Throne-protecting">
-											  <option>Włączone</option>
-											  <option>Wyłączone</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="col-xl-4">
-							    	<div class="form-group">
-										<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-											<label for="exampleFormControlSelect1">Otoczenie na tronie</label>
-											<select class="form-control form-control-custom" id="Throne-surroundings">
-											  <option>2</option>
-											  <option>4</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="col-xl-4">
-							    	<div class="form-group">
-										<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-											<label for="exampleFormControlSelect1">Powrót na tron</label>
-											<select class="form-control form-control-custom" id="Throne-return">
-											  <option>Włączone</option>
-											  <option>Wyłączone</option>
-											</select>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</section>
-					<section class="section section-custom">
-						<div class="container">
-							<div class="row row-custom-options mb-1">
-								<div class="col-xl-4">
-							    	<div class="form-group">
-										<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-										<label for="exampleFormControlSelect1">Ruch przez tron</label>
-										<select class="form-control form-control-custom" id="Move-throught-throne">
-										  <option>Włączone</option>
-										  <option>Wyłączone</option>
-										</select>
-										</div>
-									</div>
-								</div>
-								<div class="col-xl-4">
-							    	<div class="form-group">
-										<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="tutaj daj tekst">?</a>
-										<label for="exampleFormControlSelect1">ShieldWall</label>
-										<select disabled class="form-control form-control-custom" id="shield-wall">
-										  <option>Włączone</option>
-										  <option selected="selected">Wyłączone</option>
-										</select>
 										</div>
 									</div>
 								</div>

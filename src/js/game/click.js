@@ -3,6 +3,8 @@ function click(e){
         mainMenu=0;
     }else if(win!=0){
         clearFigures(field);
+        movesB=0;
+        movesW=0;
         putFiguresOnMap();
         win=0;
         startingPlayer=='black'?player=1:player=2;
@@ -27,6 +29,7 @@ function click(e){
                     }else if(canMove(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y)){
                     	move(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y, player);
                     	sound.play();
+                        player==1?movesB++:movesW++;
                     	clicked.x=0;
     					clicked.y=0;
                         player==1?player=2:player=1;

@@ -6,7 +6,7 @@
 
 html, body{
 	background-color: #856066;
-	background-image: url(../../assets/img/readmeImage.jpg);
+	/*background-image: url(../../assets/img/readmeImage.jpg);*/
 	height: 100%;
 	background-position: center;
   background-repeat: no-repeat;
@@ -80,6 +80,10 @@ html, body{
 .modal-header-custom{
   border-bottom-color: var(--main-color-dark);
   border-width: 3px;
+}
+
+.modal-header-custom-options:hover{
+  cursor: pointer;
 }
 
 .modal-custom{
@@ -211,6 +215,25 @@ html, body{
   height: 50px;
 }
 
+.form-control-custom:valid{
+  color: white;
+  background-color: #a9877f;
+  border-color: var(--main-color-dark); 
+  border-width: 3px;
+  border-radius: .5em;
+  height: 50px;
+}
+
+.form-control-custom:disabled{
+  cursor: no-drop;
+  color: white;
+  background-color: #a9877f;
+  border-color: var(--main-color-dark); 
+  border-width: 3px;
+  border-radius: .5em;
+  height: 50px;
+}
+
 .form-control-custom option{
   border-color: var(--main-color-dark); 
   border-width: 1px;
@@ -241,4 +264,11 @@ html, body{
 .modal-body-options{
   /*display: none;*/
   
+}
+
+.hint{
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }

@@ -3,7 +3,6 @@ var ele = document.getElementsByName('rd');
 var hOptionsH = true;
 $(".modal-body-options").hide();
 $('#hOptions').on('click', function(e){
-    console.log("dupaaaaaaaaaaaaaa");
     if(hOptionsH){
         hOptionsH=false;
         $(".modal-body-options").show();
@@ -16,7 +15,7 @@ $('#hOptions').on('click', function(e){
 $('input').on('click', function (e) {
 	var ele = document.getElementsByName('rd'); 
               
-    for(i = 0; i < ele.length; i++) { 
+    for(i = 0; i < ele.length; i++) {
         if(ele[i].checked) {
         gameName = ele[i].value; 
     	}
@@ -27,24 +26,33 @@ $('input').on('click', function (e) {
 		switch(i+1){
 			case 1:
 				gameName='Hnefatafl';
+                document.getElementById("hint").innerHTML = "<b>Hnefatafl</b> - Najpopularniejszy i najbardziej zbalansowany wariant, grany na zawodach.";
 			break;
 			case 2:
 				gameName='Tablut';
+                document.getElementById("hint").innerHTML = "<b>Tablut</b> - Do ucieczki wystarczy krawędź planszy, ale wystarczy dwóch do złapania króla";
 			break;
 			case 3:
 				gameName='Brandubh';
+                document.getElementById("hint").innerHTML = "<b>Brandubh</b> - Mała plansza. każdy ruch może być kluczowy";
 			break;
 			case 4:
 				gameName='Ard Ri';
+                document.getElementById("hint").innerHTML = "<b>Ard Ri</b> - Każdy pionek rusza się maksymalnie o jedno pole";
 			break;
 			case 5:
 				gameName='Tawlbwrdd';
+                document.getElementById("hint").innerHTML = "<b>Tawlbwrdd</b> - Pamiętaj o słownym sygnalizowaniu ruchów";
 			break;
 			case 6:
 				gameName='Alea Evangelii';
+                document.getElementById("hint").innerHTML = "<b>Alea Evangelii</b> - Olbrzmyia plansza, 16 pól ucieczki";
 			break;
 			case 7:
 				gameName='Custom';
+                hOptionsH=false;
+                $(".modal-body-options").show();
+                document.getElementById("hint").innerHTML = "<b>Własne/b> - twoje własne Szachy Wikingów, sam znasz zasady";
 			break;
 		}
 
@@ -53,7 +61,7 @@ $('input').on('click', function (e) {
 	}
 
     if(gameName == "Hnefatafl"){
-    	$('#Map-size').val('11');
+    	$('#Map-size').val('11x11 (Hnefatafl)');
     	$('#Escape').val('Narożnik');
     	$('#Move-throught-throne').val('Włączone');
     	$('#King-weapon').val('Zabójczy');
@@ -65,7 +73,7 @@ $('input').on('click', function (e) {
     	$('#Starting-Player').val('Atakujący');
     	$('#Shield-wall').val('Włączone');
     }else if(gameName == "Tablut"){
-    	$('#Map-size').val('9');
+    	$('#Map-size').val('9x9 (Tablut)');
     	$('#Escape').val('Krawędź');
     	$('#Move-throught-throne').val('Włączone');
     	$('#King-weapon').val('Zabójczy');
@@ -77,7 +85,7 @@ $('input').on('click', function (e) {
     	$('#Starting-Player').val('Atakujący');
     	$('#Shield-wall').val('Włączone');
     }else if(gameName == "Brandubh"){
-    	$('#Map-size').val('7'); 
+    	$('#Map-size').val('7x7 (Brandubh)'); 
     	$('#Escape').val('Narożnik'); 
     	$('#Move-throught-throne').val('Włączone'); 
     	$('#King-weapon').val('Nieuzbrojony'); 
@@ -89,7 +97,7 @@ $('input').on('click', function (e) {
     	$('#Starting-Player').val('Atakujący');
     	$('#Shield-wall').val('Włączone');
     }else if(gameName == "Ard Ri"){
-    	$('#Map-size').val('7'); 
+    	$('#Map-size').val('7x7 (Ard Ri)'); 
     	$('#Escape').val('Narożnik'); 
     	$('#Move-throught-throne').val('Włączone'); 
     	$('#King-weapon').val('Nieuzbrojony'); 
@@ -101,7 +109,7 @@ $('input').on('click', function (e) {
     	$('#Starting-Player').val('Atakujący');
     	$('#Shield-wall').val('Włączone');
     }else if(gameName == "Tawlbwrdd"){
-        $('#Map-size').val('11'); 
+        $('#Map-size').val('11x11 (Tawlbwrdd)'); 
         $('#Escape').val('Narożnik'); 
         $('#Move-throught-throne').val('Włączone'); 
         $('#King-weapon').val('Zabójczy'); 
@@ -110,6 +118,18 @@ $('input').on('click', function (e) {
         $('#King-surroundings').val('2'); 
         $('#Throne-protecting').val('Wyłączone'); 
         $('#Throne-surroundings').val('4'); 
+        $('#Starting-Player').val('Atakujący');
+        $('#Shield-wall').val('Włączone');
+    }else if(gameName == "Alea Evangelii"){
+        $('#Map-size').val('19x19 (Alea Evangelii)'); 
+        $('#Escape').val('Narożnik'); 
+        $('#Move-throught-throne').val('Włączone'); 
+        $('#King-weapon').val('Zabójczy'); 
+        $('#Throne-return').val('Wyłączone'); 
+        $('#Throne-deadliness').val('Dla obu graczy');  //chyba ze krol siedzi
+        $('#King-surroundings').val('2'); 
+        $('#Throne-protecting').val('Wyłączone'); 
+        $('#Throne-surroundings').val('2'); 
         $('#Starting-Player').val('Atakujący');
         $('#Shield-wall').val('Włączone');
     }

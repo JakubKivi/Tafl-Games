@@ -5,73 +5,97 @@ function onModalOpen(){
 }
 
 function start(){
-    
+
     if(gameName=='Brandubh'){
         size=7;
         winCondition='corner';
-        moveThroughtThrone='enable';
         weaponlessKing='enable'; 
-        ableToBackToThrone='enable';
-        throneIsKilling='both';
         killingKingCondition='two'; 
-        throneProtecting='disable';
-        fourToKillOnThrone='enable';
-        startingPlayer='black';
-    }
-    else if(gameName=='Tablut'){
+
+    }else if(gameName=='Tablut'){
         size=9;
         winCondition='edge';
-        moveThroughtThrone='enable';
-        ableToBackToThrone='disable';
-        throneIsKilling='both';  //tu tez
         killingKingCondition='two'; 
-        throneProtecting='enable';
-        fourToKillOnThrone='enable';
-        startingPlayer='black';
-    }
-    else if(gameName=='Ard Ri'){
+        weaponlessKing='enable';
+
+    }else if(gameName=='Ard Ri'){
         size=7;
         winCondition='corner';
-        moveThroughtThrone='enable';
-        throneIsKilling='both';
         killingKingCondition='two'; 
-        throneProtecting='enable';
-        fourToKillOnThrone='enable';
-        startingPlayer='black';
+        weaponlessKing='disable';
+        
     }else if(gameName=='Tawlbwrdd'){
         size=11;
         winCondition='corner';
-        moveThroughtThrone='enable';
-        throneIsKilling='both';
         killingKingCondition='two'; 
-        throneProtecting='enable';
-        fourToKillOnThrone='enable';
-        startingPlayer='black';
         weaponlessKing='disable';
+
     }else if(gameName=='Hnefatafl'){
         size=11;
         winCondition='corner';
-        moveThroughtThrone='enable';
-        throneIsKilling='both';
         killingKingCondition='four'; 
-        throneProtecting='enable';
-        fourToKillOnThrone='enable';
         weaponlessKing='disable';
-        startingPlayer='black';
-        shieldWall='enable';
-        ableToBackToThrone='enable';
     }
     else if(gameName=='Alea Evangelii'){
         size=19;
         winCondition='corner';
-        moveThroughtThrone='enable';
-        throneIsKilling='both';
         killingKingCondition='two'; 
-        throneProtecting='enable';
-        fourToKillOnThrone='enable';
-        startingPlayer='black';
+        weaponlessKing='disable';
     }else if(gameName=='Custom'){
-        
+        switch(document.getElementById('Map-size').value){
+
+            case "7x7 (Brandubh)":
+                size=7;
+                gameName="Brandubh";
+            break;
+            case "7x7 (Ard Ri)":
+                size=7;
+                gameName="Ard Ri";
+            break;
+            case "9x9 (Tablut)":
+                size=9;
+                gameName="Tablut";
+            break;
+            case "11x11 (Hnefatafl)":
+                size=11;
+                gameName="Hnefatafl";
+            break;
+            case "11x11 (Tawlbwrdd)":
+                size=11;
+                gameName="Tawlbwrdd";
+            break;
+            case "19x19 (Alea Evangelii)":
+                size=11;
+                gameName="Alea Evangelii";
+            break;
+        }
+        switch(document.getElementById('Escape').value){
+
+            case "Krawędź":
+                winCondition='corner';
+            break;
+            case "Narożnik":
+                winCondition='edge';
+            break;
+        }
+        switch(document.getElementById('King-surroundings').value){
+
+            case "2":
+                killingKingCondition='four'; 
+            break;
+            case "4":
+                killingKingCondition='two'; 
+            break;
+        }
+        switch(document.getElementById('King-weapon').value){
+            case "Nieuzbrojony":
+                weaponlessKing='enable';
+            break;
+            case "Zabójczy":
+                weaponlessKing='disable';
+            break;
+        }
+
     }
     startingPlayer=='black'?player=1:player=2;
 
@@ -121,6 +145,7 @@ function update(){
         s.ctx.save();
         s.ctx.globalAlpha=0.85;
         s.ctx.drawImage(blackWin, 0, 0, s.w(), s.h());
+        console.log("Wygral czorny w ", movesB, " ruchach");
         s.ctx.restore();
     }else if(win==2){
         renderMap(size);
@@ -128,6 +153,7 @@ function update(){
         s.ctx.save();
         s.ctx.globalAlpha=0.85;
         s.ctx.drawImage(whiteWin, 0, 0, s.w(), s.h());
+        console.log("Wygral bioly w ", movesW, " ruchach");
         s.ctx.restore();
     }else {
         renderMap(size);
