@@ -1,17 +1,21 @@
 :root {
-  --main-color-dark: #493538;
-  --main-color-bright: #a6827e;
+  --main-color-dark: #000d17;
+  --main-color-bright: #001b30;
+  --main-color-third: #140845;
+  --main-color-font: #A13421;
 }
 
+/*niebieskie tło obraska - */
 
 html, body{
-	background-color: #856066;
-	/*background-image: url(../../assets/img/readmeImage.jpg);*/
+	background-color: var(--main-color-third);
+	background-image: url(../../assets/img/back.png);
 	height: 100%;
 	background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  font-family: "Georgia", serif;
+  font-weight: bold;
 }
 
 .navbar-custom{
@@ -25,13 +29,13 @@ html, body{
 	border:6px solid var(--main-color-dark);
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color: var(--main-color-font);
 	font-family:Impact;
 	font-size:28px;
 	/*font-weight:bold;*/
-	padding:13px 73px;
+	padding:13px 50px;
 	text-decoration:none;
-	text-shadow:-7px 4px 3px #4d3534;
+	text-shadow:-7px 4px 3px var(--main-color-dark);
 	transition: 0.5s;
 }
 .button:hover {
@@ -74,7 +78,7 @@ html, body{
   margin-left: 10px;
   font-weight: bold;
   font-size: 25px;
-  color: white;
+  color: var(--main-color-font);
 }
 
 .modal-header-custom{
@@ -97,7 +101,7 @@ html, body{
   border-right: hidden;
   border-bottom-color: var(--main-color-dark);
   border-width: 3px;
-  color: white;
+  color: var(--main-color-font);
 }
 
 .modal-footer-custom{
@@ -129,9 +133,9 @@ html, body{
   vertical-align: middle;
   text-align: center;
   border-width: 2px;
-  border-color: var(--main-color-dark);
+  border-color: var(--main-color-font);
   display: inline-block;
-  color: var(--main-color-dark);
+  color: var(--main-color-font);
   font-size: 1rem;
   font-weight: bold;
   background-color: #00000000;
@@ -147,7 +151,7 @@ html, body{
 }
 
 .btn-custom-info:hover{
-  background-color: #00000022;
+  background-color: var(--main-color-bright);
   
 }
 
@@ -174,20 +178,20 @@ html, body{
 }
 
 .dropdown-item-custom{
-  color: white;
+  color: var(--main-color-font);
 }
 
 .dropdown-item-custom:hover{
-  color: white;
+  color: var(--main-color-font);
   background-color: var(--main-color-dark);
 }
 .dropdown-item-custom-info{
   text-align: center;
-  color: white;
+  color: var(--main-color-font);
 }
 
 .dropdown-item-custom-info:hover{
-  color: white;
+  color: var(--main-color-font);
   background-color: var(--main-color-bright);
 }
 
@@ -197,59 +201,58 @@ html, body{
 }
 
 .form-control-custom{
-  color: white;
+  color: var(--main-color-font);
   background-color: var(--main-color-bright);
   border-color: var(--main-color-dark); 
   border-width: 3px;
   border-radius: .5em;
   height: 50px;
   font-size: 20px;
+  -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
 }
 
 .form-control-custom:active{
-  color: white;
-  background-color: #a9877f;
+  color: var(--main-color-font);
+  background-color: var(--main-color-dark);
   border-color: var(--main-color-dark); 
   border-width: 3px;
   border-radius: .5em;
   height: 50px;
+  -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
 }
 
 .form-control-custom:valid{
-  color: white;
-  background-color: #a9877f;
+  color: var(--main-color-font);
+  background-color: var(--main-color-dark);
   border-color: var(--main-color-dark); 
   border-width: 3px;
   border-radius: .5em;
   height: 50px;
-}
-
-.form-control-custom:disabled{
-  cursor: no-drop;
-  color: white;
-  background-color: #a9877f;
-  border-color: var(--main-color-dark); 
-  border-width: 3px;
-  border-radius: .5em;
-  height: 50px;
+  -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
 }
 
 .form-control-custom option{
   border-color: var(--main-color-dark); 
   border-width: 1px;
-  color: white;
+  color: var(--main-color-font);
   background-color: var(--main-color-bright);
 }
 
 .link-custom{
-  color: var(--main-color-dark);
+  color: var(--main-color-font);
 }
 
 .link-custom:hover{
   color: var(--main-color-dark);
 }
 .arrow {
-  border-color: white;
+  border-color: var(--main-color-font);
   border: solid;
   border-width: 0 4px 4px 0;
   display: inline-block;
@@ -258,7 +261,7 @@ html, body{
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  color: white;
+  color: var(--main-color-font);
 }
 
 .modal-body-options{
@@ -267,8 +270,10 @@ html, body{
 }
 
 .hint{
-  color: black;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  color: var(--main-color-font);
+  font-weight: bold;
+}
+
+.submenu-custom{
+  background-color: var(--main-color-bright);
 }
