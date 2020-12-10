@@ -6,11 +6,11 @@
 
 html, body{
 	background-color: #856066;
-	/*background-image: url(../../assets/img/readmeImage.jpg);*/
+	background-image: url(../../assets/img/background.png);
 	height: 100%;
 	background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
 
 }
 
