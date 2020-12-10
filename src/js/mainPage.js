@@ -26,33 +26,34 @@ $('input').on('click', function (e) {
 		switch(i+1){
 			case 1:
 				gameName='Hnefatafl';
-                document.getElementById("hint").innerHTML = "<b>Hnefatafl</b> - Najpopularniejszy i najbardziej zbalansowany wariant, grany na zawodach.";
+                document.getElementById("hint").innerHTML = "Hnefatafl<br>Najpopularniejszy i najbardziej zbalansowany wariant, grany na zawodach.";
 			break;
 			case 2:
 				gameName='Tablut';
-                document.getElementById("hint").innerHTML = "<b>Tablut</b> - Do ucieczki wystarczy krawędź planszy, ale wystarczy dwóch do złapania króla";
+                document.getElementById("hint").innerHTML = "Tablut<br>Do ucieczki wystarczy krawędź planszy, ale wystarczy dwóch do złapania króla";
 			break;
 			case 3:
 				gameName='Brandubh';
-                document.getElementById("hint").innerHTML = "<b>Brandubh</b> - Mała plansza. każdy ruch może być kluczowy";
+                document.getElementById("hint").innerHTML = "Brandubh<br>Mała plansza. każdy ruch może być kluczowy";
 			break;
 			case 4:
 				gameName='Ard Ri';
-                document.getElementById("hint").innerHTML = "<b>Ard Ri</b> - Każdy pionek rusza się maksymalnie o jedno pole";
+                document.getElementById("hint").innerHTML = "Ard Ri<br>Każdy pionek rusza się maksymalnie o jedno pole";
 			break;
 			case 5:
 				gameName='Tawlbwrdd';
-                document.getElementById("hint").innerHTML = "<b>Tawlbwrdd</b> - Pamiętaj o słownym sygnalizowaniu ruchów";
+                document.getElementById("hint").innerHTML = "Tawlbwrdd<br>Pamiętaj o słownym sygnalizowaniu ruchów";
 			break;
 			case 6:
 				gameName='Alea Evangelii';
-                document.getElementById("hint").innerHTML = "<b>Alea Evangelii</b> - Olbrzmyia plansza, 16 pól ucieczki";
+                document.getElementById("hint").innerHTML = "Alea Evangelii<br>Olbrzmyia plansza, 16 pól ucieczki";
 			break;
 			case 7:
 				gameName='Custom';
                 hOptionsH=false;
                 $(".modal-body-options").show();
-                document.getElementById("hint").innerHTML = "<b>Własne/b> - twoje własne Szachy Wikingów, sam znasz zasady";
+                
+                document.getElementById("hint").innerHTML = "<b>Własne</b> - twoje własne Szachy Wikingów, sam znasz zasady";
 			break;
 		}
 

@@ -28,6 +28,9 @@ function click(e){
                         clicked.y=mouseCord.y;
                     }else if(canMove(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y)){
                     	move(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y, player);
+                        if(AI != player)
+                            if(surrounding(field, mouseCord.x, mouseCord.y))
+                                win=1;
                     	sound.play();
                         player==1?movesB++:movesW++;
                     	clicked.x=0;

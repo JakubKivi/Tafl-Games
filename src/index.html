@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     	
-    	<title>Tafl Games</title>
+    	<title>Szachy Wikingów</title>
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 
@@ -12,6 +12,7 @@
 		<script src="js/game/functions.js"></script>
 		<script src="js/game/var.js"></script>
 		<script src="js/game/mouse.js"></script>
+		<script src="js/game/surrounding.js"></script>
 		<script src="js/game/click.js"></script>
 		<script src="js/game/movingMechanics.js"></script>
 		<script src="js/game/killingMechanics.js"></script>
@@ -26,11 +27,11 @@
 	</head>
 	<body>
 		<header style="margin-bottom: 1rem">
-			<nav class="navbar navbar-custom navbar-dark navbar-expand-sm">
+			<nav class="navbar navbar-custom navbar-dark navbar-expand-lg">
 				
 				<a class="navbar-brand" href="https://jakubkivi.github.io/Tafl-Games/src/index.html">
 					<img src="../assets/img/logo.png" width="30" height="30" alt="" class="d-inline-block mr-1 align-bottom" >
-					 Sachy wikingów
+					 Szachy wikingów
 				</a>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="drop-down menu">
@@ -40,16 +41,12 @@
 				 <div id="menu" class="collapse navbar-collapse">
 				 	<ul class="navbar-nav ml-auto ">
 				 		<li class="nav-item dropdown">
-				 			<a class="nav-link" href="index.html" aria-expanded="false">Home</a>
-				 		</li>
-				 		<li class="nav-item dropdown">
 				 			<a type="button" class="nav-link" data-toggle="modal" data-target="#exampleModalLong2" aria-expanded="false">Jak się gra?</a>
 				 		</li>
 				 		<li class="nav-item dropdown">
 				 			<a role="button" class="nav-link dropdown-toggle" data-toggle="dropdown" target="_blank" aria-expanded="false" id="submenu" aria-haspopup="true">Autorzy</a>
 
-				 			<div class="dropdown-menu" aria-labelledby="submenu"
-				 			style="background-color: #a6827e;">
+				 			<div class="dropdown-menu submenu-custom" aria-labelledby="submenu">
 				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://jakubkivi.github.io/">Jakub Kivi - Programista</a>
 				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://www.instagram.com/priestoov/">Joanna Butkiewicz - Artystka</a>
 				 			</div>
@@ -76,8 +73,8 @@
 
 			<div class="container">
 				<div class="row">
-					<h2 class="text-center hint" id="hint">
-						<b>Hnefatafl</b> - Najpopularniejszy i najbardziej zbalansowany wariant, grany na zawodach.
+					<h2 class="col-12 text-center hint" id="hint">
+						Hnefatafl <br> Najpopularniejszy i najbardziej zbalansowany wariant, grany na zawodach.
 					</h2>
 				</div>
 			    <div class="row">
@@ -146,7 +143,7 @@
 		        		</button>
 		      		</div>
 		    		<div class="modal-body modal-body-custom">
-		        		<section class="section section-custom"">
+		        		<section class="section section-custom">
 		        			<div class="container">
 			        		<div class="row">
 			        		<div class="col-xl-4">
