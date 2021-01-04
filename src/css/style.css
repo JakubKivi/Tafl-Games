@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'wikikng'; /*a name to be used later*/
+    src: "../../fonts/Heorot-4rLK.ttf"; /*URL to font*/
+}
+
 :root {
   --main-color-dark: #000d17;
   --main-color-bright: #001b30;
@@ -14,7 +19,7 @@ html, body{
 	background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: "Georgia", serif;
+  font-family: "wiking";
   font-weight: bold;
 }
 
