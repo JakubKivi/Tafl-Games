@@ -14,7 +14,7 @@
 
 html, body{
 	background-color: var(--main-color-third);
-	background-image: url(../../assets/img/back.png);
+	background-image: url(../../assets/img/backH.png);
 	height: 100%;
 	background-position: center;
   background-repeat: no-repeat;

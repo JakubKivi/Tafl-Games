@@ -18,13 +18,12 @@ function randomInt(min, max) {
 window.onresize = function(){
     s.init(document.getElementById("game"));
     if(s.w()>s.h()){
-        fieldSize = (s.h()-margin)/size;
+        fieldSize = (s.h()-margin)/(size+1);
     }else{
-
-        fieldSize = (s.w()-margin)/size;
+        fieldSize = (s.w()-margin)/(size+1);
     }
     center = {
-        x: (s.w()-fieldSize)/2,
+        x: (s.w()-(2*fieldSize))/2,
         y: (s.h()-fieldSize)/2
     };
     startCord = {
