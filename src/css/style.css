@@ -1,25 +1,20 @@
-@font-face {
-    font-family: 'wikikng'; /*a name to be used later*/
-    src: "../../fonts/Heorot-4rLK.ttf"; /*URL to font*/
-}
-
 :root {
-  --main-color-dark: #000d17;
-  --main-color-bright: #001b30;
-  --main-color-third: #140845;
-  --main-color-font: #A13421;
+  --main-color-dark: #00161F;
+  --main-color-bright: #11283B;
+  --main-color-third: #11283B;
+  --main-color-font: #B94E37;
 }
 
 /*niebieskie tło obraska - */
 
 html, body{
 	background-color: var(--main-color-third);
-	background-image: url(../../assets/img/backH.png);
+	background-image: url(../../assets/img/background2.png);
 	height: 100%;
 	background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: "wiking";
+  font-family: "Georgia", serif;
   font-weight: bold;
 }
 
