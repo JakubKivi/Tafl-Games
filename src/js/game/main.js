@@ -137,7 +137,7 @@ function update(){
          update();  
     }, 1000 / s.FPS);
     s.ctx.clearRect(0, 0, s.w(), s.h());
-
+    s.ctx.fillStyle = '#000000';
     s.ctx.fillRect(0, 0, s.w(), s.h());
     if(win==1){
         renderMap(size);
