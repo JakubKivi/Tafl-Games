@@ -1,0 +1,19 @@
+{
+    "name": "Tafl-Games",
+    "short_name": "Tafl-Games",
+    "icons": [
+        {
+            "src": "/assets/favicon/android-chrome-192x192.png?v=oLn8OEXGk8",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/favicon/android-chrome-384x384.png?v=oLn8OEXGk8",
+            "sizes": "384x384",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#001b30",
+    "background_color": "#001b30",
+    "display": "standalone"
+}
