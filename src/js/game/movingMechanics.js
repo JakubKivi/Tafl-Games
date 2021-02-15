@@ -53,3 +53,10 @@ function canMove(t,x,y,tx,ty){
     }
     return true;
 }
+
+function isLegalMove(a){
+    for(var i=1; i<size; i++){
+
+    }
+    return 1;
+}

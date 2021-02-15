@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amita&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;700&display=swap');
 
 :root {
   --main-color-dark: #000d17;
@@ -18,8 +16,7 @@ html, body{
 	background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /*font-family: 'Reggae One', cursive;*/
-  font-family: 'Amita', cursive;
+  font-family: 'Grenze Gotisch', cursive;
   font-weight: bold;
 }
 
@@ -35,8 +32,9 @@ html, body{
 	display:inline-block;
 	cursor:pointer;
 	color: var(--main-color-font);
-	font-family: 'Amita', cursive;
-	font-size:28px;
+	font-family: 'Grenze Gotisch', cursive;
+  font-weight: bold;
+	font-size:32px;
 	/*font-weight:bold;*/
 	padding:13px 50px;
 	text-decoration:none;
@@ -53,7 +51,7 @@ html, body{
 }
 
 .button-modal-close{
-  font-size:18px;
+  font-size:20px;
   padding:5px 20px;
 }
 
@@ -164,8 +162,23 @@ html, body{
   
 }
 
-.custom-control-label::before ,.custom-control-label::after{
+.custom-control-label::before{
   width:30px; height:30px;
+  background-color: var(--main-color-dark);
+  border-radius: 100%;
+  border-width: 0px;
+}
+
+.custom-control-label::after{
+  width:30px; height:30px;
+  background-color: var(--main-color-dark);
+  border-radius: 100%;
+  border-width: 0px;
+  color: var(--main-color-dark);
+}
+
+.custom-control-label input:checked ~ .checkmark {
+  background-color: var(--main-color-font);
 }
 
 .custom-control-input:checked~.custom-control-label::before {
@@ -176,10 +189,25 @@ html, body{
 .custom-control-input:checked~.custom-control-label.myColor::before {
   background-color: var(--main-color-dark);
   box-shadow: var(--main-color-bright) 0px 0px 8px; 
+  color: var(--main-color-dark);
 }
 
 .custom-control-input:active{
+  background-color: var(--main-color-dark);
+  box-shadow: var(--main-color-bright) 0px 0px 8px; 
+  color: var(--main-color-dark);
+}
 
+.custom-control-input:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .dropdown-item-custom{
