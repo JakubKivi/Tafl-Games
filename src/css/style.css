@@ -1,7 +1,6 @@
-@font-face {
-    font-family: 'wikikng'; /*a name to be used later*/
-    src: "../../fonts/Heorot-4rLK.ttf"; /*URL to font*/
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita&display=swap');
 
 :root {
   --main-color-dark: #000d17;
@@ -19,7 +18,8 @@ html, body{
 	background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: "wiking";
+  /*font-family: 'Reggae One', cursive;*/
+  font-family: 'Amita', cursive;
   font-weight: bold;
 }
 
@@ -35,7 +35,7 @@ html, body{
 	display:inline-block;
 	cursor:pointer;
 	color: var(--main-color-font);
-	font-family:Impact;
+	font-family: 'Amita', cursive;
 	font-size:28px;
 	/*font-weight:bold;*/
 	padding:13px 50px;
