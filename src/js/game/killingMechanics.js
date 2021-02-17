@@ -21,13 +21,13 @@ function remove(t, c, d, p){
                     if(t[c][d+1]==o && t[c][d+2]==5)t[c][d+1]=0;
     if(d-2>0)       if(t[c][d-1]==o && t[c][d-2]==5)t[c][d-1]=0;
     }
-    if(winCondition=='corner'){
+    if(winCondition=='corner' && (t[c][d]!=3 || weaponlessKing=='disable')){
                 if(t[c+1][d]==o && t[c+2][d]==4)t[c+1][d]=0;
     if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==4)t[c-1][d]=0;
                 if(t[c][d+1]==o && t[c][d+2]==4)t[c][d+1]=0;
     if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==4)t[c][d-1]=0;
     }
-    if(weaponlessKing=='disable'  || t[parseInt(size/2)+1][parseInt(size/2)+1]==3){
+    if(weaponlessKing=='disable'){
     
                      if(t[c+1][d]==o && t[c+2][d]==3)t[c+1][d]=0;
         if(c-2>0)    if(t[c-1][d]==o && t[c-2][d]==3)t[c-1][d]=0;
@@ -83,6 +83,11 @@ function removeKing(t, c, d){
 }
 function escaping(c, d){
     if(winCondition=="edge" && (c==size||d==size||c==1||d==1))win=2;
-    if(winCondition=="corner" && (c==1&&d==1 || c==1&&d==size||
+    else if(winCondition=="corner" && (c==1&&d==1 || c==1&&d==size||
                                   c==size&&d==1 || c==size&&d==size))win=2;
+    else if(winCondition=="cornerB"){
+        if(c<3     && d<3   ||   c<3      &&  d>(size-2)       ||
+        c>(size-2) && d<3   ||   c>size-2 &&  d>(size-2))    win=2;
+
+    }
 }

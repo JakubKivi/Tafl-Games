@@ -10,7 +10,7 @@ var clicked = {
 var gameName='Hnefatafl';           // Brandubh, Tablut, Ard Ri, Tawlbwrdd, Hnefatafl, Alea Evangelii
 var weaponlessKing='disable';    //enable, disable					
 var size=0;                      //by default								/		
-var winCondition='corner';       //edge, corner						/
+var winCondition='corner';       //edge, corner, cornerB						/
 var killingKingCondition='two';  //two, four 						/
 
 
@@ -41,4 +41,5 @@ var firstBoard=1;
 var movesB=0;
 var movesW=0;
 
-var field= createArray(100, 100);  //1 - black, 2 - white, 3 - king, 4 - obstacle
+var field= createArray(100, 100);   //1 - black, 2 - white, 3 - king, 4 - obstacle, 
+									//5 - throne

@@ -1,11 +1,16 @@
 function renderMap(size){
     if(Screen.w>Screen.h){
         for(i=0; i<size; i++){
-            for(j=0; j<=size; j++){
+            for(j=0; j<size; j++){
                 if(winCondition=='corner' && i==0&&j==0)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 else if(winCondition=='corner' && i==size-1&&j==size-1)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 else if(winCondition=='corner' && i==0&&j==size-1)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 else if(winCondition=='corner' && i==size-1&&j==0)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
+                else if(winCondition=='cornerB' &&(
+                    (i<2     && j<2   ||   i<2      &&  j>(size-3)       ||
+                    i>(size-3) && j<2   ||   i>size-3 &&  j>(size-3)))) 
+                        s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
+                
                 else if(i==parseInt(size/2)&&j==parseInt(size/2))s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 else if(i%2==0){
                     if(j%2==0)
@@ -21,12 +26,19 @@ function renderMap(size){
             }
         }  
     }else{
-        for(i=0; i<=size; i++){
+        for(i=0; i<size; i++){
             for(j=0; j<size; j++){
                 if(winCondition=='corner' && i==0&&j==0)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 else if(winCondition=='corner' && i==size-1&&j==size-1)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 else if(winCondition=='corner' && i==0&&j==size-1)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 else if(winCondition=='corner' && i==size-1&&j==0)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
+                else if(winCondition=='cornerB' &&(
+                    (i<2     && j<2   ||   i<2      &&  j>(size-3)       ||
+                    i>(size-3) && j<2   ||   i>size-3 &&  j>(size-3)))) {
+                        s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
+                        console.log("kupa");
+                    }
+                
                 else if(i==parseInt(size/2)&&j==parseInt(size/2))s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 else if(i%2==0){
                     if(j%2==0)
@@ -140,10 +152,20 @@ function putFiguresOnMap(){
    }
    mirroring();
    field[parseInt(size/2)+1][parseInt(size/2)+1]=3;
-   if(winCondition=='corner')field[1][1]=4;
-   if(winCondition=='corner')field[1][size]=4;
-   if(winCondition=='corner')field[size][1]=4;
-   if(winCondition=='corner')field[size][size]=4;
+   if(winCondition=='corner'){
+        field[1][1]=4;
+        field[1][size]=4;
+        field[size][1]=4;
+        field[size][size]=4;
+    }
+    if(winCondition=='cornerB'){
+        for (var i = 0; i <= size; i++) {
+            for (var j = 0; j <= size; j++) {
+                if(i<3     && j<3   ||   i<3      &&  j>(size-2)       ||
+                i>(size-2) && j<3   ||   i>size-2 &&  j>(size-2)) field[i][j]=4;
+            }
+        }
+    }
 }
 
 function renderFig(){

@@ -123,7 +123,7 @@ $('input').on('click', function (e) {
         $('#Shield-wall').val('Włączone');
     }else if(gameName == "Alea Evangelii"){
         $('#Map-size').val('19x19 (Alea Evangelii)'); 
-        $('#Escape').val('Narożnik'); 
+        $('#Escape').val('Narożnik (4 pola)'); 
         $('#Move-throught-throne').val('Włączone'); 
         $('#King-weapon').val('Zabójczy'); 
         $('#Throne-return').val('Wyłączone'); 

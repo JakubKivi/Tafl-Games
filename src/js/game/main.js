@@ -38,7 +38,7 @@ function start(){
     }
     else if(gameName=='Alea Evangelii'){
         size=19;
-        winCondition='corner';
+        winCondition='cornerB';
         killingKingCondition='two'; 
         weaponlessKing='disable';
     }else if(gameName=='Custom'){
@@ -126,13 +126,14 @@ function start(){
     clearFigures(field);
     putFiguresOnMap();
     if(player==1 && AI ==1)AImove(field);
+
+    console.log(field[parseInt(size/2)+1][parseInt(size/2)+1]); 
 }
 
 function update(){
     if(window.location.hash == closedModalHashStateId){
         modal.style.display = "none";
     }
-
     setTimeout(function(){
          update();  
     }, 1000 / s.FPS);

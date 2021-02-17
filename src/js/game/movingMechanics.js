@@ -19,6 +19,12 @@ function canMove(t,x,y,tx,ty){
             if(tx==1 && ty==1)return false;
         }
     }
+    if (winCondition=='cornerB'){
+        if( (tx<3 && ty<3) || (tx<3 && ty>size-2)  || (ty<3 && tx>size-2)  || (tx>size-2 && ty>size-2) ){
+            return 0;
+        }
+
+    }
     if(x!=tx&&y!=ty)return false;
     if(t[x][y]!=3 && (t[tx][ty]==5||t[x][y]==4))return false;
 
@@ -40,13 +46,13 @@ function canMove(t,x,y,tx,ty){
         if(tx>x){
             for(var i=x+1; i<=tx; i++){
                 if(t[i][y]==1 || t[i][y]==2 || t[i][y]==3)return false;
-                if(t[x][y]!=3 && t[x][i]==4)return false;
+                // if(t[x][y]!=3 && t[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && t[i][y]==5)return false;
             }
         }else if(tx<x){
             for(var i=x-1; i>=tx; i--){
                 if(t[i][y]==1 || t[i][y]==2 || t[i][y]==3)return false;
-                if(t[x][y]!=3 && t[x][i]==4)return false;
+                // if(t[x][y]!=3 && t[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && t[i][y]==5)return false;
             }
         }
