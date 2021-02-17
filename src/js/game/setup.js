@@ -36,9 +36,7 @@ function renderMap(size){
                     (i<2     && j<2   ||   i<2      &&  j>(size-3)       ||
                     i>(size-3) && j<2   ||   i>size-3 &&  j>(size-3)))) {
                         s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
-                        console.log("kupa");
                     }
-                
                 else if(i==parseInt(size/2)&&j==parseInt(size/2))s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 else if(i%2==0){
                     if(j%2==0)

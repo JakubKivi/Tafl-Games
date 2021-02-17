@@ -20,11 +20,12 @@ function canMove(t,x,y,tx,ty){
         }
     }
     if (winCondition=='cornerB'){
-        if( (tx<3 && ty<3) || (tx<3 && ty>size-2)  || (ty<3 && tx>size-2)  || (tx>size-2 && ty>size-2) ){
+        if(((tx<3 && ty<3) || (tx<3 && ty>size-2)  || (ty<3 && tx>size-2)  || (tx>size-2 && ty>size-2)) && t[x][y]!=3){
             return 0;
+            console.log("dupa");
         }
-
     }
+
     if(x!=tx&&y!=ty)return false;
     if(t[x][y]!=3 && (t[tx][ty]==5||t[x][y]==4))return false;
 
