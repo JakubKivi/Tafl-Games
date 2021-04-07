@@ -26,6 +26,12 @@ function canMove(t,x,y,tx,ty){
         }
     }
 
+    if(gameName=='Ard Ri'){
+        if(Math.abs(x-tx)>1 || Math.abs(y-ty)>1){
+            return false;
+        }
+    }
+
     if(x!=tx&&y!=ty)return false;
     if(t[x][y]!=3 && (t[tx][ty]==5||t[x][y]==4))return false;
 

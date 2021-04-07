@@ -316,3 +316,8 @@ html, body{
 .navbar-bottom-custom{
   background-color: transparent;
 }
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}

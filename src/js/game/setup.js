@@ -106,6 +106,22 @@ function putFiguresOnMap(){
                 if((i==4 && j==1) || (j==4 && i==1))field[i][j]=1;
             }
         }
+    }else if(gameName=='Ard Ri'){
+        for(i=1; i<=parseInt(size/2)+1; i++){
+            for(j=1; j<=parseInt(size/2)+1; j++){
+                if(j>2 && i==1){
+                    field[i][j]=1;
+                }else if(i==2 && j==4){
+                    field[i][j]=1;
+                }else if(i>2 && j==1){
+                    field[i][j]=1;
+                }else if(i==4 && j==2){
+                    field[i][j]=1;
+                }else if(i>2 && j>2){
+                    field[i][j]=2;
+                }
+            }
+        }
    }else if(gameName=='Tawlbwrdd'){
         for(i=1; i<=parseInt(size/2)+1; i++){
             for(j=1; j<=parseInt(size/2)+1; j++){

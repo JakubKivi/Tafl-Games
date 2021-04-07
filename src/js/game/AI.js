@@ -27,8 +27,6 @@ function AImove(t, p, depth){
 			if(t[i][j]==p || (t[i][j]==3 && p==2)){  //jeśli jest twoje
 				for(var k=1; k<=size; k++){ //przejrzyj wszystkie pola na które może się ruszyć
 					if(k!=i && t[k][j]==0 && canMove(nfield, i, j, k, j)){   //poziomo
-						if(depth==2)console.log("myśl: "+ i, j, k, j);
-						else console.log("głębsza myśl: "+ i, j, k, j);
 						move(nfield, i, j, k, j, p);
 						if(depth>1){
 							var pp;
@@ -36,12 +34,10 @@ function AImove(t, p, depth){
 							var aa = new ruch();
 							aa=AImove(nfield, pp, depth-1);
 				            if(aa.x!=0){
-				            	console.log("response: "+aa.x,aa.y,aa.tx,aa.ty);
 				                move(nfield, aa.x, aa.y, aa.tx, aa.ty);
 				            }else console.log('ai ma totalny problem w głebi');
 						}
 						var x=AIcount(nfield, t);
-						console.log(depth +' wartość po ruchu: '+ x)
 						if(p==1){
 							if(x>bestMove.value){
 								bestMove.x=i;
@@ -49,7 +45,8 @@ function AImove(t, p, depth){
 								bestMove.tx=k;
 								bestMove.ty=j;
 								bestMove.value=x;
-								console.log("my new best move "+ bestMove.value);
+								
+								//
 							}
 						}else{
 							if(x<bestMove.value){
@@ -58,13 +55,13 @@ function AImove(t, p, depth){
 								bestMove.tx=k;
 								bestMove.ty=j;
 								bestMove.value=x;
-								console.log("my new best response "+ bestMove.value);
+								console.log("my new best move "+ bestMove.value, bestMove.x, bestMove.y, bestMove.tx, bestMove.ty);
+								console.log("response "+ aa.value, aa.x, aa.y, aa.tx, aa.ty);
+								//console.log("my new best response "+ bestMove.value, bestMove.x, bestMove.y, bestMove.tx, bestMove.ty);
 							}
 						}
 					}
 					if(k!=j && t[i][k]==0 && canMove(nfield, i, j, i, k)){   //pionowo
-						if(depth==2)console.log("myśl:"+ i, j, i, k);
-						else console.log("głębsza myśl: "+ i, j, i, k);
 						move(nfield, i, j, i, k, p);
 						if(depth>1){
 							var pp;
@@ -72,12 +69,10 @@ function AImove(t, p, depth){
 							var aa = new ruch();
 							aa=AImove(nfield, pp, depth-1);
 				            if(aa.x!=0){
-				            	console.log("response: "+aa.x,aa.y,aa.tx,aa.ty);
 				                move(nfield, aa.x, aa.y, aa.tx, aa.ty);
 				            }else console.log('ai ma totalny problem głebi');
 						}
 						var x=AIcount(nfield, t);
-						console.log(depth +' wartość po ruchu: '+ x)
 						if(p==1){
 							if(x>bestMove.value){
 								bestMove.x=i;
@@ -85,7 +80,8 @@ function AImove(t, p, depth){
 								bestMove.tx=i;
 								bestMove.ty=k;
 								bestMove.value=x;
-								console.log("my new best move "+ bestMove.value);
+								
+								
 							}
 						}else{
 							if(x<bestMove.value){
@@ -94,7 +90,9 @@ function AImove(t, p, depth){
 								bestMove.tx=i;
 								bestMove.ty=k;
 								bestMove.value=x;
-								console.log("my new best response "+ bestMove.value);
+								console.log("my new best move "+ bestMove.value, bestMove.x, bestMove.y, bestMove.tx, bestMove.ty);
+								console.log("response "+ aa.value, aa.x, aa.y, aa.tx, aa.ty);
+								//console.log("my new best response "+ bestMove.value, bestMove.x, bestMove.y, bestMove.tx, bestMove.ty);
 							}
 						}
 						

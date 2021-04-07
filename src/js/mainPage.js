@@ -156,17 +156,10 @@ var btn = document.getElementById("playButton");
 resumeBtn.onclick =function(){
 	window.location.hash = openModalHashStateId;
 	modal.style.display = "block";
-
+    navb.style.display = "none";
 }
 
-function handleBackPress(event) {
-    event.preventDefault();
-    event.stopPropagation();
-	resumeBtn.style.display = "inline-block";
-    $('.modal').modal('hide');
-    $('.modal-backdrop').remove();
-    
-}
+
 
 $(function () {
   $('[data-toggle="popover"]').popover()
@@ -181,16 +174,21 @@ $('body').on('click', function (e) {
     });
 });
 
+var navb = document.getElementById("navhide");
+navb.style.display = "block";
 
 btn.onclick = function() {
 	window.location.hash = openModalHashStateId;
 	onModalOpen();
+    navb.style.display = "none";
 	modal.style.display = "block";
+
 }
 
 document.addEventListener("keydown", ({key}) => {
     if (key === "Escape"&&window.location.hash == openModalHashStateId){
         modal.style.display = "none";
+        navb.style.display = "block";
         resumeBtn.style.display = "inline-block";
         window.location.hash = closedModalHashStateId;
     }
@@ -198,3 +196,12 @@ document.addEventListener("keydown", ({key}) => {
 
 
 
+function handleBackPress(event) {
+    console.log("dupa");
+    event.preventDefault();
+    event.stopPropagation();
+    resumeBtn.style.display = "inline-block";
+    $('.modal').modal('hide');
+    $('.modal-backdrop').remove();
+    navb.style.display = "block"; 
+}
