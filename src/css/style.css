@@ -305,7 +305,7 @@ html, body{
 .hint{
   color: var(--main-color-font);
   font-weight: bold;
-  font-size:6vh;
+  font-size:9vmin;
   text-shadow:-7px 4px 3px var(--main-color-dark);
 }
 
