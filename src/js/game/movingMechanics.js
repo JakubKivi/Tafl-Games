@@ -1,3 +1,14 @@
+function escaping(c, d){
+    if(winCondition=="edge" && (c==size||d==size||c==1||d==1))win=2;
+    else if(winCondition=="corner" && (c==1&&d==1 || c==1&&d==size||
+                                  c==size&&d==1 || c==size&&d==size))win=2;
+    else if(winCondition=="cornerB"){
+        if(c<3     && d<3   ||   c<3      &&  d>(size-2)       ||
+        c>(size-2) && d<3   ||   c>size-2 &&  d>(size-2))    win=2;
+
+    }
+}
+
 function move(t, a, b, c, d, e){
     if(t[a][b]==3)escaping(c, d);
     var buf=t[a][b];
