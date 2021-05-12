@@ -34,3 +34,15 @@ window.onresize = function(){
     mouseX=-1000;
     mouseY=-1000;
 }
+
+function max(a,b){
+    var r;
+    a>b?r= a:r= b;
+    return r;
+}
+
+function min(a,b){
+    var r;
+    a<b?r= a:r= b;
+    return r;
+}

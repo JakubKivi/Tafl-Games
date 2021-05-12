@@ -22,6 +22,7 @@ function move(t, a, b, c, d, e){
 }
 
 function canMove(t,x,y,tx,ty){
+    if(x==tx&&y==ty)return false;
     if(winCondition=='corner'){
         if(t[x][y]!=3){
             if(tx==size && ty==size)return false;

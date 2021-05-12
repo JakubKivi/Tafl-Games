@@ -162,7 +162,7 @@ function update(){
         renderFig();
 		if(player==AI){
             var a = new ruch();
-            a=AImove(field, AI, 2);
+            a=AImove(field, AI, 2, -Infinity, Infinity);
             if(a.x!=0){
                 move(field, a.x, a.y, a.tx, a.ty, AI);
                 console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);

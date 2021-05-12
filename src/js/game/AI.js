@@ -8,7 +8,7 @@ class ruch {
   	}
 }
 
-function AImove(t, p, depth){
+function AImove(t, p, depth, alpha, beta){
 	var nfield= createArray(100, 100);
 	clearFigures(nfield);
 
@@ -28,14 +28,19 @@ function AImove(t, p, depth){
 		for(var j=1; j<=size; j++){
 			if(nfield[i][j]==p || (nfield[i][j]==3 && p==2)){  //jeśli jest twoje
 				for(var k=1; k<=size; k++){ //przejrzyj wszystkie pola na które może się ruszyć
-					if(k!=i && nfield[k][j]==0 && canMove(nfield, i, j, k, j)){   //poziomo
+					if(canMove(nfield, i, j, k, j)){   //poziomo
 						move(nfield, i, j, k, j, p);
-						if(depth>1){
-							var res=AImove(nfield, op, depth-1);
-							move(nfield, res.x, res.y, res.tx, res.ty, op);
+						if(!((AIcount(nfield)>1000&&p==1)||(AIcount(nfield)<-1000&&p==2))){
+							if(depth>1){
+								var res=AImove(nfield, op, depth-1, alpha, beta);
+								move(nfield, res.x, res.y, res.tx, res.ty, op);
+							}
 						}
 						var x=AIcount(nfield);
 						AIresume(nfield, t);
+
+						
+
 						if((p==1&&x>bestMove.value)||(p==2&&x<bestMove.value)){
 							bestMove.x=i;
 							bestMove.y=j;
@@ -43,12 +48,25 @@ function AImove(t, p, depth){
 							bestMove.ty=j;
 							bestMove.value=x;
 						}
+						// if(p==2){
+						//  	beta=min(beta, x);
+						// 	if(beta<=alpha){
+						// 		console.log("cut");
+						// 	}
+						// }else{
+						// 	alpha=max(alpha, x);
+						// 	if(beta<=alpha){
+						// 		console.log("cut");
+						// 	}
+						// }
 					}
-					if(k!=j && t[i][k]==0 && canMove(nfield, i, j, i, k)){   //pionowo
+					if(canMove(nfield, i, j, i, k)){   //pionowo
 						move(nfield, i, j, i, k, p);
-						if(depth>1){
-							var res=AImove(nfield, op, depth-1);
-							move(nfield, res.x, res.y, res.tx, res.ty, op);
+						if(!((AIcount(nfield)>1000&&p==1)||(AIcount(nfield)<-1000&&p==2))){
+							if(depth>1){
+								var res=AImove(nfield, op, depth-1, alpha, beta);
+								move(nfield, res.x, res.y, res.tx, res.ty, op);
+							}
 						}
 						var x=AIcount(nfield);
 						AIresume(nfield, t);
@@ -59,7 +77,17 @@ function AImove(t, p, depth){
 							bestMove.ty=k;
 							bestMove.value=x;
 						}
-						
+						// if(p==2){
+						//  	beta=min(beta, x);
+						// 	if(beta<=alpha){
+						// 		console.log("cut");
+						// 	}
+						// }else{
+						// 	alpha=max(alpha, x);
+						// 	if(beta<=alpha){
+						// 		console.log("cut");
+						// 	}
+						// }
 					}
 				}
 			}
@@ -89,13 +117,10 @@ function AIcount(t){
     	}
     }
     if(win==1){
-    	value=+Infinity;
-    	console.log("widze wygranko czarnego");
+    	value=10000;
     }
     if(win==2){
-    	value=-Infinity;
-    	console.log("widze wygranko bialego");
+    	value=-10000;
     }
-
 	return value;
 }
