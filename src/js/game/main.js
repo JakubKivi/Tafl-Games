@@ -161,12 +161,17 @@ function update(){
         if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
         renderFig();
         animate(ax,ay,atarx,atary);
-        setTimeout(aii++, 200);
+        if(atarx!=0)setTimeout(aiiIncrease(), 10);
         
-		if(player==AI){
+		if(player==AI&&atarx==0){
             var a = new ruch();
             a=AImove(field, AI, 2, -Infinity, Infinity);
             if(a.x!=0){
+                ap=field[a.x][a.y];
+                atarx=a.tx;
+                atary=a.ty;
+                ax=a.x;
+                ay=a.y;
                 move(field, a.x, a.y, a.tx, a.ty, AI);
                 console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);
                 player==1?player=2:player=1;
