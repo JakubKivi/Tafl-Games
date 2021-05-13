@@ -23,6 +23,7 @@ var shieldWall='disable';        //disable, enable
 var AI=2;  						 //0, 1-black, 2 - white		
 
 // czy na krawedzi da sie zabic zmienna	
+var zbici = createArray(100,100);
 
 var ap;		
 var aii;

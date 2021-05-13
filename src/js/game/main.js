@@ -166,6 +166,7 @@ function update(){
 		if(player==AI&&atarx==0){
             var a = new ruch();
             a=AImove(field, AI, 2, -Infinity, Infinity);
+            clearFigures(zbici);
             if(a.x!=0){
                 ap=field[a.x][a.y];
                 atarx=a.tx;

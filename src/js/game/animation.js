@@ -1,5 +1,13 @@
 function animate(x,y,tx,ty){
 	if(x!=0){
+		for(i=1; i<=size; i++){
+        	for(j=1; j<=size; j++){
+        		if(zbici[i][j]==1)s.ctx.drawImage(blackPawnClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+                else if(zbici[i][j]==2)s.ctx.drawImage(whitePawnClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+                else if(zbici[i][j]==3)s.ctx.drawImage(kingClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+        	}
+        }
+
 		if(tx==x){
 			if(ty>y){
 				if((y*fieldSize+aii)<=ty*fieldSize){
@@ -54,6 +62,8 @@ function animate(x,y,tx,ty){
 				}
 			}
 		}
+	}else{
+		clearFigures(zbici);
 	}
 }
 

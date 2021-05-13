@@ -4,35 +4,95 @@ function remove(t, c, d, p){
 
     //simple killing figures
     if(weaponlessKing=='disable'){  
-                    if(t[c+1][d]==o && t[c+2][d]==p)t[c+1][d]=0;
-        if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==p)t[c-1][d]=0;
-                    if(t[c][d+1]==o && t[c][d+2]==p)t[c][d+1]=0;
-        if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==p)t[c][d-1]=0;
+                    if(t[c+1][d]==o && t[c+2][d]==p){
+                        zbici[c+1][d]=t[c+1][d];
+                        t[c+1][d]=0;
+                    }
+        if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==p){
+                        zbici[c-1][d]=t[c-1][d];
+                        t[c-1][d]=0;
+                    }
+                    if(t[c][d+1]==o && t[c][d+2]==p){
+                        zbici[c][d+1]=t[c][d+1];
+                        t[c][d+1]=0;
+                    }
+        if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==p){
+                        zbici[c][d-1]=t[c][d-1];
+                        t[c][d-1]=0;
+                    }
     }else if(t[c][d]!=3){       //jeśli król nie moze bic to reszta moze oczywiscie 
-                    if(t[c+1][d]==o && t[c+2][d]==p)t[c+1][d]=0;
-        if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==p)t[c-1][d]=0;
-                    if(t[c][d+1]==o && t[c][d+2]==p)t[c][d+1]=0;
-        if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==p)t[c][d-1]=0;
+                    if(t[c+1][d]==o && t[c+2][d]==p){
+                        zbici[c+1][d]=t[c+1][d];
+                        t[c+1][d]=0;
+                    }
+        if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==p){
+                        zbici[c-1][d]=t[c-1][d];
+                        t[c-1][d]=0;
+                    }
+                    if(t[c][d+1]==o && t[c][d+2]==p){
+                        zbici[c][d+1]=t[c][d+1];
+                        t[c][d+1]=0;
+                    }
+        if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==p){
+                        zbici[c][d-1]=t[c][d-1];
+                        t[c][d-1]=0;
+                    }
 
     }
     if(throneIsKilling=='both'){
-                    if(t[c+1][d]==o && t[c+2][d]==5 )t[c+1][d]=0;
-    if(c-2>0)       if(t[c-1][d]==o && t[c-2][d]==5)t[c-1][d]=0;
-                    if(t[c][d+1]==o && t[c][d+2]==5)t[c][d+1]=0;
-    if(d-2>0)       if(t[c][d-1]==o && t[c][d-2]==5)t[c][d-1]=0;
+                    if(t[c+1][d]==o && t[c+2][d]==5 ){
+                        zbici[c+1][d]=t[c+1][d];
+                        t[c+1][d]=0;
+                    }
+    if(c-2>0)       if(t[c-1][d]==o && t[c-2][d]==5){
+                        zbici[c-1][d]=t[c-1][d];
+                        t[c-1][d]=0;
+                    }
+                    if(t[c][d+1]==o && t[c][d+2]==5){
+                        zbici[c][d+1]=t[c][d+1];
+                        t[c][d+1]=0;
+                    }
+    if(d-2>0)       if(t[c][d-1]==o && t[c][d-2]==5){
+                        zbici[c][d-1]=t[c][d-1];
+                        t[c][d-1]=0;
+                    }
     }
     if(winCondition=='corner' && (t[c][d]!=3 || weaponlessKing=='disable')){
-                if(t[c+1][d]==o && t[c+2][d]==4)t[c+1][d]=0;
-    if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==4)t[c-1][d]=0;
-                if(t[c][d+1]==o && t[c][d+2]==4)t[c][d+1]=0;
-    if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==4)t[c][d-1]=0;
+                if(t[c+1][d]==o && t[c+2][d]==4){
+                    zbici[c+1][d]=t[c+1][d];
+                    t[c+1][d]=0;
+                }
+    if(c-2>0)   if(t[c-1][d]==o && t[c-2][d]==4){
+                    zbici[c-1][d]=t[c-1][d];
+                    t[c-1][d]=0;
+                }
+                if(t[c][d+1]==o && t[c][d+2]==4){
+                    zbici[c][d+1]=t[c][d+1];
+                    t[c][d+1]=0;
+                }
+    if(d-2>0)   if(t[c][d-1]==o && t[c][d-2]==4){
+                    zbici[c][d-1]=t[c][d-1];
+                    t[c][d-1]=0;
+                }
     }
     if(weaponlessKing=='disable'){
     
-                     if(t[c+1][d]==o && t[c+2][d]==3)t[c+1][d]=0;
-        if(c-2>0)    if(t[c-1][d]==o && t[c-2][d]==3)t[c-1][d]=0;
-                     if(t[c][d+1]==o && t[c][d+2]==3)t[c][d+1]=0;
-        if(d-2>0)    if(t[c][d-1]==o && t[c][d-2]==3)t[c][d-1]=0; //to jest że się zabija o króla
+                     if(t[c+1][d]==o && t[c+2][d]==3){
+                        zbici[c+1][d]=t[c+1][d];
+                        t[c+1][d]=0;
+                    }
+        if(c-2>0)    if(t[c-1][d]==o && t[c-2][d]==3){
+                        zbici[c-1][d]=t[c-1][d];
+                        t[c-1][d]=0;
+                    }
+                     if(t[c][d+1]==o && t[c][d+2]==3){
+                        zbici[c][d+1]=t[c][d+1];
+                        t[c][d+1]=0;
+                    }
+        if(d-2>0)    if(t[c][d-1]==o && t[c][d-2]==3){
+                        zbici[c][d-1]=t[c][d-1];
+                        t[c][d-1]=0;
+                    } //to jest że się zabija o króla
     
     }
 }
