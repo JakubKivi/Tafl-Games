@@ -80,6 +80,8 @@ $('input').on('click', function (e) {
 				gameName='Custom';
                 hOptionsH=false;
                 $(".modal-body-options").show();
+
+                
                 
                 document.getElementById("hint").innerHTML = "<b>Własne</b> - twoje własne Szachy Wikingów, sam znasz zasady";
 			break;

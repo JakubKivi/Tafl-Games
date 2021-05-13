@@ -12,7 +12,7 @@ function escaping(c, d){
 function move(t, a, b, c, d, e){
     if(t[a][b]==3)escaping(c, d);
     var buf=t[a][b];
-    if(buf==3 && a==parseInt(size/2)+1 && b==parseInt(size/2)+1)t[a][b]=5;
+    if(buf==3 && a==parseInt(size/2)+1 && b==parseInt(size/2)+1)t[a][b]=5;  //jesli krol schodzi ztronu
     else t[a][b]=0;
     t[c][d]=buf;
     if(e==1 && (t[c+1][d]==3 || t[c-1][d]==3 ||

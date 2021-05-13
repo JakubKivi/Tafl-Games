@@ -144,7 +144,7 @@ function update(){
         renderMap(size);
         renderFig();
         s.ctx.save();
-        s.ctx.globalAlpha=0.85;
+        s.ctx.globalAlpha=0.60;
         s.ctx.drawImage(blackWin, 0, 0, s.w(), s.h());
         console.log("Wygral czorny w ", movesB, " ruchach");
         s.ctx.restore();
@@ -152,7 +152,7 @@ function update(){
         renderMap(size);
         renderFig();
         s.ctx.save();
-        s.ctx.globalAlpha=0.85;
+        s.ctx.globalAlpha=0.60;
         s.ctx.drawImage(whiteWin, 0, 0, s.w(), s.h());
         console.log("Wygral bioly w ", movesW, " ruchach");
         s.ctx.restore();
@@ -160,6 +160,9 @@ function update(){
         renderMap(size);
         if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
         renderFig();
+        animate(ax,ay,atarx,atary);
+        setTimeout(aii++, 200);
+        
 		if(player==AI){
             var a = new ruch();
             a=AImove(field, AI, 2, -Infinity, Infinity);
