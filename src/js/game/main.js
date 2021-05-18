@@ -16,13 +16,13 @@ function start(){
         size=9;
         winCondition='edge';
         killingKingCondition='two'; 
-        weaponlessKing='enable';
+        weaponlessKing='disable';
 
     }else if(gameName=='Ard Ri'){
         size=7;
         winCondition='corner';
         killingKingCondition='two'; 
-        weaponlessKing='disable';
+        weaponlessKing='enable';
         
     }else if(gameName=='Tawlbwrdd'){
         size=11;

@@ -94,6 +94,7 @@ function AImove(t, p, depth, alpha, beta){
 		}
 	}
  	return bestMove;
+ 	
 }
 
 function AIresume(t, tt){
