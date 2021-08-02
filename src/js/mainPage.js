@@ -14,6 +14,7 @@ $('#hOptions').on('click', function(e){
 
 $('input').on('click', function (e) {
 	var ele = document.getElementsByName('rd'); 
+
               
     for(i = 0; i < ele.length; i++) {
         if(ele[i].checked) {
@@ -179,6 +180,7 @@ navb.style.display = "block";
 
 btn.onclick = function() {
 	window.location.hash = openModalHashStateId;
+    console.log(mem);
 	onModalOpen();
     navb.style.display = "none";
 	modal.style.display = "block";
@@ -205,3 +207,7 @@ function handleBackPress(event) {
     $('.modal-backdrop').remove();
     navb.style.display = "block"; 
 }
+
+window.onload = function(){
+    if(mem==);
+};

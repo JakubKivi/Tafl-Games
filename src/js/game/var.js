@@ -6,6 +6,7 @@ var clicked = {
     x:0,
     y:0
 };
+var mem='nie pamietam!';
 
 var gameName='Brandubh';           // Brandubh, Tablut, Ard Ri, Tawlbwrdd, Hnefatafl, Alea Evangelii
 var weaponlessKing='disable';    //enable, disable					
