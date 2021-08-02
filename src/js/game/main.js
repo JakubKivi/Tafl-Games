@@ -16,13 +16,13 @@ function start(){
         size=9;
         winCondition='edge';
         killingKingCondition='two'; 
-        weaponlessKing='enable';
+        weaponlessKing='disable';
 
     }else if(gameName=='Ard Ri'){
         size=7;
         winCondition='corner';
         killingKingCondition='two'; 
-        weaponlessKing='disable';
+        weaponlessKing='enable';
         
     }else if(gameName=='Tawlbwrdd'){
         size=11;
@@ -144,7 +144,7 @@ function update(){
         renderMap(size);
         renderFig();
         s.ctx.save();
-        s.ctx.globalAlpha=0.85;
+        s.ctx.globalAlpha=0.60;
         s.ctx.drawImage(blackWin, 0, 0, s.w(), s.h());
         console.log("Wygral czorny w ", movesB, " ruchach");
         s.ctx.restore();
@@ -152,7 +152,7 @@ function update(){
         renderMap(size);
         renderFig();
         s.ctx.save();
-        s.ctx.globalAlpha=0.85;
+        s.ctx.globalAlpha=0.60;
         s.ctx.drawImage(whiteWin, 0, 0, s.w(), s.h());
         console.log("Wygral bioly w ", movesW, " ruchach");
         s.ctx.restore();
@@ -160,10 +160,19 @@ function update(){
         renderMap(size);
         if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
         renderFig();
-		if(player==AI){
+        animate(ax,ay,atarx,atary);
+        if(atarx!=0)setTimeout(aiiIncrease(), 10);
+        
+		if(player==AI&&atarx==0){
             var a = new ruch();
-            a=AImove(field, AI, 2);
+            a=AImove(field, AI, 2, -Infinity, Infinity);
+            clearFigures(zbici);
             if(a.x!=0){
+                ap=field[a.x][a.y];
+                atarx=a.tx;
+                atary=a.ty;
+                ax=a.x;
+                ay=a.y;
                 move(field, a.x, a.y, a.tx, a.ty, AI);
                 console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);
                 player==1?player=2:player=1;

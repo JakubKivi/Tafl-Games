@@ -1,7 +1,18 @@
+function escaping(c, d){
+    if(winCondition=="edge" && (c==size||d==size||c==1||d==1))win=2;
+    else if(winCondition=="corner" && (c==1&&d==1 || c==1&&d==size||
+                                  c==size&&d==1 || c==size&&d==size))win=2;
+    else if(winCondition=="cornerB"){
+        if(c<3     && d<3   ||   c<3      &&  d>(size-2)       ||
+        c>(size-2) && d<3   ||   c>size-2 &&  d>(size-2))    win=2;
+
+    }
+}
+
 function move(t, a, b, c, d, e){
     if(t[a][b]==3)escaping(c, d);
     var buf=t[a][b];
-    if(buf==3 && a==parseInt(size/2)+1 && b==parseInt(size/2)+1)t[a][b]=5;
+    if(buf==3 && a==parseInt(size/2)+1 && b==parseInt(size/2)+1)t[a][b]=5;  //jesli krol schodzi ztronu
     else t[a][b]=0;
     t[c][d]=buf;
     if(e==1 && (t[c+1][d]==3 || t[c-1][d]==3 ||
@@ -12,6 +23,7 @@ function move(t, a, b, c, d, e){
 }
 
 function canMove(t,x,y,tx,ty){
+    if(x==tx&&y==ty)return false;
     if(winCondition=='corner'){
         if(t[x][y]!=3){
             if(tx==size && ty==size)return false;

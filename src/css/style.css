@@ -93,6 +93,8 @@ html, body{
   cursor: pointer;
 }
 
+
+
 .modal-custom{
   
 }
@@ -139,12 +141,13 @@ html, body{
   border-color: var(--main-color-font);
   display: inline-block;
   color: var(--main-color-font);
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   background-color: #00000000;
   -webkit-border-radius:.75em;
   -moz-border-radius:.75em;
   border-radius:.75em;
+  line-height: 2rem;
 }
 .btn-custom-info p{
   padding-top: 0px;
@@ -154,7 +157,7 @@ html, body{
 }
 
 .btn-custom-info:hover{
-  background-color: var(--main-color-bright);
+  background-color: var(--main-color-font);
   
 }
 
@@ -285,16 +288,18 @@ html, body{
   color: var(--main-color-dark);
 }
 .arrow {
-  border-color: var(--main-color-font);
+  border-color: #F15441FF;
   border: solid;
   border-width: 0 4px 4px 0;
   display: inline-block;
   padding: 3px;
+  opacity: 0%;
 }
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  color: var(--main-color-font);
+  color: #F15441FF;
+  opacity: 0%;
 }
 
 .modal-body-options{

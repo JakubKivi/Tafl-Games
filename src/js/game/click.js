@@ -27,6 +27,12 @@ function click(e){
                         clicked.x=mouseCord.x;
                         clicked.y=mouseCord.y;
                     }else if(canMove(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y)){
+                        ap=field[clicked.x][clicked.y];
+                        atarx=mouseCord.x;
+                        atary=mouseCord.y;
+                        ax=clicked.x;
+                        ay=clicked.y;
+
                     	move(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y, player);
                         if(AI != player)
                             if(surrounding(field, mouseCord.x, mouseCord.y))

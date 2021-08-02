@@ -8,7 +8,7 @@ var clicked = {
 };
 var mem='nie pamietam!';
 
-var gameName='Brandubh';           // Brandubh, Tablut, Ard Ri, Tawlbwrdd, Hnefatafl, Alea Evangelii
+var gameName='Hnefatafl';           // Brandubh, Tablut, Ard Ri, Tawlbwrdd, Hnefatafl, Alea Evangelii
 var weaponlessKing='disable';    //enable, disable					
 var size=0;                      //by default								/		
 var winCondition='corner';       //edge, corner, cornerB						/
@@ -21,9 +21,17 @@ var throneIsKilling='both';      //both, attackersOnly				/
 var fourToKillOnThrone='enable'; //enable, disable					/
 var startingPlayer='black';		 //black, white					/	
 var shieldWall='disable';        //disable, enable				
-var AI=0;  						 //0, 1-black, 2 - white		
+var AI=2;  						 //0, 1-black, 2 - white		
 
-// czy na krawedzi da sie zabic zmienna			
+// czy na krawedzi da sie zabic zmienna	
+var zbici = createArray(100,100);
+
+var ap;		
+var aii;
+var ax;
+var ay;
+var atarx;
+var atary;
 
 var margin =0;
 

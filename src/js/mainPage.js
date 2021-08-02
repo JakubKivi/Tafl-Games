@@ -2,17 +2,45 @@ var ele = document.getElementsByName('rd');
 
 var hOptionsH = true;
 $(".modal-body-options").hide();
+
+$('#btn-info-zasady').hover(function(){
+    $(this).addClass('active');
+}, function(){
+    $(this).removeClass('active');
+})
+
 $('#hOptions').on('click', function(e){
-    if(hOptionsH){
-        hOptionsH=false;
-        $(".modal-body-options").show();
-    }else{
-        hOptionsH=true;
-        $(".modal-body-options").hide();
+
+    if(!$('#btn-info-zasady').hasClass('active'))  {
+        if(hOptionsH){
+            hOptionsH=false;
+            $(".modal-body-options").show();
+        }else{
+            hOptionsH=true;
+            $(".modal-body-options").hide();
+        }
     }
 });
 
 $('input').on('click', function (e) {
+    var ai = document.getElementsByName('ai'); 
+
+    for (var i = 0, length = ai.length; i < length; i++) {
+        if (ai[i].checked) {
+            switch(i+1){
+                case 1:
+                    AI=0;
+                break;
+                case 2:
+                    AI=1;
+                break;
+                case 3:
+                    AI=2;
+                break;
+            }
+        }
+    }
+
 	var ele = document.getElementsByName('rd'); 
 
               
@@ -53,6 +81,8 @@ $('input').on('click', function (e) {
 				gameName='Custom';
                 hOptionsH=false;
                 $(".modal-body-options").show();
+
+                
                 
                 document.getElementById("hint").innerHTML = "<b>Własne</b> - twoje własne Szachy Wikingów, sam znasz zasady";
 			break;
