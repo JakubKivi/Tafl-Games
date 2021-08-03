@@ -22,6 +22,21 @@ $('#hOptions').on('click', function(e){
     }
 });
 
+$('.opt').on('click', function(e){
+    // console.log("pupka");
+    // $('#rd_8').attr('checked', true);
+
+    // gameName='Custom';
+    // hOptionsH=false;
+    // $(".modal-body-options").show();
+
+    
+    
+    // document.getElementById("hint").innerHTML = "<b>Własne</b> - twoje własne Szachy Wikingów, sam znasz zasady";
+
+
+});
+
 $('input').on('click', function (e) {
     var ai = document.getElementsByName('ai'); 
 
@@ -238,6 +253,3 @@ function handleBackPress(event) {
     navb.style.display = "block"; 
 }
 
-window.onload = function(){
-    if(mem==);
-};

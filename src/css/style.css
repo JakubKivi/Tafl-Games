@@ -236,14 +236,13 @@ html, body{
   border-bottom-width: 3px;
 }
 
-.form-control-custom{
+.form-control-custom:disabled{
   color: var(--main-color-font);
-  background-color: var(--main-color-bright);
+  background-color: var(--main-color-dark);
   border-color: var(--main-color-dark); 
   border-width: 3px;
   border-radius: .5em;
   height: 50px;
-  font-size: 20px;
   -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
