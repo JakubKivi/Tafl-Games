@@ -325,3 +325,7 @@ html, body{
   float: none;
   margin: 0 auto;
 }
+
+.iks:hover{
+  cursor: not-allowed;
+}

@@ -80,9 +80,20 @@ function canMove(t,x,y,tx,ty){
     return true;
 }
 
-function isLegalMove(a){
-    for(var i=1; i<size; i++){
-
+function noLegalMove(t, a){
+    for(var i=1; i<=size; i++){
+        for(var j=1; j<=size; j++){
+            if(t[i][j]==a || (t[i][j]==3 && a==2)){  //jeśli jest twoje
+                for(var k=1; k<=size; k++){ //przejrzyj wszystkie pola na które może się ruszyć
+                    if(canMove(t, i, j, k, j)){   //poziomo
+                        return 0;
+                    }
+                    if(canMove(t, i, j, i, k)){
+                        return 0;
+                    }
+                }
+            }
+        }
     }
     return 1;
 }

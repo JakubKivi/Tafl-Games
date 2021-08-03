@@ -41,8 +41,8 @@ function click(e){
                         player==1?movesB++:movesW++;
                     	clicked.x=0;
     					clicked.y=0;
-                        player==1?player=2:player=1;    
-                        if(!isLegalMove(player))player==1?win=1:win=2;  //check if there is legal response
+                        player==1?player=2:player=1;  
+                        if(noLegalMove(field, player))player==1?win=1:win=2;  //check if there is legal response
                     }
                     else{
                         clicked.x=0;

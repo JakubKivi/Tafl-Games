@@ -70,7 +70,7 @@ $('input').on('click', function (e) {
 		switch(i+1){
 			case 1:
 				gameName='Hnefatafl';
-                document.getElementById("hint").innerHTML = "Hnefatafl<br>Najpopularniejszy i najbardziej zbalansowany wariant, grany na zawodach.";
+                document.getElementById("hint").innerHTML = "Hnefatafl<br>Najpopularniejszy i najbardziej zbalansowany wariant szachów wikingów.";
 			break;
 			case 2:
 				gameName='Tablut';
