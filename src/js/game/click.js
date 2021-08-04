@@ -39,6 +39,8 @@ function click(e){
                                 win=1;
                     	sound.play();
                         player==1?movesB++:movesW++;
+                        if(repetition(clicked.x, clicked.y, mouseCord.x, mouseCord.y))
+                            win=1;
                     	clicked.x=0;
     					clicked.y=0;
                         player==1?player=2:player=1;  

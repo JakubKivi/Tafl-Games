@@ -176,6 +176,8 @@ function update(){
                 move(field, a.x, a.y, a.tx, a.ty, AI);
                 console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);
                 player==1?player=2:player=1;
+                if(repetition(a.x, a.y, a.tx, a.ty))
+                            win=1;
             }else console.log('ai ma totalny problem');
         }
     }

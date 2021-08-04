@@ -1,13 +1,3 @@
-class ruch {
-	constructor(x, y, tx, ty, value) {
-    	this.x = x;
-    	this.y= y;
-    	this.tx = tx;
-    	this.ty= ty;
-    	this.value=value;
-  	}
-}
-
 function AImove(t, p, depth, alpha, beta){
 	var nfield= createArray(100, 100);
 	clearFigures(nfield);

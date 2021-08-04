@@ -23,7 +23,6 @@ var startingPlayer='black';		 //black, white					/
 var shieldWall='disable';        //disable, enable				
 var AI=2;  						 //0, 1-black, 2 - white		
 
-// czy na krawedzi da sie zabic zmienna	
 var zbici = createArray(100,100);
 
 var ap;		
@@ -52,3 +51,10 @@ var movesW=0;
 
 var field= createArray(100, 100);   //1 - black, 2 - white, 3 - king, 4 - obstacle, 
 									//5 - throne
+
+var rep = new Array(4);
+rep[0]= new ruch(0,0,0,0,0);
+rep[1]= new ruch(0,0,0,0,0);
+rep[2]= new ruch(0,0,0,0,0);
+rep[3]= new ruch(0,0,0,0,0);
+
