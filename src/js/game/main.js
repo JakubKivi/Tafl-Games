@@ -163,7 +163,7 @@ function update(){
         animate(ax,ay,atarx,atary);
         if(atarx!=0)setTimeout(aiiIncrease(), 10);
         
-		if(player==AI&&atarx==0){
+		if(player==AI&&atarx==0&&win==0){
             var a = new ruch();
             a=AImove(field, AI, 2, -Infinity, Infinity);
             clearFigures(zbici);
@@ -173,11 +173,16 @@ function update(){
                 atary=a.ty;
                 ax=a.x;
                 ay=a.y;
+                if(noLegalMove(field, player))
+                            win=1;  //check if there is legal response
+                if(surrounding(field))
+                                win=1;
                 move(field, a.x, a.y, a.tx, a.ty, AI);
                 console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);
                 player==1?player=2:player=1;
                 if(repetition(a.x, a.y, a.tx, a.ty))
                             win=1;
+                
             }else console.log('ai ma totalny problem');
         }
     }
