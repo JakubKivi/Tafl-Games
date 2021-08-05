@@ -58,3 +58,4 @@ rep[1]= new ruch(0,0,0,0,0);
 rep[2]= new ruch(0,0,0,0,0);
 rep[3]= new ruch(0,0,0,0,0);
 
+var isFree= createArray(100, 100);

@@ -140,22 +140,20 @@ function update(){
     s.ctx.clearRect(0, 0, s.w(), s.h());
     s.ctx.fillStyle = '#000000';
     s.ctx.fillRect(0, 0, s.w(), s.h());
-    if(win==1){
+    if(win==1 && atarx==0){
         renderMap(size);
         renderFig();
         s.ctx.save();
         s.ctx.globalAlpha=0.60;
         s.ctx.fillRect(0, 0, s.w(), s.h());
-        console.log("Wygral czorny w ", movesB, " ruchach");
         s.ctx.restore();
         s.ctx.drawImage(blackWin, startCord.x, startCord.y, (size*fieldSize), (size*fieldSize));
-    }else if(win==2){
+    }else if(win==2 && atarx==0){   
         renderMap(size);
         renderFig();
         s.ctx.save();
         s.ctx.globalAlpha=0.60;
         s.ctx.fillRect(0, 0, s.w(), s.h());
-        console.log("Wygral bioly w ", movesW, " ruchach");
         s.ctx.restore();
         s.ctx.drawImage(whiteWin, startCord.x, startCord.y, (size*fieldSize), (size*fieldSize));
     }else {

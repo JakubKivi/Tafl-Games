@@ -34,8 +34,7 @@ function click(e){
                         ay=clicked.y;
 
                     	move(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y, player);
-                        if(AI != player)
-                            if(surrounding(field, mouseCord.x, mouseCord.y))
+                        if(surrounding(field))
                                 win=1;
                     	sound.play();
                         player==1?movesB++:movesW++;
