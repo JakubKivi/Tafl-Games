@@ -333,6 +333,13 @@ html, body{
 .strikeout {
   line-height: 1.5em;
   position: relative;
+  max-width: 4.5em;
+}
+
+@media only screen and (max-width: 991px) {
+  .strikeout {
+    max-width: 3.5em;
+  }
 }
 .strikeout::after {
   border-bottom: 0.125em solid;
