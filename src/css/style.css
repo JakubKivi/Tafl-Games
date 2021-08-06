@@ -329,3 +329,20 @@ html, body{
 .iks:hover{
   cursor: not-allowed;
 }
+
+.strikeout {
+  line-height: 1.5em;
+  position: relative;
+}
+.strikeout::after {
+  border-bottom: 0.125em solid;
+  content: "";
+  left: 0;
+  position: absolute; 
+  right: 0;
+  top: 50%;
+}
+
+audio{
+  display: none;
+}

@@ -49,13 +49,25 @@
 					<img src="../assets/img/king.png" width="30" height="30" alt="" class="d-inline-block mr-1 align-bottom" >
 					 Szachy wikingów
 				</a>
-
+				<audio
+					id="myAudio"
+					loop
+			        controls
+			        src="../assets/sound/music.wav">
+			            Your browser does not support the
+			            <code>audio</code> element.
+			    </audio>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="drop-down menu">
 				 	<span class="navbar-toggler-icon"></span>
 				 </button>
 
 				 <div id="menu" class="collapse navbar-collapse">
 				 	<ul class="navbar-nav ml-auto ">
+				 		<li class="nav-item dropdown">
+				 			<a type="button" class="nav-link" id="muzyka">
+				 				<span class="">Muzyka</span>
+				 			</a>
+				 		</li>
 				 		<li class="nav-item dropdown">
 				 			<a type="button" class="nav-link" data-toggle="modal" data-target="#jakgrac" aria-expanded="false">Jak się gra?</a>
 				 		</li>

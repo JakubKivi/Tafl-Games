@@ -31,7 +31,8 @@ function AImove(t, p, depth, alpha, beta){
 
 						
 
-						if((p==1&&x>bestMove.value)||(p==2&&x<bestMove.value)){
+						if((p==1 && (x>bestMove.value || (x==bestMove.value && random(0,10)<1)))||
+							(p==2 && (x<bestMove.value || (x==bestMove.value && random(0,10)<1)))){
 							bestMove.x=i;
 							bestMove.y=j;
 							bestMove.tx=k;

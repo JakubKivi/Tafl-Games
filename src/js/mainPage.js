@@ -37,6 +37,26 @@ $('.opt').on('click', function(e){
 
 });
 
+var myAudio = document.getElementById("myAudio");
+
+$('#muzyka').addClass("strikeout");
+var music=0;
+myAudio.pause();
+
+
+$('#muzyka').on('click', function (e){
+    if(music){
+        $('#muzyka').addClass("strikeout");
+        music=0;
+        myAudio.pause();
+    }
+    else{
+        $('#muzyka').removeClass("strikeout");
+        music=1;
+        myAudio.play();
+    }
+});
+
 $('input').on('click', function (e) {
     var ai = document.getElementsByName('ai'); 
 
