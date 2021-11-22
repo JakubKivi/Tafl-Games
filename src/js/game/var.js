@@ -20,17 +20,17 @@ var throneIsKilling='both';      //both, attackersOnly				/
 var fourToKillOnThrone='enable'; //enable, disable					/
 var startingPlayer='black';		 //black, white					/	
 var shieldWall='disable';        //disable, enable				
-var AI=2;  						 //0, 1-black, 2 - white		
+var AI=2;  						 //0, 1-black/lapiacy, 2 - white/uciekajacy	
 
-// czy na krawedzi da sie zabic zmienna	
 var zbici = createArray(100,100);
-
 var ap;		
 var aii;
 var ax;
 var ay;
 var atarx;
-var atary;
+var atary;      //animation vars
+
+var 
 
 var margin =0;
 

@@ -15,6 +15,9 @@ function animate(x,y,tx,ty){
 		            else if(ap==2)s.ctx.drawImage(whitePawn, startCord.x+((x-1)*fieldSize), startCord.y+((y-1)*fieldSize)+aii, fieldSize, fieldSize);
 		            else if(ap==3)s.ctx.drawImage(king, startCord.x+((x-1)*fieldSize), startCord.y+((y-1)*fieldSize)+aii, fieldSize, fieldSize);
 				}else{
+					if(ap==1)s.ctx.drawImage(blackPawn, startCord.x+((tx-1)*fieldSize), startCord.y+((ty-1)*fieldSize), fieldSize, fieldSize);
+		            else if(ap==2)s.ctx.drawImage(whitePawn, startCord.x+((x-1)*fieldSize), startCord.y+((ty-1)*fieldSize), fieldSize, fieldSize);
+		            else if(ap==3)s.ctx.drawImage(king, startCord.x+((x-1)*fieldSize), startCord.y+((ty-1)*fieldSize), fieldSize, fieldSize);
 					aii=0;
 					ax=0;
 					ay=0;
@@ -27,6 +30,9 @@ function animate(x,y,tx,ty){
 		            else if(ap==2)s.ctx.drawImage(whitePawn, startCord.x+((x-1)*fieldSize), startCord.y+((y-1)*fieldSize)-aii, fieldSize, fieldSize);
 		            else if(ap==3)s.ctx.drawImage(king, startCord.x+((x-1)*fieldSize), startCord.y+((y-1)*fieldSize)-aii, fieldSize, fieldSize);
 				}else{
+					if(ap==1)s.ctx.drawImage(blackPawn, startCord.x+((x-1)*fieldSize), startCord.y+((ty-1)*fieldSize), fieldSize, fieldSize);
+		            else if(ap==2)s.ctx.drawImage(whitePawn, startCord.x+((x-1)*fieldSize), startCord.y+((ty-1)*fieldSize), fieldSize, fieldSize);
+		            else if(ap==3)s.ctx.drawImage(king, startCord.x+((x-1)*fieldSize), startCord.y+((ty-1)*fieldSize), fieldSize, fieldSize);
 					aii=0;
 					ax=0;
 					ay=0;
@@ -42,6 +48,9 @@ function animate(x,y,tx,ty){
 		            else if(ap==2)s.ctx.drawImage(whitePawn, startCord.x+((x-1)*fieldSize)+aii, startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
 		            else if(ap==3)s.ctx.drawImage(king, startCord.x+((x-1)*fieldSize)+aii, startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
 				}else{
+					if(ap==1)s.ctx.drawImage(blackPawn, startCord.x+((tx-1)*fieldSize), startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
+		            else if(ap==2)s.ctx.drawImage(whitePawn, startCord.x+((tx-1)*fieldSize), startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
+		            else if(ap==3)s.ctx.drawImage(king, startCord.x+((tx-1)*fieldSize), startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
 					aii=0;
 					ax=0;
 					ay=0;
@@ -54,6 +63,9 @@ function animate(x,y,tx,ty){
 		            else if(ap==2)s.ctx.drawImage(whitePawn, startCord.x+((x-1)*fieldSize)-aii, startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
 		            else if(ap==3)s.ctx.drawImage(king, startCord.x+((x-1)*fieldSize)-aii, startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
 				}else{
+					if(ap==1)s.ctx.drawImage(blackPawn, startCord.x+((tx-1)*fieldSize), startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
+		            else if(ap==2)s.ctx.drawImage(whitePawn, startCord.x+((tx-1)*fieldSize), startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
+		            else if(ap==3)s.ctx.drawImage(king, startCord.x+((tx-1)*fieldSize), startCord.y+((y-1)*fieldSize), fieldSize, fieldSize);
 					aii=0;
 					ax=0;
 					ay=0;

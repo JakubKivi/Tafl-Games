@@ -140,7 +140,7 @@ function update(){
     s.ctx.clearRect(0, 0, s.w(), s.h());
     s.ctx.fillStyle = '#000000';
     s.ctx.fillRect(0, 0, s.w(), s.h());
-    if(win==1){
+    if(win==1 && ax==0){
         renderMap(size);
         renderFig();
         s.ctx.save();
@@ -148,7 +148,7 @@ function update(){
         s.ctx.drawImage(blackWin, 0, 0, s.w(), s.h());
         console.log("Wygral czorny w ", movesB, " ruchach");
         s.ctx.restore();
-    }else if(win==2){
+    }else if(win==2 && ax==0){
         renderMap(size);
         renderFig();
         s.ctx.save();

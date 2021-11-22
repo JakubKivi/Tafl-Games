@@ -185,7 +185,7 @@ function putFiguresOnMap(){
 function renderFig(){
     for(i=1; i<=size; i++){
         for(j=1; j<=size; j++){
-            if(!(i==atarx&&j==atary))
+            if(!(i==atarx&&j==atary)||ax==0)
                 if(i==clicked.x&&j==clicked.y){
                     if(field[i][j]==1)s.ctx.drawImage(blackPawnClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
                     else if(field[i][j]==2)s.ctx.drawImage(whitePawnClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
