@@ -165,7 +165,9 @@ function update(){
         
 		if(player==AI&&atarx==0&&win==0){
             var a = new ruch();
-            a=AImove(field, AI, 2, -Infinity, Infinity);
+            r=0; u=0;
+            a=AImove(field, AI, 3, -Infinity, Infinity); //// TUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+            console.log("Ruchy: "+ r +" Ucięte: " + u);
             clearFigures(zbici);
             if(a.x!=0){
                 ap=field[a.x][a.y];
