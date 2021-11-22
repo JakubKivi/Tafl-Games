@@ -8,6 +8,7 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 
+		<script src="js/game/ruch.js"></script>
 		<script src="js/game/setup.js"></script>
 		<script src="js/game/functions.js"></script>
 		<script src="js/game/var.js"></script>
@@ -21,6 +22,7 @@
 		<script src="js/game/Screen.js"></script>
 		<script src="js/game/main.js"></script>
 		<script src="js/game/AI.js"></script>
+		<script src="js/game/repetition.js"></script>
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 		<link href="css/style.css" rel="stylesheet" />
@@ -47,13 +49,25 @@
 					<img src="../assets/img/king.png" width="30" height="30" alt="" class="d-inline-block mr-1 align-bottom" >
 					 Szachy wikingów
 				</a>
-
+				<audio
+					id="myAudio"
+					loop
+			        controls
+			        src="../assets/sound/music.wav">
+			            Your browser does not support the
+			            <code>audio</code> element.
+			    </audio>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="drop-down menu">
 				 	<span class="navbar-toggler-icon"></span>
 				 </button>
 
 				 <div id="menu" class="collapse navbar-collapse">
 				 	<ul class="navbar-nav ml-auto ">
+				 		<li class="nav-item dropdown">
+				 			<a type="button" class="nav-link" id="muzyka">
+				 				<span class="">Muzyka</span>
+				 			</a>
+				 		</li>
 				 		<li class="nav-item dropdown">
 				 			<a type="button" class="nav-link" data-toggle="modal" data-target="#jakgrac" aria-expanded="false">Jak się gra?</a>
 				 		</li>
@@ -62,7 +76,7 @@
 
 				 			<div class="dropdown-menu submenu-custom" aria-labelledby="submenu">
 				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://jakubkivi.github.io/">Jakub Kivi - Programista</a>
-				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://www.instagram.com/priestoov/">Joanna Butkiewicz - Artystka</a>
+				 				 <a class="dropdown-item dropdown-item-custom" target="_blank" href="https://tortillon.github.io">Joanna Butkiewicz - Artystka</a>
 				 			</div>
 				 		</li>
 				 		<li class="nav-item">
@@ -164,9 +178,9 @@
 			        		</div>
 		        			<div class="col-lg-8">
 		        			<p class="text-justify">
-			        			Historia gra kluczową rolę w opisywaniu zasad szachów wikingów. Jak wiadomo, w czasach świetności wyznawców Odyna, podbijali, czy też łupili bardzo odległe lądy. Podczas tych podbojów, albo pewnie raczej po nich, podczas biesiady, lubili oni pogrywać w szachy... Ale nie takie jakie znamy dzisiaj. Okazuje się, że mieli własną wersję, zwaną dzisiaj szachami wikingów. Przez wiele lat podbojów i ekspansji, w czasach bez globalnej komunikacji, gra w różnych miejscach ewoluowała w rózny sposób, czego wynikiem jest cała gama wersji szachów wikingów, z całej europy.<br/> <br>
-			        			Historia szachów wikingów miała jednka swoje mroczne czasy, kiedy świat o nich zapomniał. Dopiero odkrycia z XVIII wieku przypomniały ludzkości o tej jakże ciekawej grze. Dzisiaj ma ona grono fanów które dopracowuje zasad, stara się balansować rozgrywkę, a także zajmuje się tworzeniem, często przepięknych, planszy i pionków. <br/><br>
-								Dzięki zarysowi historycznemu, gra nabiera tak zwanego "smaczku". Na przykład figury obu graczy określano jako Szwedów i Moskali. Po więcej historycznych ciekawostek, klikaj znaki zapytania w opcjach.
+			        			Historia gra kluczową rolę w opisywaniu zasad szachów wikingów. Jak wiadomo, w czasach swojej świetności, wyznawcy Odyna, podbijali, czy też łupili bardzo odległe lądy. Podczas tych podbojów, albo raczej podczas biesiady po owych podbojach, lubili pogrywać w szachy... Ale nie takie jakie znamy dzisiaj. Okazuje się, że mieli własną wersję, zwaną dzisiaj szachami wikingów. Przez wiele lat podbojów i ekspansji, w czasach bez globalnej komunikacji, gra w różnych miejscach ewoluowała w rózny sposób, czego wynikiem jest cała gama wersji szachów wikingów, z całej europy.<br/> <br>
+			        			Historia szachów wikingów miała jednka swoje mroczne czasy, kiedy świat o nich zapomniał. Dopiero odkrycia z osiemnastego wieku przypomniały ludzkości o tej jakże ciekawej grze. Dzisiaj ma ona grono fanów które dopracowuje zasad, stara się balansować rozgrywkę, a także zajmuje się tworzeniem, często przepięknych, planszy i pionków. <br/><br>
+								Dzięki zarysowi historycznemu, gra nabiera tak zwanego "smaczku". Na przykład figury obu graczy określano jako Szwedów i Moskali. Jeżeli interesują Cię ciekawostki historyczne na temat danego wariantu, klikaj w znaki zapytania w opcjach.
 							</p>
 					        </div>
 		        		</section>
@@ -183,7 +197,7 @@
 				        			<p class="text-justify">
 					        			Podstawowe zasady szachów wikingów są bardzo proste. Cała sztuka polega na niuansach i różnicach pomiędzy konkretnymi wariantami. <br><br>
 					        			Przygotowanie:<br>
-					        			Plansza - zależnie od wariantu może mieć różny rozmiar, jednak zawsze jest to liczba nieparzysta. W przypadku implementacji gry, które proponuje na stronie, są to rozmiary od 7x7 do 19x19.<br>
+					        			Plansza - zależnie od wariantu może mieć różny rozmiar, jednak zawsze jest to liczba nieparzysta. W przypadku implementacji gry, które proponuje na stronie, są to wybrane rozmiary od 7x7 do 19x19.<br>
 					        			Król - zawsze startuje w geometrycnym centrum kwadratowej planszy.<br>
 					        			Obrońcy - grupa ustwiona zależnie od wariantu, ale zwykle w okolica króla jako wsparcie.<br>
 					        			Atakujący - grupa ustawiona zwykle na brzegach planszy, wokół broniących.
@@ -200,19 +214,21 @@
 		        				<div class="col-lg-8">
 					        		<p class="text-justify">
 					        			Cel:<br>
-					        			Broniący - wygrywają, jeżeli król dotrze do pola specjalnego w rogu lub do krawędzi mapy, znowu zależy od wariantu gry.<br>
-					        			Atakujący - wygrywają otaczając króla, zależnie od wariantu z 4 lub 2 stron, jednak często istnieją dodatkowe zasady związane z krawędzią, lub z środkowym polem zwanym tronem lub zamkiem.
+					        			Broniący - wygrywają, jeżeli król ucieknie. Tutaj znowu, zależnie od wybranego wariantu, polem ucieczki może być krawędź lub narożnik.<br>
+					        			Atakujący - wygrywają otaczając króla, zależnie od wariantu z 4 lub 2 stron, jednak jak później przeczytasz, istnieją dodatkowe zasady związane z krawędzią, lub z środkowym polem zwanym tronem lub zamkiem.
 					        		</p>
 					        	</div>
 					        	</div><div class="row">
 					        		<div class="col-lg-8">
 					        		<p class="text-justify">
 					        			Ruch:<br>
-					        			Każdy pionek może się ruszać w pionie i w poziomie. Zabronione jest natomiast poruszanie się ukośnie. Nie można także przesunąć się po polu na którym stoi już inny pion. Gracze wykonują ruchy naprzemiennie. Aż do zwycięstwa jednego z nich (wyjątek, patrz dodatkowe zasady).<br>
+					        			Każdy pionek może się ruszać w pionie i w poziomie. Zabronione jest natomiast poruszanie się ukośnie. Nie można także przesunąć się po polu na którym stoi już inny pion. Gracze wykonują ruchy naprzemiennie. Aż do zwycięstwa jednego z nich (wyjątki w zasadach dodatkowych).<br>
 					        			Jeśli ruch spowoduje, otoczenie przeciwnika z dwóch naprzemiennych stron (pionowo lub poziomo, nie na ukos), przeciwnik zostaje zbity z planszy.<br>
+					        			Król, jeżeli jest uzbrojony (czyli zależnie od wariantu gry), również może uczestniczyć w zbijaniu pionków.<br>
 					        			Zbijać można też o pola specjalne, jak np. narożnik (tylko w wariancie z narożnikami), czy pusty tron.<br>
 					        			Można ruszać się przez tron natomiast nie można stanąć na tronie zwykłym pionkiem. Król ma natomiast zawsze możliwość powrotu na tron.<br>
-					        			Zbijanie króla jest uzależnione od wariantu i wymaga otoczenia z 2 lub 4 stron, jednak król na tronie jest 'chroniony' i zawsze wymaga otoczenia ze wszystkich stron.
+					        			W przypadku wariantu, gdzie warunkiem wygranej jest narożnik, tylko król może na nim stanąć.<br>
+					        			
 					        		</p>
 					        		</div>
 					        		<div class="col-lg-4">
@@ -221,17 +237,17 @@
 					        	</div>
 					        	<div class="row">
 					        		<div class="col-lg-4">
-					        		<img src="../assets/img/how2.jpg" class="img-rounded img-fluid rounded mx-auto img-responsive mb-1" alt="...">
+					        		<img src="../assets/img/king.png" class="img-rounded img-fluid rounded mx-auto img-responsive mb-1" alt="...">
 					        		</div>
 					        		<div class="col-lg-8">
 					        		<p class="text-justify">
 					        			Dodatkowe zasady:<br>
-					        			Shieldwall - kiedy część pionków jest otoczona ze wszystkich stron, poza jedną z której jest krawędź, pionki zostają zbite.<br>
-					        			Otoczenie - Jeśli wszyscy obrońcy zostaną otoczeni przez atakujących, atakujący wygrywają.<br>
-					        			Fort ucieczki - uciekający mogą także wygrać otaczając króla z każdej strony poza krawędzią przy której stoi. Oczywiście to wszystko w przypadku, gdy król musi uciec do narożnika.<br>
-					        			Powtórzenia - powtórzenie ruchu jest zakazane, jeśli ktoś zostanie zmuszony to powtórzenia ruchu, przegrywa. Tak samo jeśli nie może wykonać żadnego legalnego ruchu.<br>
+					        			Król na tronie jest 'chroniony' i wymaga otoczenia ze wszystkich czterech stron, niezależnie od wariantu.<br>
+					        			Jeśli wszyscy obrońcy zostaną otoczeni przez atakujących, atakujący wygrywają.<br>
+					        			W przypadku gdy dojdzie do powtórzenia ruchu wygrywają atakujący.<br>
+					        			Gjady któryś gracz nie ma legalnego ruchu do wykonania, przegrywa.<br>
 					        			Jeżeli z jakiegoś powodu nie można zakończyć rozgrywki, np jest zbyt mało pionków i sytuacja ciągnie się zbyt długo, można zarządzić remis.<br>
-					        			Dodatkowych zasad różniących się od wariantów gry jest prawdopodobnie jeszcze kilka, możesz ich szukać pod znakami zapytania w opcjach, albo... jak czasem bywa na polu bitwy, liczyć na pomoc Thora.
+					        			Dodatkowych zasad różniących się od wariantów gry jest jeszcze kilka, możesz ich szukać pod znakami zapytania w opcjach, albo... jak to czasem bywa na polu bitwy, liczyć na pomoc Thora.
 					        		</p>
 					        		</div>
 					        	</div>
@@ -260,20 +276,23 @@
 		        	<div class="container">
 		        		<div class="row row-custom-options mb-1">
 		        			<div class="col-xl-4 col-custom">
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Standardowa gra" data-content="Jeśli masz w pobliżu znajomego, lub kogokolwiek komu możesz rzucić wyzwanie wybierz grę we dwóch.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
-								  <input type="radio" id="ai_1" name="ai" class="custom-control-input" value="NO">
+								  <input type="radio" checked id="ai_1" name="ai" class="custom-control-input" value="NO">
 								  <label class="custom-control-label myColor" for="ai_1"><p style="margin-left: 10px;">2 Graczy</p></label>
 								</div>
 							</div>
 							<div class="col-xl-4 col-custom">
+								<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Bot Atakujący BETA" data-content="Komputer zagra jako atakujący, ale spokojnie, nie będzie stanowił wielkiego wyzwania, to dopiero wersja BETA.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
 								  <input type="radio" id="ai_2" name="ai" class="custom-control-input" value="No">
 								  <label class="custom-control-label myColor" for="ai_2"><p style="margin-left: 10px;">SI jako atakujący</p></label>
 								</div>
 							</div>
 							<div class="col-xl-4 col-custom">
+								<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Bot Obrońca BETA" data-content="Komputer zagra jako obrońca, ale spokojnie, nie będzie stanowił wielkiego wyzwania, to dopiero wersja BETA.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
-								  <input type="radio" id="ai_3" name="ai" class="custom-control-input" checked value="Yes">
+								  <input type="radio" id="ai_3" name="ai" class="custom-control-input" value="Yes">
 								  <label class="custom-control-label myColor" for="ai_3"><p style="margin-left: 10px;">SI jako obrońcy</p></label>
 								</div>
 							</div>
@@ -341,10 +360,10 @@
 		        		</div>
 		        		<div class="row row-custom-options">
 		        			<div class="col-xl-offset-4 col-xl-4 col-custom">
-		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Ciekawski historyk" data-content="Zastanawiasz się jakie jeszcze warianty szachów wikingów mogłyby powstać lub nawet powstały? A może chcesz przetestować swoją wersje w kontekście balansu gry? Zmieniaj opcje niżej i baw się dobrze młody wojowniku.">?</a>
+		        				<a type="button" class="btn btn-lg btn-custom-info" data-toggle="popover" title="Wkrótce dostępne!" data-content="Zastanawiasz się jakie jeszcze warianty szachów wikingów mogłyby powstać lub nawet powstały? A może chcesz przetestować swoją wersje w kontekście balansu gry? Zmieniaj opcje niżej i baw się dobrze młody wojowniku.">?</a>
 		        				<div class="custom-control custom-radio custom-control-inline">
-								  <input type="radio" id="rd_8" name="rd" class="custom-control-input" value="Custom">
-								  <label class="custom-control-label myColor" for="rd_8"><p style="margin-left: 10px;">Własne</p></label>
+								  <input disabled type="radio" id="rd_8" name="rd" class="custom-control-input iks" value="Custom">
+								  <label class="custom-control-label iks myColor" for="rd_8"><p class="iks" style="margin-left: 10px;">Własne</p></label>
 								</div>
 							</div>
 		        		</div>
@@ -353,7 +372,7 @@
 		    </div>
 		    <div class="modal-header modal-header-custom modal-header-custom-options" id="hOptions">
 		        <a type="button" class="btn btn-lg btn-custom-info" id="btn-info-zasady" data-toggle="popover" title="Mnogość możliwośći" data-content="Jeżeli chcesz się upewnić jakimi prawi rządzi się konkretny wariant zobacz co jest dla niego ustawione, a jeśli coś byś poprawił... po prostu to zrób!"><p>?</p></a>
-		        <h5 class="modal-title modal-title-custom" >Zasady - Sprawdź lub zmień</h5>
+		        <h5 class="modal-title modal-title-custom" >Specjalne zasady - sprawdź </h5>
 		        <button type="button" class="close close-custom" aria-label="Close">
 		        	<span style="color: white;" aria-hidden="true"><i class="arrow down"></i></span>
 		        </button>
@@ -365,13 +384,13 @@
 							<div class="col-xl-4">
 						    	<div class="form-group">
 									<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="Rozmiary i rozstaw figur" data-content="Dostosuj rozmiar planszy i ustawienie figur zgodne z jednym z ustawień z domyślnych gier">?</a>
+		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="Rozmiary i rozstaw figur" data-content="Jeden z najważniejszych elementów rozróżniającch warianty gier od siebie.">?</a>
 		        						<label for="exampleFormControlSelect1">Mapa</label>
-											<select class="form-control form-control-custom" id="Map-size">
+											<select disabled class="form-control form-control-custom opt" id="Map-size">
 											  <option>7x7 (Brandubh)</option>
 											  <option>7x7 (Ard Ri)</option>
 											  <option>9x9 (Tablut)</option>
-											  <option>11x11 (Hnefatafl)</option>
+											  <option selected>11x11 (Hnefatafl)</option>
 											  <option>11x11 (Tawlbwrdd)</option>
 											  <option>19x19 (Alea Evangelii)</option>
 											</select>
@@ -381,11 +400,11 @@
 							<div class="col-xl-4">
 						    	<div class="form-group">
 									<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="Wygrana po stronie obrońców" data-content="Wybierz jaki ma być warunek zwycięstwa dla obrońcy">?</a>
+		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="Wygrana po stronie obrońców" data-content="Określa gdzie musi trafić król aby wygrać.">?</a>
 		        						<label for="exampleFormControlSelect1">Ucieczka</label>
-										<select class="form-control form-control-custom" id="Escape">
+										<select disabled class="form-control form-control-custom opt" id="Escape">
 										  <option>Krawędź</option>
-										  <option>Narożnik</option>
+										  <option selected>Narożnik</option>
 										  <option>Narożnik (4 pola)</option>
 										</select>
 									</div>
@@ -394,11 +413,11 @@
 							<div class="col-xl-4">
 							    	<div class="form-group">
 										<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="Wygrana po stronie atakujących" data-content="Wybierz w jaki sposób wygrywają obrońcy">?</a>
+		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="Wygrana po stronie atakujących" data-content="Określa z ilu stron należy otoczyć króla aby wygrali atakujący.">?</a>
 											<label for="exampleFormControlSelect1">Otaczenie króla</label>
-											<select class="form-control form-control-custom" id="King-surroundings">
+											<select disabled class="form-control form-control-custom opt" id="King-surroundings">
 											  <option>2</option>
-											  <option>4</option>
+											  <option selected>4</option>
 											</select>
 										</div>
 									</div>
@@ -413,11 +432,11 @@
 								<div class="col-xl-4">
 							    	<div class="form-group">
 										<div class="form-group">
-		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="Czy król zbija" data-content="Wybierz czy król może uczestniczyć w zbijaniu przeciwników">?</a>
+		        						<a type="button" class="btn btn-lg btn-custom-info" style="margin-bottom: 5px;" data-toggle="popover" title="Czy król zbija" data-content="Określa czy król może uczestniczyć w zbijaniu przeciwników.">?</a>
 			        						<label for="exampleFormControlSelect1">Uzbrojenie Króla</label>
-											<select class="form-control form-control-custom" id="King-weapon">
+											<select disabled class="form-control form-control-custom opt" id="King-weapon">
 											  <option>Nieuzbrojony</option>
-											  <option>Zabójczy</option>
+											  <option selected>Zabójczy</option>
 											</select>
 										</div>
 									</div>

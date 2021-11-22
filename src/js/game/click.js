@@ -34,15 +34,16 @@ function click(e){
                         ay=clicked.y;
 
                     	move(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y, player);
-                        if(AI != player)
-                            if(surrounding(field, mouseCord.x, mouseCord.y))
+                        if(surrounding(field))
                                 win=1;
                     	sound.play();
                         player==1?movesB++:movesW++;
+                        if(repetition(clicked.x, clicked.y, mouseCord.x, mouseCord.y))
+                            win=1;
                     	clicked.x=0;
     					clicked.y=0;
-                        player==1?player=2:player=1;    
-                        if(!isLegalMove(player))player==1?win=1:win=2;  //check if there is legal response
+                        player==1?player=2:player=1;  
+                        if(noLegalMove(field, player))player==1?win=2:win=1;  //check if there is legal response
                     }
                     else{
                         clicked.x=0;

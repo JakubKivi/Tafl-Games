@@ -75,7 +75,7 @@ function remove(t, c, d, p){
                     t[c][d-1]=0;
                 }
     }
-    if(weaponlessKing=='disable' && t[c][d]==2){
+    if(weaponlessKing=='disable'&&p==2){
     
                      if(t[c+1][d]==o && t[c+2][d]==3){
                         zbici[c+1][d]=t[c+1][d];

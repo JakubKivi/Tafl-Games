@@ -140,22 +140,22 @@ function update(){
     s.ctx.clearRect(0, 0, s.w(), s.h());
     s.ctx.fillStyle = '#000000';
     s.ctx.fillRect(0, 0, s.w(), s.h());
-    if(win==1 && ax==0){
+    if(win==1 && atarx==0){
         renderMap(size);
         renderFig();
         s.ctx.save();
         s.ctx.globalAlpha=0.60;
-        s.ctx.drawImage(blackWin, 0, 0, s.w(), s.h());
-        console.log("Wygral czorny w ", movesB, " ruchach");
+        s.ctx.fillRect(0, 0, s.w(), s.h());
         s.ctx.restore();
-    }else if(win==2 && ax==0){
+        s.ctx.drawImage(blackWin, startCord.x, startCord.y, (size*fieldSize), (size*fieldSize));
+    }else if(win==2 && atarx==0){   
         renderMap(size);
         renderFig();
         s.ctx.save();
         s.ctx.globalAlpha=0.60;
-        s.ctx.drawImage(whiteWin, 0, 0, s.w(), s.h());
-        console.log("Wygral bioly w ", movesW, " ruchach");
+        s.ctx.fillRect(0, 0, s.w(), s.h());
         s.ctx.restore();
+        s.ctx.drawImage(whiteWin, startCord.x, startCord.y, (size*fieldSize), (size*fieldSize));
     }else {
         renderMap(size);
         if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
@@ -163,7 +163,7 @@ function update(){
         animate(ax,ay,atarx,atary);
         if(atarx!=0)setTimeout(aiiIncrease(), 10);
         
-		if(player==AI&&atarx==0){
+		if(player==AI&&atarx==0&&win==0){
             var a = new ruch();
             a=AImove(field, AI, 2, -Infinity, Infinity);
             clearFigures(zbici);
@@ -173,9 +173,16 @@ function update(){
                 atary=a.ty;
                 ax=a.x;
                 ay=a.y;
+                if(noLegalMove(field, player))
+                            win=1;  //check if there is legal response
+                if(surrounding(field))
+                                win=1;
                 move(field, a.x, a.y, a.tx, a.ty, AI);
                 console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);
                 player==1?player=2:player=1;
+                if(repetition(a.x, a.y, a.tx, a.ty))
+                            win=1;
+                
             }else console.log('ai ma totalny problem');
         }
     }

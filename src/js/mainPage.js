@@ -22,6 +22,41 @@ $('#hOptions').on('click', function(e){
     }
 });
 
+$('.opt').on('click', function(e){
+    // console.log("pupka");
+    // $('#rd_8').attr('checked', true);
+
+    // gameName='Custom';
+    // hOptionsH=false;
+    // $(".modal-body-options").show();
+
+    
+    
+    // document.getElementById("hint").innerHTML = "<b>Własne</b> - twoje własne Szachy Wikingów, sam znasz zasady";
+
+
+});
+
+var myAudio = document.getElementById("myAudio");
+
+$('#muzyka').addClass("strikeout");
+var music=0;
+myAudio.pause();
+
+
+$('#muzyka').on('click', function (e){
+    if(music){
+        $('#muzyka').addClass("strikeout");
+        music=0;
+        myAudio.pause();
+    }
+    else{
+        $('#muzyka').removeClass("strikeout");
+        music=1;
+        myAudio.play();
+    }
+});
+
 $('input').on('click', function (e) {
     var ai = document.getElementsByName('ai'); 
 
@@ -42,6 +77,7 @@ $('input').on('click', function (e) {
     }
 
 	var ele = document.getElementsByName('rd'); 
+
               
     for(i = 0; i < ele.length; i++) {
         if(ele[i].checked) {
@@ -54,7 +90,7 @@ $('input').on('click', function (e) {
 		switch(i+1){
 			case 1:
 				gameName='Hnefatafl';
-                document.getElementById("hint").innerHTML = "Hnefatafl<br>Najpopularniejszy i najbardziej zbalansowany wariant, grany na zawodach.";
+                document.getElementById("hint").innerHTML = "Hnefatafl<br>Najpopularniejszy i najbardziej zbalansowany wariant szachów wikingów.";
 			break;
 			case 2:
 				gameName='Tablut';
@@ -209,6 +245,7 @@ navb.style.display = "block";
 
 btn.onclick = function() {
 	window.location.hash = openModalHashStateId;
+    console.log(mem);
 	onModalOpen();
     navb.style.display = "none";
 	modal.style.display = "block";
@@ -235,3 +272,4 @@ function handleBackPress(event) {
     $('.modal-backdrop').remove();
     navb.style.display = "block"; 
 }
+

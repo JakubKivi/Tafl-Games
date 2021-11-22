@@ -1,13 +1,3 @@
-class ruch {
-	constructor(x, y, tx, ty, value) {
-    	this.x = x;
-    	this.y= y;
-    	this.tx = tx;
-    	this.ty= ty;
-    	this.value=value;
-  	}
-}
-
 function AImove(t, p, depth, alpha, beta){
 	var nfield= createArray(100, 100);
 	clearFigures(nfield);
@@ -41,7 +31,8 @@ function AImove(t, p, depth, alpha, beta){
 
 						
 
-						if((p==1&&x>bestMove.value)||(p==2&&x<bestMove.value)){
+						if((p==1 && (x>bestMove.value || (x==bestMove.value && random(0,10)<1)))||
+							(p==2 && (x<bestMove.value || (x==bestMove.value && random(0,10)<1)))){
 							bestMove.x=i;
 							bestMove.y=j;
 							bestMove.tx=k;

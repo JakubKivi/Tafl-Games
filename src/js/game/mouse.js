@@ -44,6 +44,7 @@ function drawHovered(){
             else 
                 s.ctx.drawImage(blackFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
         }
+        //console.log(isFree[mouseCord.x][mouseCord.y]);
     }
     // console.log("x: " + mouseCord.x + " y: " +mouseCord.y);
 }
