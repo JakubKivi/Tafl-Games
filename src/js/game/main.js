@@ -127,7 +127,7 @@ function start(){
     putFiguresOnMap();
     if(player==1 && AI ==1)AImove(field);
 
-    console.log(field[parseInt(size/2)+1][parseInt(size/2)+1]); 
+    //console.log(field[parseInt(size/2)+1][parseInt(size/2)+1]); 
 }
 
 function update(){
@@ -166,8 +166,10 @@ function update(){
 		if(player==AI&&atarx==0&&win==0){
             var a = new ruch();
             r=0; u=0;
-            a=AImove(field, AI, 3, -Infinity, Infinity); //// TUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
-            console.log("Ruchy: "+ r +" Ucięte: " + u);
+            alpha=-Infinity;
+            beta=Infinity;
+            a=AImove(field, AI, 4, -Infinity, Infinity); //// TUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+            console.log("Ruchy: "+ r +" Ucięte: " + u + " diff: "+ (r-u));
             clearFigures(zbici);
             if(a.x!=0){
                 ap=field[a.x][a.y];

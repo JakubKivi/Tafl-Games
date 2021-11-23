@@ -135,6 +135,7 @@ function putFiguresOnMap(){
             }
         }
    }else if(gameName=='Hnefatafl'){
+        
         for(i=1; i<=parseInt(size/2)+1; i++){
             for(j=1; j<=parseInt(size/2)+1; j++){
                 if((i==6&&j>3)||(j==6&&i>3))field[i][j]=2;

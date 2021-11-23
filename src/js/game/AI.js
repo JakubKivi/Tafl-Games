@@ -2,6 +2,8 @@ var u=0;
 var r=0;
 
 function AImove(t, p, depth, alpha, beta){
+	
+	
 	var nfield= createArray(100, 100);
 	clearFigures(nfield);
 
@@ -23,7 +25,6 @@ function AImove(t, p, depth, alpha, beta){
 				for(var k=1; k<=size; k++){ //przejrzyj wszystkie pola na które może się ruszyć
 					if(canMove(nfield, i, j, k, j)){   //poziomo
 						move(nfield, i, j, k, j, p);
-						r++;
 						if(!((AIcount(nfield)>1000&&p==1)||(AIcount(nfield)<-1000&&p==2))){
 							if(depth>1){
 								var res=AImove(nfield, op, depth-1, alpha, beta);
@@ -33,8 +34,9 @@ function AImove(t, p, depth, alpha, beta){
 						var x=AIcount(nfield);
 						AIresume(nfield, t);
 
-						if((p==1 && (x>bestMove.value ))||
-							(p==2 && (x<bestMove.value))){
+						
+
+						if((p==1&&x>bestMove.value)||(p==2&&x<bestMove.value)){
 							bestMove.x=i;
 							bestMove.y=j;
 							bestMove.tx=k;
@@ -44,20 +46,19 @@ function AImove(t, p, depth, alpha, beta){
 						if(p==2){
 						 	beta=min(beta, x);
 							if(beta<=alpha){
-								u++;
+								break;
 								//console.log("cut");
 							}
 						}else{
 							alpha=max(alpha, x);
 							if(beta<=alpha){
-								u++;
+								break;
 								//console.log("cut");
 							}
 						}
 					}
 					if(canMove(nfield, i, j, i, k)){   //pionowo
 						move(nfield, i, j, i, k, p);
-						r++;
 						if(!((AIcount(nfield)>1000&&p==1)||(AIcount(nfield)<-1000&&p==2))){
 							if(depth>1){
 								var res=AImove(nfield, op, depth-1, alpha, beta);
@@ -66,7 +67,6 @@ function AImove(t, p, depth, alpha, beta){
 						}
 						var x=AIcount(nfield);
 						AIresume(nfield, t);
-						
 						if((p==1 && x>bestMove.value) ||(p==2 && x<bestMove.value)){
 							bestMove.x=i;
 							bestMove.y=j;
@@ -77,13 +77,13 @@ function AImove(t, p, depth, alpha, beta){
 						if(p==2){
 						 	beta=min(beta, x);
 							if(beta<=alpha){
-								u++;
+								break;
 								//console.log("cut");
 							}
 						}else{
 							alpha=max(alpha, x);
 							if(beta<=alpha){
-								u++;
+								break;
 								//console.log("cut");
 							}
 						}
@@ -117,10 +117,10 @@ function AIcount(t){
     	}
     }
     if(win==1){
-    	value=1000000;
+    	value+=100000;
     }
     if(win==2){
-    	value=-1000000;
+    	value-=100000;
     }
 	return value;
 }
