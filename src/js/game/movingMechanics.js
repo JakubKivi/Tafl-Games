@@ -97,3 +97,20 @@ function noLegalMove(t, a){
     }
     return 1;
 }
+
+
+function updateAvailableMoves(x,y){
+    if(x==0 && y==0){
+        for (var i = 1; i <=size; i++) {
+            for (var j = 1; j <=size; j++) {
+                availableMoves[i][j]=0;
+            }
+        }
+    }else{
+        for (var i = 1; i <=size ; i++) {
+            if(canMove(field, x,y,x,i))availableMoves[x][i]=1;
+            if(canMove(field, x,y,i,y))availableMoves[i][y]=1;
+        }
+    }
+}
+

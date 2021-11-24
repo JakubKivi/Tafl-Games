@@ -21,9 +21,10 @@ var throneIsKilling='both';      //both, attackersOnly				/
 var fourToKillOnThrone='enable'; //enable, disable					/
 var startingPlayer='black';		 //black, white					/	
 var shieldWall='disable';        //disable, enable				
-var AI=2;  						 //0, 1-black, 2 - white		
+var AI=0;  						 //0, 1-black, 2 - white		
 
 var zbici = createArray(100,100);
+var availableMoves = createArray(100,100);
 
 var ap;		
 var aii;

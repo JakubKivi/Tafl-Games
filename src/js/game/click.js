@@ -21,11 +21,16 @@ function click(e){
                     clicked.x=0;
                     clicked.y=0;
                 }
+                updateAvailableMoves(clicked.x,clicked.y);
+
             }else if(field[clicked.x][clicked.y]==1 || field[clicked.x][clicked.y]==2 || field[clicked.x][clicked.y]==3){
                 if(clicked.x!=mouseCord.x || clicked.y!=mouseCord.y){
                     if(field[mouseCord.x][mouseCord.y]==player){
                         clicked.x=mouseCord.x;
                         clicked.y=mouseCord.y;
+
+                        updateAvailableMoves(0,0);
+                        updateAvailableMoves(clicked.x,clicked.y);
                     }else if(canMove(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y)){
                         ap=field[clicked.x][clicked.y];
                         atarx=mouseCord.x;
@@ -34,6 +39,7 @@ function click(e){
                         ay=clicked.y;
 
                     	move(field,clicked.x, clicked.y, mouseCord.x, mouseCord.y, player);
+                        updateAvailableMoves(0,0);
                         if(surrounding(field))
                                 win=1;
                     	sound.play();
@@ -48,18 +54,23 @@ function click(e){
                     else{
                         clicked.x=0;
                         clicked.y=0;
+                        updateAvailableMoves(clicked.x,clicked.y);
+                
                     }
                 }else{
                     clicked.x=0;
                     clicked.y=0;
+                    updateAvailableMoves(clicked.x,clicked.y);
                 }
             }else{
                 clicked.x=0;
                 clicked.y=0;
+                updateAvailableMoves(clicked.x,clicked.y);
             }
         }else{
             clicked.x=0;
             clicked.y=0;
+            updateAvailableMoves(clicked.x,clicked.y);
         }
     }
 }

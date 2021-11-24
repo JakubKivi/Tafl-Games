@@ -160,6 +160,17 @@ function update(){
         renderMap(size);
         if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
         renderFig();
+        for (var i = 0; i <=size ; i++) {
+            for (var j = 0; j <=size; j++) {
+                if(availableMoves[i][j]){
+                    s.ctx.fillStyle = "#3334";
+                    s.ctx.beginPath();
+                    s.ctx.arc(startCord.x+(i*fieldSize)-fieldSize/2, startCord.y+(j*fieldSize)-fieldSize/2, fieldSize/3, 0, 2 * Math.PI);
+                    s.ctx.fill();
+
+                }
+            }
+        }
         animate(ax,ay,atarx,atary);
         if(atarx!=0)setTimeout(aiiIncrease(), 10);
         
