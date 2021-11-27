@@ -77,6 +77,7 @@ function animate(x,y,tx,ty){
 	}else{
 		clearFigures(zbici);
 	}
+	
 }
 
 function aiiIncrease(){

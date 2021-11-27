@@ -92,9 +92,16 @@ function AImove(t, p, depth, alpha, beta){
 			}
 		}
 	}
+ 	//return new Promise(resolve => bestMove);
  	return bestMove;
- 	
+ 		
 }
+
+// async function asyncAImove(t, p, depth, alpha, beta){
+//   	console.log('calling');
+// 	var result = AImove(t, p, depth, alpha, beta);
+// 	return result;
+// }
 
 function AIresume(t, tt){
 

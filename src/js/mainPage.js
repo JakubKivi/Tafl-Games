@@ -271,5 +271,6 @@ function handleBackPress(event) {
     $('.modal').modal('hide');
     $('.modal-backdrop').remove();
     navb.style.display = "block"; 
+    mainMenu=1;
 }
 

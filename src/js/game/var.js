@@ -21,7 +21,7 @@ var throneIsKilling='both';      //both, attackersOnly				/
 var fourToKillOnThrone='enable'; //enable, disable					/
 var startingPlayer='black';		 //black, white					/	
 var shieldWall='disable';        //disable, enable				
-var AI=0;  						 //0, 1-black, 2 - white		
+var AI=2;  						 //0, 1-black, 2 - white		
 
 var zbici = createArray(100,100);
 var availableMoves = createArray(100,100);
@@ -60,3 +60,5 @@ rep[2]= new ruch(0,0,0,0,0);
 rep[3]= new ruch(0,0,0,0,0);
 
 var isFree= createArray(100, 100);
+
+var inGame=0;

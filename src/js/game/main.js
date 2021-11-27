@@ -163,7 +163,7 @@ function update(){
         for (var i = 0; i <=size ; i++) {
             for (var j = 0; j <=size; j++) {
                 if(availableMoves[i][j]){
-                    s.ctx.fillStyle = "#3334";
+                    s.ctx.fillStyle = "#c972";
                     s.ctx.beginPath();
                     s.ctx.arc(startCord.x+(i*fieldSize)-fieldSize/2, startCord.y+(j*fieldSize)-fieldSize/2, fieldSize/3, 0, 2 * Math.PI);
                     s.ctx.fill();
@@ -175,12 +175,12 @@ function update(){
         if(atarx!=0)setTimeout(aiiIncrease(), 10);
         
 		if(player==AI&&atarx==0&&win==0){
+            renderFig
             var a = new ruch();
             r=0; u=0;
             alpha=-Infinity;
             beta=Infinity;
             a=AImove(field, AI, 4, -Infinity, Infinity); //// TUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
-            console.log("Ruchy: "+ r +" Ucięte: " + u + " diff: "+ (r-u));
             clearFigures(zbici);
             if(a.x!=0){
                 ap=field[a.x][a.y];
@@ -201,5 +201,5 @@ function update(){
             }else console.log('ai ma totalny problem');
         }
     }
-    if(!isMobile)s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);
+    if(!isMobile && player!=AI)s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);
 }

@@ -29,4 +29,13 @@ whiteWin.src="../assets/img/whiteWin.png";
 var blackWin = new Image;
 blackWin.src="../assets/img/blackWin.png";
 
+var playerIcon = new Image;
+playerIcon.src="../assets/img/playerIcon.png";
+var AIIcon = new Image;
+AIIcon.src="../assets/img/AIIcon.png";
+var playerIconD = new Image;
+playerIconD.src="../assets/img/playerIconD.png";
+var AIIconD = new Image;
+AIIconD.src="../assets/img/AIIconD.png";
+
 var sound = new Audio('../assets/sound/sound.wav');

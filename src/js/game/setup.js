@@ -1,5 +1,6 @@
 function renderMap(size){
-    if(Screen.w>Screen.h){
+
+    if(s.w>s.h){
         for(i=0; i<size; i++){
             for(j=0; j<size; j++){
                 if(winCondition=='corner' && i==0&&j==0)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
@@ -24,7 +25,60 @@ function renderMap(size){
                         s.ctx.drawImage(whiteField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 }
             }
-        }  
+        }
+
+        if(AI==2){
+                if(player==AI){
+                    s.ctx.drawImage(playerIconD, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(AIIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }else{
+                    s.ctx.drawImage(playerIcon, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(AIIconD,s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }
+
+            }else if(AI==1){
+                if(player==AI){
+                    s.ctx.drawImage(AIIcon, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(playerIconD, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }else{
+                    s.ctx.drawImage(AIIconD, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(playerIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }
+            }else{
+                if(player==1){
+                    s.ctx.drawImage(playerIcon, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(playerIconD, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }else{
+                    s.ctx.drawImage(playerIconD, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(playerIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }
+            }
+        if(AI==2){
+            if(player==AI){
+                s.ctx.drawImage(playerIconD, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(AIIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }else{
+                s.ctx.drawImage(playerIcon, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(AIIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }
+        }else if(AI==1){
+            if(player==AI){
+                s.ctx.drawImage(AIIcon, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(playerIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }else{
+                s.ctx.drawImage(AIIconD, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(playerIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }
+        }else{
+            if(player==1){
+                s.ctx.drawImage(playerIcon, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(playerIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }else{
+                s.ctx.drawImage(playerIconD, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(playerIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }
+        }
+
     }else{
         for(i=0; i<size; i++){
             for(j=0; j<size; j++){
@@ -50,8 +104,64 @@ function renderMap(size){
                         s.ctx.drawImage(whiteField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 }
             }
-        }  
+        }
+
+        if(AI==2){
+                if(player==AI){
+                    s.ctx.drawImage(playerIconD, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(AIIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }else{
+                    s.ctx.drawImage(playerIcon, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(AIIconD,s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }
+
+            }else if(AI==1){
+                if(player==AI){
+                    s.ctx.drawImage(AIIcon, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(playerIconD, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }else{
+                    s.ctx.drawImage(AIIconD, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(playerIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }
+            }else{
+                if(player==1){
+                    s.ctx.drawImage(playerIcon, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(playerIconD, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }else{
+                    s.ctx.drawImage(playerIconD, 0, 0, startCord.y,startCord.y);
+                    s.ctx.drawImage(playerIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
+                }
+            }
+        if(AI==2){
+            if(player==AI){
+                s.ctx.drawImage(playerIconD, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(AIIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }else{
+                s.ctx.drawImage(playerIcon, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(AIIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }
+        }else if(AI==1){
+            if(player==AI){
+                s.ctx.drawImage(AIIcon, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(playerIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }else{
+                s.ctx.drawImage(AIIconD, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(playerIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }
+        }else{
+            if(player==1){
+                s.ctx.drawImage(playerIcon, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(playerIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }else{
+                s.ctx.drawImage(playerIconD, 0, 0, startCord.x,startCord.x);
+                s.ctx.drawImage(playerIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
+            }
+        }
+
     } 
+
+
+
 }
 
 function clearFigures(a){
@@ -187,7 +297,7 @@ function renderFig(){
     for(i=1; i<=size; i++){
         for(j=1; j<=size; j++){
 
-            if(!(i==atarx&&j==atary)){
+            if(!(i==atarx&&j==atary)||(atarx==0)){
                 if(i==clicked.x&&j==clicked.y){
                     if(field[i][j]==1)s.ctx.drawImage(blackPawnClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
                     else if(field[i][j]==2)s.ctx.drawImage(whitePawnClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
