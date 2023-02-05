@@ -1,5 +1,5 @@
 function renderMap(size){
-
+    renderPlayer();
     if(s.w>s.h){
         for(i=0; i<size; i++){
             for(j=0; j<size; j++){
@@ -27,58 +27,6 @@ function renderMap(size){
             }
         }
 
-        if(AI==2){
-                if(player==AI){
-                    s.ctx.drawImage(playerIconD, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(AIIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }else{
-                    s.ctx.drawImage(playerIcon, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(AIIconD,s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }
-
-            }else if(AI==1){
-                if(player==AI){
-                    s.ctx.drawImage(AIIcon, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(playerIconD, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }else{
-                    s.ctx.drawImage(AIIconD, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(playerIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }
-            }else{
-                if(player==1){
-                    s.ctx.drawImage(playerIcon, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(playerIconD, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }else{
-                    s.ctx.drawImage(playerIconD, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(playerIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }
-            }
-        if(AI==2){
-            if(player==AI){
-                s.ctx.drawImage(playerIconD, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(AIIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }else{
-                s.ctx.drawImage(playerIcon, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(AIIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }
-        }else if(AI==1){
-            if(player==AI){
-                s.ctx.drawImage(AIIcon, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(playerIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }else{
-                s.ctx.drawImage(AIIconD, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(playerIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }
-        }else{
-            if(player==1){
-                s.ctx.drawImage(playerIcon, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(playerIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }else{
-                s.ctx.drawImage(playerIconD, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(playerIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }
-        }
-
     }else{
         for(i=0; i<size; i++){
             for(j=0; j<size; j++){
@@ -103,58 +51,6 @@ function renderMap(size){
                     if(j%2==0)
                         s.ctx.drawImage(whiteField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
                 }
-            }
-        }
-
-        if(AI==2){
-                if(player==AI){
-                    s.ctx.drawImage(playerIconD, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(AIIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }else{
-                    s.ctx.drawImage(playerIcon, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(AIIconD,s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }
-
-            }else if(AI==1){
-                if(player==AI){
-                    s.ctx.drawImage(AIIcon, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(playerIconD, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }else{
-                    s.ctx.drawImage(AIIconD, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(playerIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }
-            }else{
-                if(player==1){
-                    s.ctx.drawImage(playerIcon, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(playerIconD, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }else{
-                    s.ctx.drawImage(playerIconD, 0, 0, startCord.y,startCord.y);
-                    s.ctx.drawImage(playerIcon, s.w()-startCord.y, 0, startCord.y,startCord.y);
-                }
-            }
-        if(AI==2){
-            if(player==AI){
-                s.ctx.drawImage(playerIconD, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(AIIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }else{
-                s.ctx.drawImage(playerIcon, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(AIIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }
-        }else if(AI==1){
-            if(player==AI){
-                s.ctx.drawImage(AIIcon, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(playerIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }else{
-                s.ctx.drawImage(AIIconD, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(playerIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }
-        }else{
-            if(player==1){
-                s.ctx.drawImage(playerIcon, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(playerIconD, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
-            }else{
-                s.ctx.drawImage(playerIconD, 0, 0, startCord.x,startCord.x);
-                s.ctx.drawImage(playerIcon, startCord.x+fieldSize*size, 0, startCord.x,startCord.x);
             }
         }
 
@@ -319,4 +215,58 @@ function renderFig(){
             // }
         }
     }
+}
+
+function renderPlayer(){
+    var orientation;
+    (s.w()<s.h())?orientation='horizontal':orientation='vertical';
+
+    var AIPlayer;
+    if(AI==0) AIPlayer='none';
+    else if (AI==1)AIPlayer='left';
+    else AIPlayer='right';
+
+    var activePlayer;
+    if(player==1)activePlayer='left';
+    else activePlayer='right';
+
+    console.log(AIPlayer+' '+activePlayer);
+
+    var activeImageLeft;
+    var activeImageRight;
+
+    if(activePlayer=='left'){
+        if(AIPlayer=='left'){
+            activeImageLeft = AIIcon;
+            activeImageRight = playerIconD;
+        }else if(AIPlayer=='right'){
+            activeImageLeft = playerIcon;
+            activeImageRight = AIIconD;
+        }else{
+            activeImageLeft = playerIcon;
+            activeImageRight = playerIconD;
+        }
+    }else{
+        if(AIPlayer=='left'){
+            activeImageLeft = AIIconD;
+            activeImageRight = playerIcon;
+        }else if(AIPlayer=='right'){
+            activeImageLeft = playerIconD;
+            activeImageRight = AIIcon;
+        }else{
+            activeImageLeft = playerIconD;
+            activeImageRight = playerIcon;
+        }
+    }
+
+
+        var size;
+        if(orientation=='vertical')size=startCord.x;
+        else size= startCord.y;
+
+        if(size>100)size=100;
+
+        s.ctx.drawImage(activeImageLeft,0,0,size,size);
+        s.ctx.drawImage(activeImageRight,s.w()-size,s.h()-size,size,size);
+    
 }
