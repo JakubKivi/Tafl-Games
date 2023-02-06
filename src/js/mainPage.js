@@ -223,6 +223,7 @@ resumeBtn.onclick =function(){
 	window.location.hash = openModalHashStateId;
 	modal.style.display = "block";
     navb.style.display = "none";
+    inGame=1;
 }
 
 
@@ -249,6 +250,8 @@ btn.onclick = function() {
 	onModalOpen();
     navb.style.display = "none";
 	modal.style.display = "block";
+    
+    inGame=1;
 
 }
 
@@ -258,6 +261,7 @@ document.addEventListener("keydown", ({key}) => {
         navb.style.display = "block";
         resumeBtn.style.display = "inline-block";
         window.location.hash = closedModalHashStateId;
+        inGame=0;
     }
 })
 
@@ -272,5 +276,6 @@ function handleBackPress(event) {
     $('.modal-backdrop').remove();
     navb.style.display = "block"; 
     mainMenu=1;
+    inGame=0;
 }
 

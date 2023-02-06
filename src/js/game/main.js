@@ -135,7 +135,7 @@ function update(){
         modal.style.display = "none";
     }
     setTimeout(function(){
-         update();  
+        update();  
     }, 1000 / s.FPS);
     s.ctx.clearRect(0, 0, s.w(), s.h());
     s.ctx.fillStyle = '#000000';
@@ -173,32 +173,33 @@ function update(){
         }
         animate(ax,ay,atarx,atary);
         if(atarx!=0)setTimeout(aiiIncrease(), 10);
-        
-		if(player==AI&&atarx==0&&win==0){
-            renderFig
-            var a = new ruch();
-            r=0; u=0;
-            alpha=-Infinity;
-            beta=Infinity;
-            a=AImove(field, AI, 4, -Infinity, Infinity); //// TUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
-            clearFigures(zbici);
-            if(a.x!=0){
-                ap=field[a.x][a.y];
-                atarx=a.tx;
-                atary=a.ty;
-                ax=a.x;
-                ay=a.y;
-                if(noLegalMove(field, player))
-                            win=1;  //check if there is legal response
-                if(surrounding(field))
+        if(inGame){
+            if(player==AI&&atarx==0&&win==0){
+                renderFig
+                var a = new ruch();
+                r=0; u=0;
+                alpha=-Infinity;
+                beta=Infinity;
+                a=AImove(field, AI, 4, -Infinity, Infinity); //// TUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+                clearFigures(zbici);
+                if(a.x!=0){
+                    ap=field[a.x][a.y];
+                    atarx=a.tx;
+                    atary=a.ty;
+                    ax=a.x;
+                    ay=a.y;
+                    if(noLegalMove(field, player))
+                                win=1;  //check if there is legal response
+                    if(surrounding(field))
+                                    win=1;
+                    move(field, a.x, a.y, a.tx, a.ty, AI);
+                    console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);
+                    player==1?player=2:player=1;
+                    if(repetition(a.x, a.y, a.tx, a.ty))
                                 win=1;
-                move(field, a.x, a.y, a.tx, a.ty, AI);
-                console.log("ruszyłem z: "+a.x+", "+a.y+" do: "+a.tx+", "+a.ty+" z wartością: "+a.value);
-                player==1?player=2:player=1;
-                if(repetition(a.x, a.y, a.tx, a.ty))
-                            win=1;
-                
-            }else console.log('ai ma totalny problem');
+                    
+                }else console.log('ai ma totalny problem');
+            }
         }
     }
     if(!isMobile && player!=AI)s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);

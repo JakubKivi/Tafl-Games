@@ -1,4 +1,5 @@
 function click(e){
+    if(inGame){
     if(mainMenu==1){
         mainMenu=0;
     }else if(win!=0){
@@ -73,4 +74,5 @@ function click(e){
             updateAvailableMoves(clicked.x,clicked.y);
         }
     }
+}
 }

@@ -230,8 +230,6 @@ function renderPlayer(){
     if(player==1)activePlayer='left';
     else activePlayer='right';
 
-    console.log(AIPlayer+' '+activePlayer);
-
     var activeImageLeft;
     var activeImageRight;
 
@@ -264,7 +262,7 @@ function renderPlayer(){
         if(orientation=='vertical')size=startCord.x;
         else size= startCord.y;
 
-        if(size>100)size=100;
+        if(size>110)size=110;
 
         s.ctx.drawImage(activeImageLeft,0,0,size,size);
         s.ctx.drawImage(activeImageRight,s.w()-size,s.h()-size,size,size);
